@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+mm = "python manage.py makemigrations"
+mi = "python manage.py migrate"
+run = "python manage.py runserver 7000"
+sh = "python manage.py shell"
+su = "python manage.py createsuperuser"
+ca = "python manage.py loaddata categories"
+kill = "lsof -t -i:8000"
+t = "python manage.py test"
