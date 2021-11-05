@@ -1,0 +1,43 @@
+@import "vars";
+
+.nav-bar {
+    padding: 30px 0px 30px 100px;
+    margin: 0px 0px 00px 0px;
+    display: block;
+
+    .nav-option {
+        display: inline;
+        font-family: 'Roboto Mono', monospace;
+        margin: 0px;
+        font-size: 22px;
+        padding: 0px;
+        margin-right: 50px;
+        text-decoration: none;
+        color: rgb(255, 255, 255, .6);
+        text-align: left;
+
+        &:hover {
+            color: rgb(255, 166, 0);
+            //background: green;
+        }
+    }
+}
+
+.nav-bar.in {
+    //border-bottom: 5px solid rgb(119, 109, 119, .1);
+
+    .nav-option {
+        color: $purp;
+
+        &:hover {
+            //color: rgb(77, 56, 95, 1);
+            color: $hl2;
+            border-bottom: 5px solid $hl2;
+            
+        }
+    }
+}
+
+.nav-bar.out {
+    background: rgb(0, 0, 0, .2);
+}

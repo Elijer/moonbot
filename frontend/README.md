@@ -11,6 +11,8 @@ To run app
 `cd frontend` >
 `npm start`
 
+Port to backend is hardcoded into 
+
 # DJANGO
 To Run app:
 `cd backend` >

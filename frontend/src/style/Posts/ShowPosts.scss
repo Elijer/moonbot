@@ -1,0 +1,51 @@
+@import "../vars";
+
+#show-posts {
+    
+    width: $compwidth;
+    margin-top: 100px;
+
+    .page-nav {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid rgba(151, 129, 177, 0.2);
+
+        .page-nav-button {
+            background: none;
+            font-size: 24px;
+            border-radius: 0px;
+            padding: 10px 20px;
+            user-select: none;
+            border: 1px solid rgba(151, 129, 177, 0.2);
+            border-bottom: none;
+    
+            &:hover {
+                color: white;
+                background: $purp;
+            }
+
+        }
+
+        // When there are no more pages next or back, this greys out the button
+        .inactive-button:hover {
+                background: rgba(95, 95, 95, 0.4);
+        }
+
+        .current-page, .post-count {
+            color: $purp;
+            font-size: 24px;
+            padding: 10px;
+            user-select: none;
+        }
+
+        .current-page {
+            float: right;
+        }
+
+    }
+
+    .posts-container {
+        margin-top: 30px;
+    }
+
+}

@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import PrivateRoute from './utilities/PrivateRoute'
+import { AuthProvider } from './context/AuthContext'
+
+import HomePage from './pages/HomePage'
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
+import ParamProfilePage from './pages/ParamProfilePage'
+import FollowingPage from './pages/FollowingPage'
+import NotFound from './pages/NotFound'
+import Header from './components/Header'
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id = "app-all">
+        <Router>
+
+            <AuthProvider>
+
+              <Header />
+
+                <Switch>
+                  
+                  <PrivateRoute component = {HomePage} path = "/" exact />
+                  <PrivateRoute component = {HomePage} path = "/page-:page" exact />
+
+{/*                   <PrivateRoute component = {ProfilePage} path = "/yourprofile" /> */}
+                  
+                  <PrivateRoute component = {FollowingPage} path = "/following" />
+                  <PrivateRoute component = {ParamProfilePage} path = "/profile/:handle" />
+
+                  <Route component = {LoginPage} path = "/login" />
+                  <Route component = {RegisterPage} path = "/register" />
+
+                  <Route component={NotFound} />
+                </Switch>
+
+
+            </AuthProvider>
+        </Router>    
     </div>
   );
 }
