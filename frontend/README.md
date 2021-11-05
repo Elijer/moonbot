@@ -1,13 +1,17 @@
 # Ports
+Django port: `7000`
+React Port: `4000`
+
+**To change ports:**
 - In react, change port by changing an environmental variable: `export PORT=8000`
 - In django, go into Pipfile and change `run` command to reflect desired port.
 
 # REACT
 To run app
-`cd frontend`
+`cd frontend` >
 `npm start`
 
 # DJANGO
 To Run app:
-`cd backend`
+`cd backend` >
 `pipenv run run`
