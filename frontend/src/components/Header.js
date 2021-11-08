@@ -16,8 +16,8 @@ const Header = () => {
 
                             {/* <Link to={`/profile/${user.id}`} className = "nav-option" >{user.uppercaseUsername}</Link> */}
                             {/* <Link to="/following" className = "nav-option" >Following</Link> */}
-                            <Link to="/" className = "nav-option">Moonbot</Link> 
-                            <Link to="/" onClick = {logoutUser } className = "nav-option" >Logout</Link>
+                            <Link to="/" className = "nav-option">🌙 Moonbot</Link> 
+                            <Link to="/" onClick = {logoutUser } className = "nav-option" >🌑 Logout</Link>
 
                     </React.Fragment>
 

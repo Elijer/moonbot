@@ -5,7 +5,7 @@
     .nav-bar {
         padding: 15px 20px 15px 15px;
         display: block;
-        text-align: right;
+        text-align: left;
         background: $bg;        
     }
 
@@ -15,6 +15,10 @@
         color: $gold;
         text-decoration: none;
         padding: 0px 20px;
+
+        &:active, &:visited {
+            color: $gold;
+        }
     }
 
 }
