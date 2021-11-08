@@ -10,8 +10,9 @@ const HomePage = () => {
     let { page } = useParams()
 
     return (
-        <div>
-            
+        <div id = "date">
+            <div id = "day"></div>
+            <div id = "time"></div>
         </div>
     )
 }
