@@ -10,14 +10,15 @@ const Header = () => {
 
     return (
             <div className = {"nav-bar " + (user ? "in" : "out")}>
-                <Link to="/" className = "nav-option">Home</Link>
+                {/* <Link to="/" className = "nav-option">Home</Link> */}
 
                 {user ? (
                     
                     <React.Fragment>
 
-                            <Link to={`/profile/${user.id}`} className = "nav-option" >{user.uppercaseUsername}</Link>
-                            <Link to="/following" className = "nav-option" >Following</Link>
+                            {/* <Link to={`/profile/${user.id}`} className = "nav-option" >{user.uppercaseUsername}</Link> */}
+                            {/* <Link to="/following" className = "nav-option" >Following</Link> */}
+                            <Link to="/" className = "nav-option">Moonbot</Link> 
                             <Link to="/" onClick = {logoutUser } className = "nav-option" >Logout</Link>
 
                     </React.Fragment>
