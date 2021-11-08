@@ -17,3 +17,8 @@ Port to backend is hardcoded into
 To Run app:
 `cd backend` >
 `pipenv run run`
+
+# Firebase Implementation
+
+Package:
+`npm install firebase@9.3.0 --save`
