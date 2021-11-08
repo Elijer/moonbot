@@ -4,6 +4,7 @@
     padding: 30px 0px 30px 100px;
     margin: 0px 0px 00px 0px;
     display: block;
+    background: $bg;
 
     .nav-option {
         display: inline;
@@ -13,7 +14,7 @@
         padding: 0px;
         margin-right: 50px;
         text-decoration: none;
-        color: rgb(255, 255, 255, .6);
+        color: gold;
         text-align: left;
 
         &:hover {
@@ -23,21 +24,20 @@
     }
 }
 
-.nav-bar.in {
-    //border-bottom: 5px solid rgb(119, 109, 119, .1);
+/* .nav-bar.in {
+    background: $bg;
 
     .nav-option {
-        color: $purp;
+        color: gold;
 
         &:hover {
-            //color: rgb(77, 56, 95, 1);
-            color: $hl2;
-            border-bottom: 5px solid $hl2;
+            color: white;
+            border-bottom: 5px solid white;
             
         }
     }
-}
+} */
 
-.nav-bar.out {
+/* .nav-bar.out {
     background: rgb(0, 0, 0, .2);
-}
+} */
