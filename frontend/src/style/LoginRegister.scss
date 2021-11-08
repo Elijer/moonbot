@@ -21,7 +21,7 @@
 .login {
     width: 35%;
     margin: 8% auto;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, .9);
     text-align: center;
     border-radius: 3px;
     box-shadow: 2px 2px 10px rgb(0, 0, 0, .3);
@@ -41,7 +41,7 @@
 
     .form-line::placeholder {
         //color: rgb(255, 255, 255, .6);
-        color: $inactive;
+        color: $light;
     }
 
     .form-line {
@@ -53,23 +53,23 @@
         padding: 12px 12px 0px;
         border: none;
         background: none;
-        border-bottom: 5px solid $filled;
+        border-bottom: 5px solid $light;
         //border-bottom: 2px solid $
-        color: $filled;
+        color: $light;
         user-select: none;
         //background: rgb(255, 255, 255, .8);
 
         &:focus {
             outline: none;
             border: none;
-            border-bottom: 5px solid $hl;
-            color: $hl;
+            border-bottom: 5px solid $intense;
+            color: $intense;
         }
     }
 
     .form-submit {
-        color: rgb(255, 255, 255, .5);
-        background: $inactive;
+        color: $light;
+        background: $intense;
         border: none;
         padding: 12px;
         margin-top: 50px;
@@ -78,13 +78,14 @@
 
 
         &:hover {
-            background: $hl;
+            background: $intense;
+            color: $gold;
         }
     }
 
     .register-message {
 
-        background: rgb(0, 0, 0, .8);
+        background: $intense;
 
         font-family: 'Roboto Mono', monospace;
 
@@ -92,14 +93,14 @@
         font-size: 24px;
         width: 100%;
         margin: 0px auto 0px;
-        color: white;
+        color: $gold;
         font-weight: 100px;
 
         .register-link {
-            color: $hl;
+            color: $gold;
 
             &:hover {
-                color: rgb(240, 116, 0);
+                color: $gold;
             }
         }
     }
