@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PrivateRoute from './utilities/PrivateRoute'
 import { AuthProvider } from './context/AuthContext'
 
-import HomePage from './pages/HomePage'
+import Tracker from './pages/Tracker'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import NotFound from './pages/NotFound'
@@ -25,7 +25,7 @@ function App() {
 
                 <Switch>
                   
-                  <PrivateRoute component = {HomePage} path = "/" exact />
+                  <PrivateRoute component = {Tracker} path = "/" exact />
                   <Route component = {LoginPage} path = "/login" />
                   <Route component = {RegisterPage} path = "/register" />
 

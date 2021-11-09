@@ -6,10 +6,12 @@ import { useParams } from 'react-router-dom'
 
 import dd from '../utilities/Debugger'
 
-const HomePage = () => {
+const Tracker = () => {
 
     let { user } = useContext(AuthContext)
     let { page } = useParams()
+
+    
 
     return (
         <div id = "date">
@@ -19,4 +21,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default Tracker
