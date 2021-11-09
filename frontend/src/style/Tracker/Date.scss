@@ -1,0 +1,15 @@
+@import "../vars";
+
+#date {
+    padding: 5px 12px;
+    color: grey;
+
+    #day {
+        float: left;
+    }
+
+    #time, #timeOfDay {
+        float: right;
+    }
+
+}
