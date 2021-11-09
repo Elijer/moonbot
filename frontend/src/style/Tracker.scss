@@ -1,12 +1,21 @@
 @import "vars";
 
+#tracker {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+}
+
+#date, #form, #timeOfDay {
+    padding: 5px 12px;
+}
+
 #date, #timeOfDay {
     color: grey;
 
     #day {
         float: left;
     }
-
 
     #time, #timeOfDay {
         float: right;
