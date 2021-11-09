@@ -1,4 +1,4 @@
-import React, { useEffect, useContext} from 'react'
+import React, { useEffect, useContext, useState} from 'react'
 import { Link } from 'react-router-dom'
 import AuthContext from '../context/AuthContext'
 import { Posts } from '../components/Posts'
@@ -13,22 +13,22 @@ const Tracker = () => {
     let { user } = useContext(AuthContext)
     let { page } = useParams()
 
+    let [date, setDate] = useState("")
+
     useEffect(()=> {
 
     // get date
-    var state = {};
-    var theMoment = moment();
-    state.date = moment().format('L');
-    state.fsDate = state.date.replace(/\//g, "-");
-    dd(state.fsDate)
+    let date = moment().format('L');
+    let entryDate = date.replace(/\//g, "-");
+    setDate(entryDate)
 
     }, [])
 
 
     return (
         <div id = "date">
-            <div id = "day"></div>
-            <div id = "time"></div>
+            <div id = "day"> {date}</div>
+            <div id = "time"> time:time </div>
         </div>
     )
 }
