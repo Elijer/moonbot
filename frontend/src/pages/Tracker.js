@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState} from 'react'
 import { Link } from 'react-router-dom'
 import AuthContext from '../context/AuthContext'
+import TimeContext from '../context/TimeContext'
 import { Posts } from '../components/Posts'
 import { useParams } from 'react-router-dom'
 
@@ -11,16 +12,10 @@ import dd from '../utilities/Debugger'
 const Tracker = () => {
 
     let { user } = useContext(AuthContext)
+    let { time } = useContext(TimeContext)
     let { page } = useParams()
 
-    let [time, setTime] = useState({
-        time: "",
-        date: "",
-        dateString: "",
-        timeOfDay: ""
-    })
-
-    useEffect(()=> {
+/*     useEffect(()=> {
         let m = moment()
         setTime({
             time: m.format('h:mm a'),
@@ -28,7 +23,7 @@ const Tracker = () => {
             dateString: m.format('L').replace(/\//g, "-"),
             timeOfDay: getTimeOfDay(m)
         });
-    }, [])
+    }, []) */
 
     var getTimeOfDay = function(m){
         var timeOfDay;
