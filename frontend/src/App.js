@@ -2,6 +2,7 @@ import './App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PrivateRoute from './utilities/PrivateRoute'
 import { AuthProvider } from './context/AuthContext'
+import { TimeProvider } from './context/TimeContext'
 
 import Tracker from './pages/Tracker'
 import LoginPage from './pages/LoginPage'
@@ -20,20 +21,21 @@ function App() {
         <Router>
 
             <AuthProvider>
+              <TimeProvider>
 
-              <Header />
+                <Header />
 
-                <Switch>
-                  
-                  <PrivateRoute component = {Tracker} path = "/" exact />
-                  <Route component = {LoginPage} path = "/login" />
-                  <Route component = {RegisterPage} path = "/register" />
+                  <Switch>
+                    
+                    <PrivateRoute component = {Tracker} path = "/" exact />
+                    <Route component = {LoginPage} path = "/login" />
+                    <Route component = {RegisterPage} path = "/register" />
 
-                  <Route component={NotFound} />
-                  
-                </Switch>
+                    <Route component={NotFound} />
+                    
+                  </Switch>
 
-
+              </TimeProvider>
             </AuthProvider>
         </Router>    
     </div>
