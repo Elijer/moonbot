@@ -46,35 +46,60 @@ const SleepInput = () => {
         let output;
         let colonPosition = 0;
 
+        if (len === 2){
+            if (parseInt(noColon[1]) > 5){
+                noColon = noColon.substring(0, len-1)
+            }
+        }
         
         if (len < 3){
+            
             output = noColon
-        } else if (potentialHours > 12){
-            colonPosition = 1
-        } else if (potentialHours > 9){
-            // length must be at least 2 for this to be possible
-            if (len < 4){
-                colonPosition = 1
-            } else {
-                colonPosition = 2
-            }
+
         } else {
-            if (digitOne > 1){
+
+            if (potentialHours > 12){
                 colonPosition = 1
+            } else if (potentialHours > 9){
+                // length must be at least 2 for this to be possible
+                if (len < 4){
+                    colonPosition = 1
+                } else {
+                    colonPosition = 2
+                }
             } else {
-                colonPosition = 2
+                if (digitOne > 1){
+                    colonPosition = 1
+                } else {
+                    colonPosition = 2
+                }
+            }
+
+        }
+
+        if (parseInt(noColon[2]) > 5){
+            colonPosition = 1
+        }
+
+        if (parseInt(noColon[0]) === 0){
+            if (parseInt(noColon[1]) === 0){
+                colonPosition = -1
             }
         }
 
         switch (colonPosition){
+            case -1:
+                output = 0
+                break;
             case 0: // no colon
                 output = noColon
                 break;
             case 1: // colon after first digit
-                output = output = insert(noColon, ":", 1).substring(0, 4)
+                output = insert(noColon, ":", 1).substring(0, 4)
                 break;
             case 2: // colon after second digit
                 output = insert(noColon, ":", 2).substring(0, 5)
+                break;
         }
 
         return output
