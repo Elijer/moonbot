@@ -1,10 +1,30 @@
 @import "vars";
-
-@import "./Tracker/Date";
+@import "./Tracker/SleepInput";
 
 
 #tracker {
     font-family: 'Nunito', sans-serif;
     font-weight: 200;
     font-size: 16px;
+    margin: 0px 10px;
+}
+
+#date {
+    padding-top: 10px;
+    color: grey;
+
+    #day {
+        float: left;
+    }
+
+    #time {
+        float: right;
+        padding-right: 5px;
+    }
+
+}
+
+.section {
+    padding-top: 50px;
+    font-size: 20px;
 }

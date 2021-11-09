@@ -1,0 +1,39 @@
+@import "../vars";
+
+#sleep-input {
+    line-height: 1;
+    color: $grey;
+}
+
+.timeInputContainer {
+    position: relative;
+    top: -4px;
+    padding: 2px 0px 3px 0px;
+    margin: 0px 4px 0px 4px;
+    border-bottom: 2px solid $light;
+    background: none;
+
+    &:hover {
+        border-bottom: 2px solid $intense;
+
+        .timeInput {
+            color: $intense;
+        }
+    }
+}
+
+.timeInput {
+
+    width: 50px;
+    background: none;
+
+    font-size: 20px;
+    outline: none;
+    border: none;
+    text-align: center;
+    color: $light;
+    position: relative;
+    top: 4px;
+    left: 2px;
+    display: inline;
+}

@@ -11,8 +11,8 @@ const SleepInput = () => {
 
 
     return (
-        <div className = "section" id = "sleepWake">
-            <h3> 🛌 Bed </h3>
+        <div className = "section" id = "sleep-input">
+            🛌 Bed
             <span className = "timeInputContainer">
             <input id = "nightInput" className = "timeInput" maxLength = "5"></input>
             </span>
