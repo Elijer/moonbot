@@ -1,14 +1,19 @@
-import React from 'react'
-import moment from 'moment';
+import React, { useContext} from 'react'
+import AuthContext from '../../context/AuthContext'
+import TimeContext from '../../context/TimeContext'
 import dd from '../../utilities/Debugger'
 
-const TimeDisplay = (props) => {
+import moment from 'moment';
+
+const TimeDisplay = () => {
+
+    let { time } = useContext(TimeContext)
 
 
     return (
         <div id = "date">
-            <div id = "day"> {props.time.date}</div>
-            <div id = "time"> {props.time.time} </div>
+            <div id = "day"> {time.date}</div>
+            <div id = "time"> {time.time} </div>
         </div>
     )
 }

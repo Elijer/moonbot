@@ -14,7 +14,7 @@ import dd from '../utilities/Debugger'
 const Tracker = () => {
 
     let { user } = useContext(AuthContext)
-    let { time } = useContext(TimeContext)
+    // let { time } = useContext(TimeContext)
     let { page } = useParams()
 
 /*     useEffect(()=> {
@@ -24,7 +24,7 @@ const Tracker = () => {
 
     return (
         <div id = "tracker">
-            < TimeDisplay time = {time} />
+            < TimeDisplay />
         </div>
     )
 }
