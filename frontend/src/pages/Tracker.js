@@ -13,14 +13,31 @@ const Tracker = () => {
     let { user } = useContext(AuthContext)
     let { page } = useParams()
 
+    let [theMoment, setTheMoment] = useState(moment())
     let [date, setDate] = useState("")
+    let [time, setTime] = useState("")
+    let [DBDate, setDBDate] = useState("")
 
     useEffect(()=> {
 
+        let m = moment()
+        setTime(m.format('h:mm a'))
+        setDate(m.format('dddd, MMM Do'))
+        setDBDate(m.format('L').replace(/\//g, "-"))
+
+
     // get date
-    let date = moment().format('L');
+/*     let date = theMoment.format('L');
     let entryDate = date.replace(/\//g, "-");
-    setDate(entryDate)
+    setDate(entryDate) */
+
+
+/*     dateElement.innerHTML = m.format('dddd, MMM */
+/*     timeElement.innerHTML = m.format('h:mm a'); */
+    
+    // Get Time
+    //var timeOfDay = getTimeOfDay(theMoment);
+    //state.timeOfDay = timeOfDay
 
     }, [])
 
@@ -28,7 +45,7 @@ const Tracker = () => {
     return (
         <div id = "date">
             <div id = "day"> {date}</div>
-            <div id = "time"> time:time </div>
+            <div id = "time"> {time} </div>
         </div>
     )
 }
