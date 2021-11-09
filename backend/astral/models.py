@@ -28,7 +28,7 @@ class User(AbstractUser):
         
 class Entry(models.Model):
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="logged_entries")
-    date = models.TextField(max_length="10", min_length="10")
+    date = models.TextField(max_length="10")
     timestamp = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now_add=True)
 
