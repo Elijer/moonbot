@@ -57,7 +57,7 @@ export const TimeProvider = ({children}) => {
     }
 
     let contextData = {
-        time: time,
+        time: time
     }
 
     return (
