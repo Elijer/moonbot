@@ -15,7 +15,6 @@ const SleepInput = () => {
 
     let handleTimeInput = (e, sleepScenario) => {
         e.preventDefault()
-        dd(e)
         let val = e.target.value
         let newData = e.nativeEvent.data
         let backSpace = e.nativeEvent.inputType === "deleteContentBackward"
@@ -24,11 +23,11 @@ const SleepInput = () => {
         
         if (backSpace){
             let oneLess = val.substring(0, val.length)
-            newValue = oneLess
-            modifiedBackspace(val)
+            newValue = formatTime(oneLess, state[sleepScenario])
+            //modifiedBackspace(val)
             //dd(modifiedBackspace(val))
         } else if (valid){
-            newValue = formatTime(val)
+            newValue = formatTime(val, state[sleepScenario])
         }
 
         setState({
@@ -38,7 +37,51 @@ const SleepInput = () => {
 
     }
 
-    let formatTime = (val) => {
+    let formatTime = (val, oldValue) => {
+        let noColon = val.replaceAll(':', '')
+        let digitOne = parseInt(noColon[0] ? noColon[0] : 0)
+        let digitTwo = parseInt(noColon[1] ? noColon[1] : 0)
+        let potentialHours = parseInt(noColon.substring(0, 2));
+        let len = noColon.length // is 0 when empty // shouldn't be more than 4, maybe enforce that here
+        let output;
+        let colonPosition = 0;
+
+        
+        if (len < 3){
+            output = noColon
+        } else if (potentialHours > 12){
+            colonPosition = 1
+        } else if (potentialHours > 9){
+            // length must be at least 2 for this to be possible
+            if (len < 4){
+                colonPosition = 1
+            } else {
+                colonPosition = 2
+            }
+        } else {
+            if (digitOne > 1){
+                colonPosition = 1
+            } else {
+                colonPosition = 2
+            }
+        }
+
+        switch (colonPosition){
+            case 0: // no colon
+                output = noColon
+                break;
+            case 1: // colon after first digit
+                output = output = insert(noColon, ":", 1).substring(0, 4)
+                break;
+            case 2: // colon after second digit
+                output = insert(noColon, ":", 2).substring(0, 5)
+        }
+
+        return output
+
+    }
+
+/*     let formatTime = (val) => {
 
         let max = 5
         let output = val
@@ -70,21 +113,12 @@ const SleepInput = () => {
         }
 
         return output
-    }
+    } */
 
     function insert(s, insert, index){
         const newString = s.slice(0, index) + insert + s.slice(index);
         return newString;
     }
-    
-    let modifiedBackspace = (val) => {
-        let noColon = val.replaceAll(':', '')
-        let digitOne = noColon[0] ? noColon[0] : 0
-        let digitTwo = noColon[1] ? noColon[1] : 0
-
-        if (digitOne > )
-    }
-
 
     return (
 
