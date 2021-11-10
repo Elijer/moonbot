@@ -72,6 +72,8 @@ const SleepInput = () => {
         return newString;
     }
 
+    console.log("how many times?")
+
     return (
 
         <div className = "section" id = "sleep-input">

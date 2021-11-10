@@ -62,7 +62,8 @@ export const TimeProvider = ({children}) => {
 
     return (
         <TimeContext.Provider value = {contextData}>
-            {loading ? null : children}
+            {/* Load children even if time hasn't loaded yet to minimize re-renders */}
+            { children }
         </TimeContext.Provider>
     )
 

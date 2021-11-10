@@ -19,9 +19,9 @@ function App() {
     <div id = "app-all">
         <Router>
 
-            <AuthProvider>
+            <FireProvider>
               <TimeProvider>
-                <FireProvider>
+                <AuthProvider>
 
                   <Header />
 
@@ -34,9 +34,9 @@ function App() {
                       <Route component={NotFound} />
                       
                     </Switch>
-                </FireProvider>
+                </AuthProvider>
               </TimeProvider>
-            </AuthProvider>
+            </FireProvider>
         </Router>    
     </div>
   );
