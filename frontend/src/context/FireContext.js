@@ -18,17 +18,6 @@ export const FireProvider = ({children}) => {
     let [db, setDB] = useState({})
     let [loading, setLoading] = useState(false)
 
-/*     useEffect(() => {
-        (async () => {
-          if (firebaseUserObject) {
-            const user: User = await UserCollection.getCurrentUser(firebaseUserObject.uid)
-            setCurrentUser(user)
-          } else {
-            setCurrentUser(null)
-          }
-        })()
-      }, [firebaseUserObject]) */
-
     useEffect(()=> {
 
         (async () => {
@@ -45,8 +34,11 @@ export const FireProvider = ({children}) => {
                 })
                     
                 const firestore = firebase.firestore()
-                setDB(firestore)
-                setLoading(false)
+                if (firestore._delegate.type === "firestore"){
+                    setDB(firestore)
+                    setLoading(false)
+                    console.log("We got the db object!", db)
+                }
     
             }
         })()
@@ -59,7 +51,7 @@ export const FireProvider = ({children}) => {
 
     return (
         <FireContext.Provider value = {contextData}>
-            {loading ? null : children}
+            {children}
         </FireContext.Provider>
     )
 

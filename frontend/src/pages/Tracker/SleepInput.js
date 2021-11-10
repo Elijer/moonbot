@@ -10,7 +10,7 @@ const SleepInput = () => {
 
     let { db } = useContext(FireContext)
 
-    dd(db)
+    //dd(db)
 
     let { time } = useContext(TimeContext)
     let [state, setState] = useState({
@@ -72,7 +72,7 @@ const SleepInput = () => {
         return newString;
     }
 
-    console.log("how many times?")
+    //dd("how many times?")
 
     return (
 
