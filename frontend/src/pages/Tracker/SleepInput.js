@@ -37,7 +37,41 @@ const SleepInput = () => {
 
     }
 
-    let formatTime = (val, oldValue) => {
+    let formatTime2 = (val) => {
+        let noColon = val.replaceAll(':', '')
+        let hadZero = false;
+        if (noColon[0] === 0){
+            noColon.substring(1, noColon.length)
+            hadZero = true; // we could add it back in at the very end if we want
+        }
+        let digitOne = parseInt(noColon[0] ? noColon[0] : 0)
+        let digitTwo = parseInt(noColon[1] ? noColon[1] : 0)
+        let hours = parseInt(noColon.substring(0, 2));
+        let len = noColon.length
+
+        // Assumptions
+            // the noColon value we are reading has no colons
+            // its first digit is NOT 0
+
+        // Rules
+        
+            // Under no circumstances can first two digits be 00
+            // There may not be more than 4 digits
+            // Under the following circumstances, there may not be more than 3 digits:
+                // if first two digits are more than 12
+                // if the first two digits read together are less than 10
+                // If the first two digits read together are more than 12
+                // if the third digit is more than 5
+
+            // if there can only be three digits, a colon must be added at position 2
+            // if there are four digits, a colon must be added to position 3
+
+        // Additional Validation
+            // there must be at least 3 digits when form is left or form is invalid, and will be cleared to show
+            // That no valid value exists
+    }
+
+    let formatTime = (val) => {
         let noColon = val.replaceAll(':', '')
         let digitOne = parseInt(noColon[0] ? noColon[0] : 0)
         let digitTwo = parseInt(noColon[1] ? noColon[1] : 0)
