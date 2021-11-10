@@ -23,11 +23,11 @@ const SleepInput = () => {
         
         if (backSpace){
             let oneLess = val.substring(0, val.length)
-            newValue = formatTime(oneLess, state[sleepScenario])
+            newValue = formatTime(oneLess)
             //modifiedBackspace(val)
             //dd(modifiedBackspace(val))
         } else if (valid){
-            newValue = formatTime(val, state[sleepScenario])
+            newValue = formatTime(val)
         }
 
         setState({
@@ -37,142 +37,30 @@ const SleepInput = () => {
 
     }
 
-    let formatTime2 = (val) => {
-        let noColon = val.replaceAll(':', '')
-        let hadZero = false;
-        if (noColon[0] === 0){
-            noColon.substring(1, noColon.length)
-            hadZero = true; // we could add it back in at the very end if we want
-        }
-        let digitOne = parseInt(noColon[0] ? noColon[0] : 0)
-        let digitTwo = parseInt(noColon[1] ? noColon[1] : 0)
-        let hours = parseInt(noColon.substring(0, 2));
-        let len = noColon.length
-
-        // Assumptions
-            // the noColon value we are reading has no colons
-            // its first digit is NOT 0
-
-        // Rules
-        
-            // Under no circumstances can first two digits be 00
-            // There may not be more than 4 digits
-            // Under the following circumstances, there may not be more than 3 digits:
-                // if first two digits are more than 12
-                // if the first two digits read together are less than 10
-                // If the first two digits read together are more than 12
-                // if the third digit is more than 5
-
-            // if there can only be three digits, a colon must be added at position 2
-            // if there are four digits, a colon must be added to position 3
-
-        // Additional Validation
-            // there must be at least 3 digits when form is left or form is invalid, and will be cleared to show
-            // That no valid value exists
-    }
-
     let formatTime = (val) => {
-        let noColon = val.replaceAll(':', '')
-        let digitOne = parseInt(noColon[0] ? noColon[0] : 0)
-        let digitTwo = parseInt(noColon[1] ? noColon[1] : 0)
-        let potentialHours = parseInt(noColon.substring(0, 2));
-        let len = noColon.length // is 0 when empty // shouldn't be more than 4, maybe enforce that here
-        let output;
-        let colonPosition = 0;
 
-        if (len === 2){
-            if (parseInt(noColon[1]) > 5){
-                noColon = noColon.substring(0, len-1)
-            }
-        }
-        
-        if (len < 3){
-            
-            output = noColon
+        // prepare val into noColon string
+        let noColon = val.replaceAll(':', '')// get rid of all colons
+        if (noColon[0] == 0) noColon = noColon.substring(1, noColon.length) // if noColon starts with 0, drop it
+        noColon = noColon.substring(0, 4) // and ensure noColon doesn't exceed 4 digits
+        let hours = parseInt(noColon.substring(0, 2)); // get the first two digits as a number
+        let output = noColon // create variable function will return
 
-        } else {
+        if (parseInt(noColon[1]) > 5) noColon = noColon[0] // The second character can't be more than 5: If it is, cut it out and continue
 
-            if (potentialHours > 12){
-                colonPosition = 1
-            } else if (potentialHours > 9){
-                // length must be at least 2 for this to be possible
-                if (len < 4){
-                    colonPosition = 1
-                } else {
-                    colonPosition = 2
-                }
-            } else {
-                if (digitOne > 1){
-                    colonPosition = 1
-                } else {
-                    colonPosition = 2
-                }
-            }
+        if (noColon.length < 2) output = noColon // If there's only one digit, don't add any colons -- this prevents full deletion
+        else if (
 
-        }
+            hours > 15 // but 13, 14 and 15 can create valid 3 digit hours too (1:32, 1:59, etc.)
+            || noColon[2] > 5 // if third digit is more than 5, 1:26 , 4 digits aren't valid. ex. 12:61
+            || noColon.length < 4 // If digits are 3 or fewer, we'll want colon here "0:00" anyways
 
-        if (parseInt(noColon[2]) > 5){
-            colonPosition = 1
-        }
+        ) output = insert(noColon, ":", 1).substring(0, 4) // Format to 3 digits: 0:00
 
-        if (parseInt(noColon[0]) === 0){
-            if (parseInt(noColon[1]) === 0){
-                colonPosition = -1
-            }
-        }
-
-        switch (colonPosition){
-            case -1:
-                output = 0
-                break;
-            case 0: // no colon
-                output = noColon
-                break;
-            case 1: // colon after first digit
-                output = insert(noColon, ":", 1).substring(0, 4)
-                break;
-            case 2: // colon after second digit
-                output = insert(noColon, ":", 2).substring(0, 5)
-                break;
-        }
+        else output = insert(noColon, ":", 2).substring(0, 5) // Format to 4 digits: 00:00
 
         return output
-
     }
-
-/*     let formatTime = (val) => {
-
-        let max = 5
-        let output = val
-        const len = val.length;
-        const hasColon = val.includes(":")
-
-        if (hasColon){
-            if (len >= 4){
-                var withoutColon = val.replaceAll(':', '')
-                var potentialHours = parseInt(withoutColon.substring(0, 2));
-                console.log(potentialHours);
-                if (potentialHours > 12){
-                    if (output.length > 3){
-                        console.log("too long")
-                        output = output.substring(0, 4)
-                    }
-                } else {
-                    if (len === 5){
-                
-                        val = val.replaceAll(":", "");
-                        output = insert(val, ":", 2)
-                    }
-                }
-            }
-        } else {
-            if (len === 1){
-                output = insert(val, ":", 1);
-            }
-        }
-
-        return output
-    } */
 
     function insert(s, insert, index){
         const newString = s.slice(0, index) + insert + s.slice(index);
@@ -203,3 +91,34 @@ const SleepInput = () => {
 }
 
 export default SleepInput
+
+
+
+
+
+
+// Logic blueprint for 
+
+        // Assumptions
+            // the noColon value we are reading has no colons (x)
+            // its first digit is NOT 0 (x)
+            // third digit can't be more than 5
+
+        // Rules
+        
+            // Under no circumstances can second digit be 0 (x)
+            // There may not be more than 4 digits (x)
+            // Under the following circumstances, there may not be more than 3 digits:
+                // if first two digits are more than 12
+                // if the first two digits read together are less than 10
+                // If the first two digits read together are more than 12
+                // if the third digit is more than 5
+                // there currently ARE only three digits
+
+            // if there are only two digits, there must be no colons
+            // if there can only be three digits, a colon must be added at position 2
+            // if there are four digits, a colon must be added to position 3
+
+        // Additional Validation
+            // there must be at least 3 digits when form is left or form is invalid, and will be cleared to show
+            // That no valid value exists
