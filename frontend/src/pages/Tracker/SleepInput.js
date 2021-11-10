@@ -1,11 +1,16 @@
 import React, { useContext, useState } from 'react'
 import AuthContext from '../../context/AuthContext'
 import TimeContext from '../../context/TimeContext'
+import FireContext from '../../context/FireContext'
 import dd from '../../utilities/Debugger'
 
 import moment from 'moment';
 
 const SleepInput = () => {
+
+    let { db } = useContext(FireContext)
+
+    dd(db)
 
     let { time } = useContext(TimeContext)
     let [state, setState] = useState({
