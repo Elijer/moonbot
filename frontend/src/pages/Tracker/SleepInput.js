@@ -8,9 +8,6 @@ import dd from '../../utilities/Debugger'
 
 const SleepInput = (props) => {
 
-    const mornRef = React.useRef();
-    const nightRef = React.useRef();
-
     let { time } = useContext(TimeContext)
     let { db } = useContext(FireContext)
     let entry = db.collection("entries").doc(time.dateString);
@@ -100,7 +97,6 @@ const SleepInput = (props) => {
             🛌 Bed
             <span className = "timeInputContainer">
                 <input id = "nightInput"
-                ref = {nightRef}
                 className = "timeInput"
                 maxLength = "5"
                 onChange = {(e) => handleTimeInput(e, "sleep")}
@@ -109,7 +105,6 @@ const SleepInput = (props) => {
             , woke
             <span className = "timeInputContainer">
                 <input id = "morningInput"
-                ref = {mornRef}
                 className = "timeInput"
                 maxLength = "5"
                 onChange = {(e) => handleTimeInput(e, "wake")}
