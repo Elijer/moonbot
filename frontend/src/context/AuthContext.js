@@ -38,11 +38,6 @@ export const AuthProvider = ({children}) => {
     const [loginAttempt, setLoginAttempt] = useState(false)
     const [loading, setLoading] = useState(true)
 
-/*     const [state, setState] = useState({
-        loading: true,
-        loginAttempt: false
-    }) */
-
     const history = useHistory()
 
 
@@ -90,17 +85,9 @@ export const AuthProvider = ({children}) => {
             data.username = jwt_decode(data.access).username
             loginEvent(data) // log user in
             setLoginAttempt(false)
-/*             setState({
-                ...state,
-                setLoginAttempt: false
-            }) */
             return "success"
         } else {
             setLoginAttempt(true)
-/*             setState({
-                ...state,
-                setLoginAttempt: true
-            }) */
             dd("Something went wrong -- you probably supplied the wrong login credentials")
             return "loginError"
         }
@@ -112,11 +99,6 @@ export const AuthProvider = ({children}) => {
         localStorage.removeItem('authTokens')
         setLoginAttempt(false)
         setLoading(true)
-/*         setState({
-            ...state,
-            loading: true,
-            setLoginAttempt: false //
-        }) */
     }
 
     let registerUser = async (e) => {
@@ -174,10 +156,6 @@ export const AuthProvider = ({children}) => {
     
             if(loading){
                 setLoading(false)
-/*                 setState({
-                    ...state,
-                    loading: false
-                }) */
             }
         },
         [authTokens?.refresh, loading]
