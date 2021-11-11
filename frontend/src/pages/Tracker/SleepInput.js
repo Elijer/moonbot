@@ -30,10 +30,6 @@ const SleepInput = (props) => {
             wakeSaved: props.data.wake,
             sleepSaved: props.data.sleep
         })
-
-        return async () => {
-            setEntry({sleep: state.sleep})
-        }
     }, [props.data])
 
     useEffect(() => {
@@ -62,6 +58,7 @@ const SleepInput = (props) => {
 
     // Function that sends time data to database
     let setEntry = async (data) => {
+        data.userID = props.user.id
         try {
             let response = await entry.set(data, {merge: true})
             return response
