@@ -24,12 +24,19 @@ const SleepInput = (props) => {
 
 
     useEffect(() => {
+        setState({
+            ...state,
+            wakeSaved: props.data.wake,
+            sleepSaved: props.data.sleep
+        })
     }, [props.data])
 
     //let { time } = useContext(TimeContext)
     let [state, setState] = useState({
         wake: "",
-        sleep: ""
+        sleep: "",
+        wakeSaved: "",
+        sleepSaved: ""
     })
 
     let handleTimeInput = (e, sleepScenario) => {
@@ -57,6 +64,8 @@ const SleepInput = (props) => {
         setEntry({
             [sleepScenario]: newValue
         })
+
+        dd("wake: " + state.wake, "sleep: " + state.sleep)
     }
 
     let formatTime = (val) => {
@@ -99,6 +108,7 @@ const SleepInput = (props) => {
                 <input id = "nightInput"
                 className = "timeInput"
                 maxLength = "5"
+                placeholder = { state.sleepSaved }
                 onChange = {(e) => handleTimeInput(e, "sleep")}
                 value = {state.sleep} />
             </span>
@@ -107,6 +117,7 @@ const SleepInput = (props) => {
                 <input id = "morningInput"
                 className = "timeInput"
                 maxLength = "5"
+                placeholder = { state.wakeSaved }
                 onChange = {(e) => handleTimeInput(e, "wake")}
                 value = {state.wake} />
             </span>.
