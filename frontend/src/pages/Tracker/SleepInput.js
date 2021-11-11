@@ -1,20 +1,25 @@
 
 import React, { useContext, useState, useEffect } from 'react'
 //import AuthContext from '../../context/AuthContext'
-//import TimeContext from '../../context/TimeContext'
+import TimeContext from '../../context/TimeContext'
 import FireContext from '../../context/FireContext'
 import dd from '../../utilities/Debugger'
 //import dd from '../../utilities/Debugger'
 
 const SleepInput = () => {
 
+    let { time } = useContext(TimeContext)
     let { db } = useContext(FireContext)
+    let entry = db.collection("entries").doc(time.dateString);
 
-    useEffect(() => {
+    let setEntry = async (data) => {
+        let response = await entry.set(data, {merge: true})
+        return response
+    }
+
+/*     useEffect(() => {
         dd(db)
-    }, [])
-
-    //dd(db)
+    }, []) */
 
     //let { time } = useContext(TimeContext)
     let [state, setState] = useState({
@@ -44,6 +49,9 @@ const SleepInput = () => {
             [sleepScenario]: newValue
         })
 
+        dd(setEntry({
+            [sleepScenario]: newValue
+        }))
     }
 
     let formatTime = (val) => {
