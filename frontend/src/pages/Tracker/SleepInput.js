@@ -22,7 +22,45 @@ const SleepInput = (props) => {
         sleepSaved: ""
     })
 
-    // Send time data to database
+    // Props not available on first render -- must be saved to state here in useEffect
+    // props.data needed as dependency
+    useEffect(() => {
+        setState({
+            ...state,
+            wakeSaved: props.data.wake,
+            sleepSaved: props.data.sleep
+        })
+
+        return async () => {
+            setEntry({sleep: state.sleep})
+        }
+    }, [props.data])
+
+    useEffect(() => {
+        let wakeIsValid = validateTime(state.wake)
+        let sleepIsValid = validateTime(state.sleep)
+
+        if (wakeIsValid || sleepIsValid){
+
+            let data = {}
+
+            if (wakeIsValid){
+                data.wake = state.wake
+                dd("setting wake data")
+            }
+
+            if (sleepIsValid){
+                data.sleep = state.sleep
+                dd("setting sleep data")
+            }
+
+            setEntry(data)
+
+        }
+
+    }, [state.wake, state.sleep])
+
+    // Function that sends time data to database
     let setEntry = async (data) => {
         try {
             let response = await entry.set(data, {merge: true})
@@ -33,24 +71,13 @@ const SleepInput = (props) => {
         }
     }
 
-
-    // Props not available on first render -- must be saved to state here in useEffect
-    // props.data needed as dependency
-    useEffect(() => {
-        setState({
-            ...state,
-            wakeSaved: props.data.wake,
-            sleepSaved: props.data.sleep
-        })
-    }, [props.data])
-
     // Fired when time inputs change
     let handleTimeInput = (e, sleepScenario) => {
         e.preventDefault()
         let val = e.target.value
         let newData = e.nativeEvent.data
-        let backSpace = e.nativeEvent.inputType === "deleteContentBackward"
         let valid = /^\d*:?\d*$/.test(newData); // returns false if anything other than number or colon
+        let backSpace = e.nativeEvent.inputType === "deleteContentBackward"
         let newValue = state[sleepScenario]
         
         if (backSpace){
@@ -67,11 +94,27 @@ const SleepInput = (props) => {
         })
 
         // set data in firestore
-        setEntry({
+        // But this is actually just done in useEffect for any state.sleep or state.wake changes
+/*         setEntry({
             [sleepScenario]: newValue
-        })
+        }) */
 
-        dd("wake: " + state.wake, "sleep: " + state.sleep)
+    }
+
+/*     let handleBlur = (e, sleepScenario) => {
+        let val = e.target.value
+        let valid = validateTime(val)
+        if (valid){
+            setEntry({
+                [sleepScenario]: val
+            })
+        }
+    } */
+
+    let validateTime = (val) => {
+        let regex = /^(([0-9]{1}|1[0-2]{1}):[0-5]{1}[0-9]{1}){1}$/y
+        let valid = regex.test(val) 
+        return valid
     }
 
     return (
@@ -82,7 +125,6 @@ const SleepInput = (props) => {
                 <input id = "nightInput"
                 className = "timeInput"
                 maxLength = "5"
-                //onBlur = {(e) => validateTimeData(e)}
                 placeholder = { state.sleepSaved }
                 onChange = {(e) => handleTimeInput(e, "sleep")}
                 value = {state.sleep} />
