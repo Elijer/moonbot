@@ -35,10 +35,13 @@ export const AuthProvider = ({children}) => {
         }
     })
 
-    const [state, setState] = useState({
+    const [loginAttempt, setLoginAttempt] = useState(false)
+    const [loading, setLoading] = useState(true)
+
+/*     const [state, setState] = useState({
         loading: true,
         loginAttempt: false
-    })
+    }) */
 
     const history = useHistory()
 
@@ -86,16 +89,18 @@ export const AuthProvider = ({children}) => {
         if (response.status === 200){
             data.username = jwt_decode(data.access).username
             loginEvent(data) // log user in
-            setState({
+            setLoginAttempt(false)
+/*             setState({
                 ...state,
                 setLoginAttempt: false
-            })
+            }) */
             return "success"
         } else {
-            setState({
+            setLoginAttempt(true)
+/*             setState({
                 ...state,
                 setLoginAttempt: true
-            })
+            }) */
             dd("Something went wrong -- you probably supplied the wrong login credentials")
             return "loginError"
         }
@@ -105,11 +110,13 @@ export const AuthProvider = ({children}) => {
         setAuthTokens(null)
         setUser(null)
         localStorage.removeItem('authTokens')
-        setState({
+        setLoginAttempt(false)
+        setLoading(true)
+/*         setState({
             ...state,
             loading: true,
             setLoginAttempt: false //
-        })
+        }) */
     }
 
     let registerUser = async (e) => {
@@ -165,21 +172,22 @@ export const AuthProvider = ({children}) => {
                 logoutUser()
             }
     
-            if(state.loading){
-                setState({
+            if(loading){
+                setLoading(false)
+/*                 setState({
                     ...state,
                     loading: false
-                })
+                }) */
             }
         },
-        [],
+        [authTokens?.refresh, loading]
     )
 
     let serverURL = Config.serverURL
 
     useEffect(()=> {
 
-        if(state.loading){
+        if(loading){
             updateToken()
         }
 
@@ -202,7 +210,7 @@ export const AuthProvider = ({children}) => {
         // we have to clear the interval after calling it so it only runs once
         // otherwise we'll end up with an incerasing number of intervals running in parallell
 
-    }, [authTokens, state.loading, updateToken])
+    }, [authTokens, loading, updateToken])
 
     // 'Export' functions/variables to the component which will wrap other components, thus sharing its context
     let contextData = {
@@ -210,7 +218,7 @@ export const AuthProvider = ({children}) => {
         user: user,
         authTokens:authTokens,
         serverURL: serverURL,
-        loginAttempt: state.loginAttempt,
+        loginAttempt: loginAttempt,
 
         // Functions:
         loginUser: loginUser,
@@ -222,7 +230,7 @@ export const AuthProvider = ({children}) => {
     // Pass contextData into the value of AuthContext.Provider so that it can be used
     return (
         <AuthContext.Provider value = {contextData}>
-            {state.loading ? null : children}
+            {loading ? null : children}
         </AuthContext.Provider>
     )
 }
