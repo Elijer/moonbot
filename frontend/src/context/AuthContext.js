@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect} from 'react'
+import { createContext, useState, useEffect, useCallback} from 'react'
 import jwt_decode from 'jwt-decode'
 import { useHistory } from 'react-router-dom'
 import Config from './Config'
@@ -139,39 +139,41 @@ export const AuthProvider = ({children}) => {
 
     }
 
-    let updateToken = async () => {
-        dd("fetching api/token/refresh to update token")
-        let response = await fetch(Config.serverURL + 'api/token/refresh/', {
-            method: 'POST',
-            headers:  {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                'refresh': authTokens?.refresh // the question mark apparently prevents this fetch call from getting used if it doesn't exist, preventing errors
+    let updateToken = useCallback(
+        async () => {
+            dd("fetching api/token/refresh to update token")
+            let response = await fetch(Config.serverURL + 'api/token/refresh/', {
+                method: 'POST',
+                headers:  {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    'refresh': authTokens?.refresh // the question mark apparently prevents this fetch call from getting used if it doesn't exist, preventing errors
+                })
             })
-        })
-
-        // wait for response
-        let data = await response.json()
-
-        if (response.status === 200){
-            // save tokens to state AND local storage
-            setAuthTokens(data)
-            setUser(custom_jwt_decode(data.access)) // decode user out of the access code
-            localStorage.setItem('authTokens', JSON.stringify(data))
-        } else {
-            dd("Couldn't refresh token -- this could be an intentional or unintentional logout")
-            logoutUser()
-        }
-
-        if(state.loading){
-            setState({
-                ...state,
-                loading: false
-            })
-        }
-
-    }
+    
+            // wait for response
+            let data = await response.json()
+    
+            if (response.status === 200){
+                // save tokens to state AND local storage
+                setAuthTokens(data)
+                setUser(custom_jwt_decode(data.access)) // decode user out of the access code
+                localStorage.setItem('authTokens', JSON.stringify(data))
+            } else {
+                dd("Couldn't refresh token -- this could be an intentional or unintentional logout")
+                logoutUser()
+            }
+    
+            if(state.loading){
+                setState({
+                    ...state,
+                    loading: false
+                })
+            }
+        },
+        [],
+    )
 
     let serverURL = Config.serverURL
 
@@ -200,7 +202,7 @@ export const AuthProvider = ({children}) => {
         // we have to clear the interval after calling it so it only runs once
         // otherwise we'll end up with an incerasing number of intervals running in parallell
 
-    }, [authTokens, state.loading])
+    }, [authTokens, state.loading, updateToken])
 
     // 'Export' functions/variables to the component which will wrap other components, thus sharing its context
     let contextData = {
