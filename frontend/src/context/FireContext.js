@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect} from 'react'
+import { createContext, useState, useEffect, useRef, useCallback} from 'react'
 import { handleEmulators } from './Firestore/handleEmulators'
 import { firebaseConfig } from './Firestore/firebaseConfig'
 //import dd from '../utilities/Debugger'
@@ -7,7 +7,6 @@ import { firebaseConfig } from './Firestore/firebaseConfig'
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/firestore'
 
-//import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 const FireContext = createContext()
 
@@ -16,25 +15,17 @@ export default FireContext
 
 export const FireProvider = ({children}) => {
 
-    let [db, setDB] = useState({})
-
-    useEffect(()=> {
-
-
-            // app = firebase.initiazeApp()
+    let createDB = useCallback(
+        () => {
             firebase.initializeApp(firebaseConfig)
-                
             const firestore = firebase.firestore()
             handleEmulators(firestore);
-            if (firestore._delegate.type === "firestore"){
-                setDB(firestore)
-                console.log("We got the db object!", db)
-            }
-
-    }, [])
+            return firestore
+        }
+    )
 
     let contextData = {
-        db: db
+        db: createDB()
     }
 
     return (
