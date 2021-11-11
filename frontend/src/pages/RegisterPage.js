@@ -14,7 +14,7 @@ const RegisterPage = () => {
     return (
         <div>
             <div id = "bg-color">
-                <img id = "bg-image" src = {img} />
+                <img id = "bg-image" src = {img} alt = "" />
             </div>
             <div className = "login register">
                 <div className = "login-panel">

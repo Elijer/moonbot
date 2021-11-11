@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect} from 'react'
 import moment from 'moment';
-import dd from '../utilities/Debugger'
+//import dd from '../utilities/Debugger'
 
 const TimeContext = createContext()
 
@@ -32,7 +32,7 @@ export const TimeProvider = ({children}) => {
             setLoading(false)
 
         }
-    }, [])
+    }, [loading])
 
     var getTimeOfDay = function(m){
         var timeOfDay;

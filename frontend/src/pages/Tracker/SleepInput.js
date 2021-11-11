@@ -1,13 +1,10 @@
-import React, { useContext, useState } from 'react'
-import AuthContext from '../../context/AuthContext'
-import TimeContext from '../../context/TimeContext'
-import dd from '../../utilities/Debugger'
-
-import moment from 'moment';
+import React, { useState } from 'react'
+//import AuthContext from '../../context/AuthContext'
+//import TimeContext from '../../context/TimeContext'
+//import dd from '../../utilities/Debugger'
 
 const SleepInput = () => {
 
-    let { time } = useContext(TimeContext)
     let [state, setState] = useState({
         wake: "",
         sleep: ""
@@ -18,7 +15,7 @@ const SleepInput = () => {
         let val = e.target.value
         let newData = e.nativeEvent.data
         let backSpace = e.nativeEvent.inputType === "deleteContentBackward"
-        let valid = /^\d*\:?\d*$/.test(newData); // returns false if anything other than number or colon
+        let valid = /^\d*:?\d*$/.test(newData); // returns false if anything other than number or colon
         let newValue = state[sleepScenario]
         
         if (backSpace){
@@ -41,7 +38,7 @@ const SleepInput = () => {
 
         // prepare val into noColon string
         let noColon = val.replaceAll(':', '')// get rid of all colons
-        if (noColon[0] == 0) noColon = noColon.substring(1, noColon.length) // if noColon starts with 0, drop it
+        if (parseInt(noColon[0]) === 0) noColon = noColon.substring(1, noColon.length) // if noColon starts with 0, drop it
         noColon = noColon.substring(0, 4) // and ensure noColon doesn't exceed 4 digits
         let hours = parseInt(noColon.substring(0, 2)); // get the first two digits as a number
         let output = noColon // create variable function will return
