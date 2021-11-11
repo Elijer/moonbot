@@ -22,7 +22,8 @@ export const FireProvider = ({children}) => {
         (async () => {
             if (loading === false){
 
-                const app = firebase.initializeApp({
+                // app = firebase.initiazeApp()
+                firebase.initializeApp({
                     apiKey: "AIzaSyCfcluagAp51tAuLFk_-2JqdpGFsZ5t4d4",
                     authDomain: "m00nb0t.firebaseapp.com",
                     projectId: "m00nb0t",
@@ -42,7 +43,7 @@ export const FireProvider = ({children}) => {
             }
         })()
 
-    }, [db])
+    }, [db, loading])
 
     let contextData = {
         db: db
