@@ -1184,3 +1184,426 @@ INFO: Detected non-HTTP/2 connection.
 [debug] [2021-11-11T18:35:41.268Z] Nov 11, 2021 12:35:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
  {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:35:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:36:41.299Z] Nov 11, 2021 12:36:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:36:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:37:41.324Z] Nov 11, 2021 12:37:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:37:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:38:41.354Z] Nov 11, 2021 12:38:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:38:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:39:41.378Z] Nov 11, 2021 12:39:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:39:49.807Z] Nov 11, 2021 12:39:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:39:49.812Z] Nov 11, 2021 12:39:49 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:49 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:39:49.867Z] Nov 11, 2021 12:39:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:39:49.882Z] Nov 11, 2021 12:39:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:39:53.363Z] Nov 11, 2021 12:39:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:39:53.364Z] Nov 11, 2021 12:39:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:39:53.393Z] Nov 11, 2021 12:39:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:39:53.422Z] Nov 11, 2021 12:39:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:39:54.209Z] Nov 11, 2021 12:39:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:39:54.212Z] Nov 11, 2021 12:39:54 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:54 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:39:54.225Z] Nov 11, 2021 12:39:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:39:54.244Z] Nov 11, 2021 12:39:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:39:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:40:48.941Z] Nov 11, 2021 12:40:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:40:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:40:49.092Z] Nov 11, 2021 12:40:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:40:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:40:49.130Z] Nov 11, 2021 12:40:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:40:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:40:53.456Z] Nov 11, 2021 12:40:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:40:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:41:22.251Z] Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:41:22.256Z] Nov 11, 2021 12:41:22 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:41:22 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:41:22.296Z] Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:41:22.307Z] Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:41:22.695Z] Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:41:22.700Z] Nov 11, 2021 12:41:22 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:41:22 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:41:22.737Z] Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:41:22.754Z] Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:41:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:41:53.483Z] Nov 11, 2021 12:41:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:41:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:42:06.639Z] Nov 11, 2021 12:42:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:42:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:42:06.669Z] Nov 11, 2021 12:42:06 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:42:06 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:42:06.740Z] Nov 11, 2021 12:42:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:42:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:42:06.753Z] Nov 11, 2021 12:42:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:42:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:42:16.929Z] Nov 11, 2021 12:42:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:42:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:42:16.934Z] Nov 11, 2021 12:42:16 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:42:16 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:42:16.947Z] Nov 11, 2021 12:42:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:42:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:42:16.970Z] Nov 11, 2021 12:42:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:42:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:42:38.777Z] Nov 11, 2021 12:42:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:42:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:42:38.882Z] Nov 11, 2021 12:42:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:42:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:42:53.510Z] Nov 11, 2021 12:42:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:42:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:43:02.739Z] Nov 11, 2021 12:43:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:43:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:43:02.766Z] Nov 11, 2021 12:43:02 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:43:02 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:43:02.840Z] Nov 11, 2021 12:43:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:43:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:43:02.853Z] Nov 11, 2021 12:43:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:43:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:43:22.027Z] Nov 11, 2021 12:43:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:43:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:43:22.134Z] Nov 11, 2021 12:43:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:43:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:43:27.006Z] Nov 11, 2021 12:43:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:43:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:43:27.010Z] Nov 11, 2021 12:43:27 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:43:27 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:43:27.055Z] Nov 11, 2021 12:43:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:43:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:43:27.069Z] Nov 11, 2021 12:43:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:43:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:43:53.548Z] Nov 11, 2021 12:43:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:43:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:14.897Z] Nov 11, 2021 12:44:14 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:14 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:15.007Z] Nov 11, 2021 12:44:15 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:15 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:15.039Z] Nov 11, 2021 12:44:15 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:15 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:19.076Z] Nov 11, 2021 12:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:19.088Z] Nov 11, 2021 12:44:19 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:19 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:44:19.149Z] Nov 11, 2021 12:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:19.170Z] Nov 11, 2021 12:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:26.676Z] Nov 11, 2021 12:44:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:26.743Z] Nov 11, 2021 12:44:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:27.283Z] Nov 11, 2021 12:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:27.284Z] Nov 11, 2021 12:44:27 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:27 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:44:27.366Z] Nov 11, 2021 12:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:27.437Z] Nov 11, 2021 12:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:44:53.598Z] Nov 11, 2021 12:44:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:44:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:03.876Z] Nov 11, 2021 12:45:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:03.954Z] Nov 11, 2021 12:45:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:04.879Z] Nov 11, 2021 12:45:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:04.887Z] Nov 11, 2021 12:45:04 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:04 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:45:04.948Z] Nov 11, 2021 12:45:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:04.969Z] Nov 11, 2021 12:45:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:06.851Z] Nov 11, 2021 12:45:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:06.856Z] Nov 11, 2021 12:45:06 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:06 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:45:06.927Z] Nov 11, 2021 12:45:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:06.950Z] Nov 11, 2021 12:45:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:08.747Z] Nov 11, 2021 12:45:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:08.752Z] Nov 11, 2021 12:45:08 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:08 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:45:08.764Z] Nov 11, 2021 12:45:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:08.791Z] Nov 11, 2021 12:45:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:24.784Z] Nov 11, 2021 12:45:24 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:24 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:24.855Z] Nov 11, 2021 12:45:24 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:24 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:25.184Z] Nov 11, 2021 12:45:25 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:25 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:25.187Z] Nov 11, 2021 12:45:25 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:25 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:45:25.258Z] Nov 11, 2021 12:45:25 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:25 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:25.275Z] Nov 11, 2021 12:45:25 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:25 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:33.121Z] Nov 11, 2021 12:45:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:33.138Z] Nov 11, 2021 12:45:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:33.737Z] Nov 11, 2021 12:45:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:33.742Z] Nov 11, 2021 12:45:33 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:33 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:45:33.757Z] Nov 11, 2021 12:45:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:33.772Z] Nov 11, 2021 12:45:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:40.728Z] Nov 11, 2021 12:45:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:40.744Z] Nov 11, 2021 12:45:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:43.860Z] Nov 11, 2021 12:45:43 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:43 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:45:43.875Z] Nov 11, 2021 12:45:43 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:45:43 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:07.923Z] Nov 11, 2021 12:46:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:07.950Z] Nov 11, 2021 12:46:07 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:07 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:46:08.015Z] Nov 11, 2021 12:46:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:08.029Z] Nov 11, 2021 12:46:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:09.018Z] Nov 11, 2021 12:46:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:09.834Z] Nov 11, 2021 12:46:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:09.837Z] Nov 11, 2021 12:46:09 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:09 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:46:09.848Z] Nov 11, 2021 12:46:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:09.871Z] Nov 11, 2021 12:46:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:17.412Z] Nov 11, 2021 12:46:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:17.417Z] Nov 11, 2021 12:46:17 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:17 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:46:17.433Z] Nov 11, 2021 12:46:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:17.450Z] Nov 11, 2021 12:46:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:18.591Z] Nov 11, 2021 12:46:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:18.596Z] Nov 11, 2021 12:46:18 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:18 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:46:18.627Z] Nov 11, 2021 12:46:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:18.646Z] Nov 11, 2021 12:46:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:29.624Z] Nov 11, 2021 12:46:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:29.634Z] Nov 11, 2021 12:46:29 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:29 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:46:29.700Z] Nov 11, 2021 12:46:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:29.755Z] Nov 11, 2021 12:46:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:30.861Z] Nov 11, 2021 12:46:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:30.870Z] Nov 11, 2021 12:46:30 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0
+Content-Type:text/plain
+X-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:30 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/9.4.0\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:717345603721:web:5a7c8e88fc43f9e97a8658\r\n\n"}}
+[debug] [2021-11-11T18:46:30.948Z] Nov 11, 2021 12:46:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-11-11T18:46:30.981Z] Nov 11, 2021 12:46:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 11, 2021 12:46:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
