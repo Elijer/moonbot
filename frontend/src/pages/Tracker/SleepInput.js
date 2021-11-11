@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+
+import React, { useContext, useState } from 'react'
 //import AuthContext from '../../context/AuthContext'
-//import TimeContext from '../../context/TimeContext'
+import TimeContext from '../../context/TimeContext'
+import FireContext from '../../context/FireContext'
 //import dd from '../../utilities/Debugger'
 
 const SleepInput = () => {
 
+    let { db } = useContext(FireContext)
+
+    //dd(db)
+
+    let { time } = useContext(TimeContext)
     let [state, setState] = useState({
         wake: "",
         sleep: ""
@@ -63,6 +70,8 @@ const SleepInput = () => {
         const newString = s.slice(0, index) + insert + s.slice(index);
         return newString;
     }
+
+    //dd("how many times?")
 
     return (
 

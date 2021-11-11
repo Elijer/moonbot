@@ -10,9 +10,8 @@ import RegisterPage from './pages/RegisterPage'
 import NotFound from './pages/NotFound'
 import Header from './components/Header'
 
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { FireProvider } from './context/FireContext';
 
 function App() {
 
@@ -20,23 +19,24 @@ function App() {
     <div id = "app-all">
         <Router>
 
-            <AuthProvider>
+            <FireProvider>
               <TimeProvider>
+                <AuthProvider>
 
-                <Header />
+                  <Header />
 
-                  <Switch>
-                    
-                    <PrivateRoute component = {Tracker} path = "/" exact />
-                    <Route component = {LoginPage} path = "/login" />
-                    <Route component = {RegisterPage} path = "/register" />
+                    <Switch>
+                      
+                      <PrivateRoute component = {Tracker} path = "/" exact />
+                      <Route component = {LoginPage} path = "/login" />
+                      <Route component = {RegisterPage} path = "/register" />
 
-                    <Route component={NotFound} />
-                    
-                  </Switch>
-
+                      <Route component={NotFound} />
+                      
+                    </Switch>
+                </AuthProvider>
               </TimeProvider>
-            </AuthProvider>
+            </FireProvider>
         </Router>    
     </div>
   );
