@@ -17,28 +17,21 @@ export default FireContext
 export const FireProvider = ({children}) => {
 
     let [db, setDB] = useState({})
-    let [loading, setLoading] = useState(false)
 
     useEffect(()=> {
 
-        (async () => {
-            if (loading === false){
 
-                // app = firebase.initiazeApp()
-                firebase.initializeApp(firebaseConfig)
-                    
-                const firestore = firebase.firestore()
-                handleEmulators(firestore);
-                if (firestore._delegate.type === "firestore"){
-                    setDB(firestore)
-                    setLoading(false)
-                    console.log("We got the db object!", db)
-                }
-    
+            // app = firebase.initiazeApp()
+            firebase.initializeApp(firebaseConfig)
+                
+            const firestore = firebase.firestore()
+            handleEmulators(firestore);
+            if (firestore._delegate.type === "firestore"){
+                setDB(firestore)
+                console.log("We got the db object!", db)
             }
-        })()
 
-    }, [db, loading])
+    }, [])
 
     let contextData = {
         db: db
