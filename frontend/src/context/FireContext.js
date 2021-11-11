@@ -1,12 +1,11 @@
-import { createContext, useState, useRef, useEffect} from 'react'
-import moment from 'moment';
-import dd from '../utilities/Debugger'
+import { createContext, useState, useEffect} from 'react'
+//import dd from '../utilities/Debugger'
 
 // Firebase
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/firestore'
 
-import { useCollectionData } from 'react-firebase-hooks/firestore'
+//import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 const FireContext = createContext()
 

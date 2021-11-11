@@ -93,14 +93,17 @@ export const AuthProvider = ({children}) => {
         }
     }
 
-    let logoutUser = () => {
-        history.push('/login')
-        setAuthTokens(null)
-        setUser(null)
-        localStorage.removeItem('authTokens')
-        setLoginAttempt(false)
-        setLoading(true)
-    }
+    let logoutUser = useCallback(
+        () => {
+            history.push('/login')
+            setAuthTokens(null)
+            setUser(null)
+            localStorage.removeItem('authTokens')
+            setLoginAttempt(false)
+            setLoading(true)
+        },
+        [history]
+    )
 
     let registerUser = async (e) => {
         e.preventDefault()
@@ -159,7 +162,7 @@ export const AuthProvider = ({children}) => {
                 setLoading(false)
             }
         },
-        [authTokens?.refresh, loading]
+        [authTokens?.refresh, loading, logoutUser]
     )
 
     let serverURL = Config.serverURL
