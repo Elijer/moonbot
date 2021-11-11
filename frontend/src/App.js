@@ -16,7 +16,7 @@ import { FireProvider } from './context/FireContext';
 //import dd from './utilities/Debugger'
 
 // Firebase
-import firebase from 'firebase/compat/app'
+//import firebase from 'firebase/compat/app'
 import 'firebase/compat/firestore'
 
 function App() {

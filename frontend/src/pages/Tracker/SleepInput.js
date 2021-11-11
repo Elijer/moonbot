@@ -1,5 +1,5 @@
 
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState } from 'react'
 //import AuthContext from '../../context/AuthContext'
 import TimeContext from '../../context/TimeContext'
 import FireContext from '../../context/FireContext'
@@ -13,8 +13,13 @@ const SleepInput = () => {
     let entry = db.collection("entries").doc(time.dateString);
 
     let setEntry = async (data) => {
-        let response = await entry.set(data, {merge: true})
-        return response
+        try {
+            let response = await entry.set(data, {merge: true})
+            return response
+        } catch(err){
+            dd(err)
+            throw err
+        }
     }
 
 /*     useEffect(() => {
@@ -49,9 +54,9 @@ const SleepInput = () => {
             [sleepScenario]: newValue
         })
 
-        dd(setEntry({
+        setEntry({
             [sleepScenario]: newValue
-        }))
+        })
     }
 
     let formatTime = (val) => {

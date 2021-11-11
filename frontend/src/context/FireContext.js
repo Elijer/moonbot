@@ -1,8 +1,7 @@
 
-import { createContext, useState, useEffect, useRef, useContext, useCallback} from 'react'
+import { createContext } from 'react'
 import { handleEmulators } from './Firestore/handleEmulators'
 import { firebaseConfig } from './Firestore/firebaseConfig'
-import TimeContext from './TimeContext'
 //import dd from '../utilities/Debugger'
 
 // Firebase
@@ -16,16 +15,12 @@ export default FireContext
 
 export const FireProvider = ({children}) => {
 
-    let { time } = useContext(TimeContext)
-
-    let createDB = useCallback(
-        () => {
+    let createDB = () => {
             firebase.initializeApp(firebaseConfig)
             const firestore = firebase.firestore()
             handleEmulators(firestore);
             return firestore
-        }
-    )
+    }
 
     let db = createDB()
 
