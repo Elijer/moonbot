@@ -13,14 +13,19 @@ import Header from './components/Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FireProvider } from './context/FireContext';
 
+//import dd from './utilities/Debugger'
+
+// Firebase
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/firestore'
+
 function App() {
 
   return (
     <div id = "app-all">
         <Router>
-
+          <TimeProvider>
             <FireProvider>
-              <TimeProvider>
                 <AuthProvider>
 
                   <Header />
@@ -35,8 +40,8 @@ function App() {
                       
                     </Switch>
                 </AuthProvider>
-              </TimeProvider>
-            </FireProvider>
+              </FireProvider>
+            </TimeProvider>
         </Router>    
     </div>
   );

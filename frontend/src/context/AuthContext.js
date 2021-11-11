@@ -48,7 +48,7 @@ export const AuthProvider = ({children}) => {
         data.id = data.user_id
         data.uppercaseUsername = data.username[0].toUpperCase() + data.username.substring(1)
         delete data.user_id
-        dd(data)
+        //dd(data)
         return data
     }
 
