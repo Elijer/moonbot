@@ -28,7 +28,7 @@ const Tracker = () => {
     return (
         <div id = "tracker">
             < TimeDisplay />
-            < SleepInput data = {entryData.wake}/>
+            < SleepInput data= {entryData}/>
         </div>
     )
 }

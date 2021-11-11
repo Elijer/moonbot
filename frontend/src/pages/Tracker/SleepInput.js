@@ -1,5 +1,5 @@
 
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 //import AuthContext from '../../context/AuthContext'
 import TimeContext from '../../context/TimeContext'
 import FireContext from '../../context/FireContext'
@@ -7,6 +7,9 @@ import dd from '../../utilities/Debugger'
 //import dd from '../../utilities/Debugger'
 
 const SleepInput = (props) => {
+
+    const mornRef = React.useRef();
+    const nightRef = React.useRef();
 
     let { time } = useContext(TimeContext)
     let { db } = useContext(FireContext)
@@ -22,10 +25,10 @@ const SleepInput = (props) => {
         }
     }
 
-/*     useEffect(() => {
-        dd(props.data)
+
+    useEffect(() => {
     }, [props.data])
- */
+
     //let { time } = useContext(TimeContext)
     let [state, setState] = useState({
         wake: "",
@@ -97,6 +100,7 @@ const SleepInput = (props) => {
             🛌 Bed
             <span className = "timeInputContainer">
                 <input id = "nightInput"
+                ref = {nightRef}
                 className = "timeInput"
                 maxLength = "5"
                 onChange = {(e) => handleTimeInput(e, "sleep")}
@@ -105,6 +109,7 @@ const SleepInput = (props) => {
             , woke
             <span className = "timeInputContainer">
                 <input id = "morningInput"
+                ref = {mornRef}
                 className = "timeInput"
                 maxLength = "5"
                 onChange = {(e) => handleTimeInput(e, "wake")}
