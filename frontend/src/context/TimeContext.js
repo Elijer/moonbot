@@ -6,7 +6,6 @@ const TimeContext = createContext()
 
 export default TimeContext
 
-
 export const TimeProvider = ({children}) => {
 
     let [time, setTime] = useState({
