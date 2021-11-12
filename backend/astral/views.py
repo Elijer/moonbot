@@ -92,6 +92,8 @@ def updateEntry(request):
         entry.wake = data.get("wake", "")
     if data.get("sleep", "") != "":
         entry.sleep = data.get("sleep", "")
+    if data.get("cries", "") != "":
+        entry.cries = data.get("cries", "")
         
     entry.save()
     return JsonResponse(status=201, data = entry.serialize())

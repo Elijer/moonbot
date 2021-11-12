@@ -18,11 +18,13 @@ const CryInput = (props) => {
 
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
-/*     useEffect(() => {
+    useEffect(() => {
 
+        if (props.data.cries){
             setCries(props.data.cries)
+        }
 
-    }, [props.data.cries]) */
+    }, [props.data.cries])
 
     useEffect(() => {
 
