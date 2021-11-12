@@ -1,7 +1,8 @@
 @import "vars";
 @import "./Time";
 @import "./Tracker/SleepInput";
-
+@import "./Tracker/BCInput";
+@import "./Tracker/buttons";
 // Time and components
 #tracker-page {
     font-family: 'Nunito', sans-serif;
@@ -12,28 +13,13 @@
     padding: 15px 15px 20px 20px;
 
     h3 {
-        font-size: 19px;
+        font-size: 18px;
+        font-weight: 300
     }
 }
-
 
 .section {
     padding-bottom: 30px;
     font-size: 20px;
     margin: 0px;
-}
-
-.grid-container {
-    display: grid;
-    grid-gap: 2px;
-    grid-template-columns: repeat(7, 1fr);
-}
-
-.grid-item {
-    padding: 10px;
-    background: #e8e8e8;
-}
-
-.selected-day {
-    background: $intense;
 }

@@ -51,14 +51,13 @@ const CryInput = (props) => {
             <h3> 💧 And cried this many times:</h3>
 
             <button
-            id = "lessCry"
-            className = "btn"
+            className = "button"
             onClick = {() => handleClick(-1)}> - </button>
 
-            <button id = "cryNumber"> {cries} </button>
+            <button id = "cryNumber" className = "button"> {cries} </button>
 
-            <button id = "moreCry"
-            className = "btn"
+            <button
+            className = "button"
             onClick = {() => handleClick(+1)}> + </button>
             
             {cries > 30 &&

@@ -57,18 +57,18 @@ const EnergyInput = (props) => {
 
                 <button
                 onClick = {(e) => handleSelection(e, 1)}
-                className = {"btn" + (selection === 1 ? "selected" : "")}
-                id = "little">Little</button>
+                className = {"button button-energy " + (selection === 1 ? "selected" : "")}
+                >Little</button>
 
                 <button
                 onClick = {(e) => handleSelection(e, 2)}
-                className = {"btn" + (selection === 2 ? "selected" : "")}
-                id = "some">Some</button>
+                className = {"button button-energy " + (selection === 2 ? "selected" : "")}
+                >Some</button>
 
                 <button
                 onClick = {(e) => handleSelection(e, 3)}
-                className = {"btn" + (selection === 3 ? "selected" : "")}
-                id = "lots">Lots</button>
+                className = {"button button-energy " + (selection === 3 ? "selected" : "")}
+                >Lots</button>
 
             </div>
         </div>
