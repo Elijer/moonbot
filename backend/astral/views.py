@@ -47,6 +47,18 @@ def decodeToken(request):
     decodedToken = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
     return (decodedToken["user_id"])
 
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def getEntry(request):
+    data = json.loads(request.body)
+    dateString = data.get("dateString", "")
+    currentUser = decodeToken(request)
+    u = User.objects.get(id=currentUser)
+    entryExists = Entry.objects.filter(dateString=dateString, creator=u).count()
+    if entryExists > 0:
+        return Response("Entry exists")
+    else:
+        return Response("Entry does not exist")
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
