@@ -14,32 +14,35 @@ const CryInput = (props) => {
     let { updateEntry } = useContext(RequestContext)
 
     // STATE
-    let [cryAmount, setCryAmount] = useState(0)
+    let [cries, setCries] = useState(0)
 
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
 /*     useEffect(() => {
 
-            setSelection(props.data.energy)
+            setCries(props.data.cries)
 
-    }, [props.data.energy]) */
+    }, [props.data.cries]) */
 
-/*     useEffect(() => {
+    useEffect(() => {
 
     // As it is now, energy cannot be deselected, just changed
     // To allow deselection:
     // if (selection > -1 && selection < 4){
-        if (selection > 0 &&  selection < 4){
-            updateEntry({
-                "energy": selection
-            })
-        }
+        updateEntry({
+            "cries": cries
+        })
 
-    }, [selection, updateEntry]) */
+    }, [cries, updateEntry])
+
 
     let handleClick = (amount) => {
-        if ( cryAmount > -1 )
-        setCryAmount(cryAmount + amount)
+        if ( cries > -1 ){
+            setCries(cries + amount)
+        // If amount is -1, we won't allow more substractions but we do need to allow additions
+        } else if (cries === -1 && Math.sign(amount) === 1){
+            setCries(cries + amount)
+        }
     }
 
     return (
@@ -52,7 +55,7 @@ const CryInput = (props) => {
             className = "btn"
             onClick = {() => handleClick(-1)}> - </button>
 
-            <button id = "cryNumber"> {cryAmount} </button>
+            <button id = "cryNumber"> {cries} </button>
 
             <button id = "moreCry"
             className = "btn"
