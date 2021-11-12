@@ -26,3 +26,6 @@ Package:
 
 # To Do
 Make sure no HTTP requests BESIDES loading data once are getting called. For example, initial field data shouldn't get sent just cause.
+
+# Potential Problems
+Since all data is just input whenever it changes, if there are ANY artifacts, like an initial state, that is exposed to set the state somehow, it is likely it will also be able to change the data in the database, permanently erasing user data
