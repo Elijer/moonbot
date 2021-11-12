@@ -10,7 +10,7 @@ const LogoutFooter = () => {
         <div className = "logout-footer" >
             <div
             className = "logout-button"
-            onClick = { logoutUser }> Logout </div>
+            onClick = { logoutUser }> logout </div>
         </div>
     )
 }
