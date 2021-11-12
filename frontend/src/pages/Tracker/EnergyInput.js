@@ -61,8 +61,9 @@ const EnergyInput = (props) => {
     useEffect(() => {
 
         // As it is now, energy cannot be deselected, just changed
-        // To allow deselection: selection > -1, and uncomment additional conditional in handleSelection
-        if (selection > 0 && selection < 4){
+        // To allow deselection:
+     // if (selection > -1 && selection < 4){
+        if (selection > 0 &&  selection < 4){
             setEnergyHTTP(selection)
         }
 
@@ -70,12 +71,10 @@ const EnergyInput = (props) => {
 
     let handleSelection = (e, n) => {
 
-        // This block allows for deselection
-    /* if (selection === n){
-            setSelection(0)
-        } else {
-            setSelection(n)
-        } */
+        /* This block allows for deselection:
+        if (selection === n)setSelection(0)
+        else setSelection(n) */
+
         setSelection(n)
         dd(selection)
     }
