@@ -2,6 +2,7 @@
 @import "./Time";
 @import "./Tracker/SleepInput";
 @import "./Tracker/BCInput";
+@import "./Tracker/CryInput";
 @import "./Tracker/buttons";
 // Time and components
 #tracker-page {
@@ -12,14 +13,10 @@
 .tracker-body {
     padding: 15px 15px 20px 20px;
 
-    h3 {
+    .section {
         font-size: 18px;
-        font-weight: 300
+        font-weight: 300;
+        padding-bottom: 30px;
+        margin: 0px;
     }
-}
-
-.section {
-    padding-bottom: 30px;
-    font-size: 20px;
-    margin: 0px;
 }

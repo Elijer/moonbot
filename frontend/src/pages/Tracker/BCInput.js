@@ -47,13 +47,13 @@ const BCInput = (props) => {
     return (
 
         <h3 className = "section">
-            <h3>🌙 Took this birth control pill:</h3>
+            <div>🌙 Took this birth control pill:</div>
             <div className = "grid-container">
 
                 {month.map((i) =>
                 <div
                 key = {`BC-day-${i}`}
-                className = {(i === day ? "selected-day" : "") + " grid-item"}
+                className = {(i === day ? "saved" : "") + " grid-item"}
                 onClick = {() => handleClick(i)}> {i} </div>)}
             </div>
 

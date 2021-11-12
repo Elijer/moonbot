@@ -12,9 +12,10 @@
     }
 
     .button:active, .saved {
-        background: #6e5cc8;
+        background: $intense;
         outline: none;
         border: none;
+        color: white;
     }
 
     .button-energy {
