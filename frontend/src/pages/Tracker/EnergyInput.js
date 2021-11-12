@@ -16,6 +16,7 @@ const EnergyInput = (props) => {
     // STATE
     let [selection, setSelection] = useState(0)
     let [userInteraction, setUserInteraction] = useState(false)
+    let [saved, setSaved] = useState(0)
 
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
@@ -51,23 +52,28 @@ const EnergyInput = (props) => {
 
     return (
         <div className = "section">
-            <h3> ⚡️ This <span id = "dayRegion">{time.timeOfDay}</span>, I have this much energy:</h3>
+            <div> ⚡️ This <span id = "dayRegion">{time.timeOfDay}</span>, I have this much energy: </div>
             <p id = "energyNote"></p>
             <div id = "energyOptions">
 
                 <button
                 onClick = {(e) => handleSelection(e, 1)}
-                className = {"button button-energy " + (selection === 1 ? "selected" : "")}
+                className = {"button button-energy "
+                + (selection === 1 ? "selected saved" : "")}
                 >Little</button>
 
                 <button
                 onClick = {(e) => handleSelection(e, 2)}
-                className = {"button button-energy " + (selection === 2 ? "selected" : "")}
+                className = {"button button-energy "
+                + (selection === 2 ? "selected saved" : "")
+                + ` ${saved}`}
                 >Some</button>
 
                 <button
                 onClick = {(e) => handleSelection(e, 3)}
-                className = {"button button-energy " + (selection === 3 ? "selected" : "")}
+                className = {"button button-energy "
+                + (selection === 3 ? "selected saved" : "")
+                + ` ${saved}`}
                 >Lots</button>
 
             </div>
