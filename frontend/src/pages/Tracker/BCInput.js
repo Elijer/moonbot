@@ -10,7 +10,7 @@ const BCInput = (props) => {
     let { time } = useContext(TimeContext)
     let { updateEntry } = useContext(RequestContext)
 
-    let [day, setDay] = useState(5)
+    let [day, setDay] = useState(0)
     //let [month, setMonth] = useState
 
     // Create dirt simple month array to map through
@@ -18,6 +18,16 @@ const BCInput = (props) => {
     for (let i = 0; i<31; i++){
         month[i] = i + 1
     }
+
+        // Props not available on first render -- must be saved to state here in useEffect
+    // props.data needed as dependency
+    useEffect(() => {
+
+        if (props.data.BC_day){
+            setDay(props.data.BC_day)
+        }
+
+    }, [props.data.BC_day])
 
     useEffect(() => {
 
