@@ -3,17 +3,17 @@ import React, { useContext, useState, useEffect, useCallback } from 'react'
 import TimeContext from '../../context/TimeContext'
 import FireContext from '../../context/FireContext'
 import AuthContext from '../../context/AuthContext'
-import dd from '../../utilities/Debugger'
 import { formatTime } from '../../utilities/utilities'
-//import dd from '../../utilities/Debugger'
+
+import { updateEntryHTTP } from '../../HTTP/updateEntry'
+
+import dd from '../../utilities/Debugger'
 
 const SleepInput = (props) => {
 
     // Create reference to entry in database
     let { time } = useContext(TimeContext)
-    let { db } = useContext(FireContext)
     let { user, serverURL, authTokens } = useContext(AuthContext)
-    let entry = db.collection("entries").doc(time.dateString);
 
     // State
     let [state, setState] = useState({
@@ -24,34 +24,9 @@ const SleepInput = (props) => {
     })
 
     let updateEntry = useCallback(
-        async(someData) => {
-
-            dd("initiate http request to update data")
-
-            let response = await fetch(serverURL + 'updateEntry/', {
-                method: 'POST',
-                headers:  {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + String(authTokens.access)
-                },
-                body: JSON.stringify({
-                    ...someData,
-                    'creator': user.id,
-                    'dateString': time.dateString,
-                })
-            })
-
-            let data = await response.json()
-            if (response.status === 201){
-                dd(data)
-            } else if (response.status === 401){
-                alert("You are not authorized to update this entry")
-                //setBody(props.data.body)
-            } else if (response.status === 404){
-                alert("The entry you are trying to edit could not be found.")
-                //setBody(props.data.body)
-            }
-        }, [authTokens.access, serverURL, time.dateString, user.id]
+        updateEntryHTTP,
+        //someData, time.dateString, user.id, serverURL, authTokens.access
+        [authTokens.access, serverURL, time.dateString, user.id]
     )
 
     let setEntryHTTP = useCallback(
@@ -114,7 +89,13 @@ const SleepInput = (props) => {
                 dd("setting sleep data")
             }
 
-            updateEntry(data)
+            updateEntry(data,
+                {
+                    dateString: time.dateString,
+                    userID: user.id,
+                    serverURL: serverURL,
+                    access: authTokens.access
+                })
 
         }
 
