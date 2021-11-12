@@ -18,7 +18,7 @@ const Tracker = () => {
             dateString: time.dateString
         })
 
-    }, [])
+    }, [time.dateString])
 
     let getEntry = async(someData) => {
 

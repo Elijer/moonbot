@@ -1,11 +1,11 @@
 
-import React, { useContext, useState, useEffect, useRef } from 'react'
+import React, { useContext, useState, useEffect, useCallback } from 'react'
 //import AuthContext from '../../context/AuthContext'
 import TimeContext from '../../context/TimeContext'
 import FireContext from '../../context/FireContext'
 import AuthContext from '../../context/AuthContext'
 import dd from '../../utilities/Debugger'
-import { insert, formatTime } from '../../utilities/utilities'
+import { formatTime } from '../../utilities/utilities'
 //import dd from '../../utilities/Debugger'
 
 const SleepInput = (props) => {
@@ -23,6 +23,37 @@ const SleepInput = (props) => {
         wakeSaved: "",
         sleepSaved: ""
     })
+
+    let setEntryHTTP = useCallback(
+        async(someData) => {
+
+            dd("initiate http request")
+
+            let response = await fetch(serverURL + 'updateSleep/', {
+                method: 'POST',
+                headers:  {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + String(authTokens.access)
+                },
+                body: JSON.stringify({
+                    ...someData,
+                    'creator': user.id,
+                    'dateString': time.dateString,
+                })
+            })
+
+            let data = await response.json()
+            if (response.status === 201){
+                dd(data)
+            } else if (response.status === 401){
+                alert("You are not authorized to update this entry")
+                //setBody(props.data.body)
+            } else if (response.status === 404){
+                alert("The entry you are trying to edit could not be found.")
+                //setBody(props.data.body)
+            }
+        }, [authTokens.access, serverURL, time.dateString, user.id]
+    )
 
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
@@ -60,48 +91,7 @@ const SleepInput = (props) => {
 
         }
 
-    }, [state.wake, state.sleep])
-
-    // Function that sends time data to database
-    let setEntry = async (data) => {
-        data.userID = props.user.id
-        try {
-            let response = await entry.set(data, {merge: true})
-            return response
-        } catch(err){
-            dd(err)
-            throw err
-        }
-    }
-
-    let setEntryHTTP = async(someData) => {
-
-        dd("initiate http request")
-
-        let response = await fetch(serverURL + 'updateSleep/', {
-            method: 'POST',
-            headers:  {
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer ' + String(authTokens.access)
-            },
-            body: JSON.stringify({
-                ...someData,
-                'creator': user.id,
-                'dateString': time.dateString,
-            })
-        })
-
-        let data = await response.json()
-        if (response.status === 201){
-            dd(data)
-        } else if (response.status === 401){
-            alert("You are not authorized to update this entry")
-            //setBody(props.data.body)
-        } else if (response.status === 404){
-            alert("The entry you are trying to edit could not be found.")
-            //setBody(props.data.body)
-        }
-    }
+    }, [state.wake, state.sleep, setEntryHTTP])
 
     // Fired when time inputs change
     let handleTimeInput = (e, sleepScenario) => {
