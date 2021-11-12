@@ -6,8 +6,6 @@ import TimeDisplay from './Tracker/TimeDisplay'
 import SleepInput from './Tracker/SleepInput'
 import dd from '../utilities/Debugger'
 
-//import dd from '../utilities/Debugger'
-
 const Tracker = () => {
 
     let { time } = useContext(TimeContext)
@@ -23,8 +21,6 @@ const Tracker = () => {
     }, [])
 
     let getEntry = async(someData) => {
-
-        dd("initiate http request")
 
         let response = await fetch(serverURL + 'getEntry/', {
             method: 'POST',
