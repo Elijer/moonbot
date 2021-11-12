@@ -24,6 +24,8 @@ const SleepInput = (props) => {
         sleepSaved: ""
     })
 
+    let [userInteraction, setUserInteraction] = useState(false)
+
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
     useEffect(() => {
@@ -53,7 +55,7 @@ const SleepInput = (props) => {
                 dd("setting sleep data")
             }
 
-            updateEntry(data)
+            if (userInteraction) updateEntry(data)
 
         }
 
@@ -76,6 +78,7 @@ const SleepInput = (props) => {
         }
 
         // set state
+        setUserInteraction(true)
         setState({
             ...state,
             [sleepScenario]: newValue
