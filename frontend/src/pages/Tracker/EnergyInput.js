@@ -15,6 +15,7 @@ const EnergyInput = (props) => {
 
     // STATE
     let [selection, setSelection] = useState(0)
+    let [userInteraction, setUserInteraction] = useState(false)
 
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
@@ -29,7 +30,7 @@ const EnergyInput = (props) => {
     // As it is now, energy cannot be deselected, just changed
     // To allow deselection:
     // if (selection > -1 && selection < 4){
-        if (selection > 0 &&  selection < 4){
+        if (selection > 0 &&  selection < 4 && userInteraction){
             updateEntry({
                 "energy": selection
             })
@@ -42,7 +43,7 @@ const EnergyInput = (props) => {
         /* This block allows for deselection:
         if (selection === n)setSelection(0)
         else setSelection(n) */
-
+        setUserInteraction(true)
         setSelection(n)
         dd(selection)
     }
