@@ -60,6 +60,12 @@ const CryInput = (props) => {
             <button id = "moreCry"
             className = "btn"
             onClick = {() => handleClick(+1)}> + </button>
+            
+            {cries > 30 &&
+            <div> Good god that's a lot of crying! Take care to keep hydrating, take a rest, and do something nice for yourself. </div>}
+            
+            {cries > 50 && 
+            <div> Jesus. You are really having a crazy day and I feel for you. It's okay to ask for help -- I recommend you call someone, even if it's just to tell them that you cried your eyes out today. </div>}
 
         </div>
 
