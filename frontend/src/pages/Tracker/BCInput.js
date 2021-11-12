@@ -2,6 +2,7 @@
 import React, { useContext, useState, useEffect, useCallback } from 'react'
 import TimeContext from '../../context/TimeContext'
 import RequestContext from '../../context/RequestContext'
+import dd from '../../utilities/Debugger'
 //import dd from '../../utilities/Debugger'
 
 const BCInput = (props) => {
@@ -9,36 +10,19 @@ const BCInput = (props) => {
     let { time } = useContext(TimeContext)
     let { updateEntry } = useContext(RequestContext)
 
-    // STATE
+    let [day, setDay] = useState(0)
 
-    // Props not available on first render -- must be saved to state here in useEffect
-    // props.data needed as dependency
-/*     useEffect(() => {
+    useEffect(() => {
 
-        if (props.data.cries){
-            setCries(props.data.cries)
-        }
+            let month = []
+            for (let i = 0; i<31; i++){
+                month[i] = i + 1
+            }
 
-    }, [props.data.cries]) */
+            dd(month)
 
-/*     useEffect(() => {
+        }, [])
 
-        updateEntry({
-            "cries": cries
-        })
-
-    }, [cries, updateEntry]) */
-
-
-/*     let handleClick = (amount) => {
-        if ( cries > -1 ){
-            setCries(cries + amount)
-        // If amount is -1, we won't allow more substractions but we do need to allow additions
-        } else if (cries === -1 && Math.sign(amount) === 1){
-            setCries(cries + amount)
-        }
-    }
- */
     return (
 
         <div className = "section">
