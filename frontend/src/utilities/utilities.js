@@ -25,7 +25,10 @@ export let formatTime = (val) => {
 }
 
 
-
+export let up = (str) => {
+    const capitalStr = str.replace(/\b\w/g, c => c.toUpperCase());
+    return capitalStr
+}
 
 // Helper function used by formatTime
 export function insert(s, insert, index){

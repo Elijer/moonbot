@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import AuthContext from '../context/AuthContext'
+import { up } from '../utilities/utilities'
 
 
 const Header = () => {
@@ -16,8 +17,9 @@ const Header = () => {
 
                             {/* <Link to={`/profile/${user.id}`} className = "nav-option" >{user.uppercaseUsername}</Link> */}
                             {/* <Link to="/following" className = "nav-option" >Following</Link> */}
-                            <Link to="/" className = "nav-option">🌙 Moonbot</Link> 
-                            <Link to="/" onClick = {logoutUser } className = "nav-option" >🌑 Logout</Link>
+{/*                             <Link to="/" className = "nav-option">🌙 Moonbot </Link> 
+                            <Link to="/" onClick = {logoutUser } className = "nav-option" >🌑 Logout</Link> */}
+                            <div className = "tracker-title-display"> 🌙 {up(user.username)}'s Mood Tracker ✨ </div>
 
                     </React.Fragment>
 

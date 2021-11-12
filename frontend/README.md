@@ -30,7 +30,8 @@ Package:
 3. Dockerize
 4. Create tool for selecting mood tracker components
 5. Set up twilio, possibly with geolocation?
-6. create data visualization / data consumption tools (probably on its own page)
+6. Clear out unused code in backend AND frontend
+7. create data visualization / data consumption tools (probably on its own page)
 
 # Potential Problems
 1. Since all data is just input whenever it changes, if there are ANY artifacts, like an initial state, that is exposed to set the state somehow, it is likely it will also be able to change the data in the database, permanently erasing user data. I have run into this problem in CryInput and BCInput and fixed it by created a userInteraction boolean with useState that just determines if the user has HAD any valid interaction as a prequisite for sending any http updates requests.

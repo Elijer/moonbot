@@ -24,6 +24,15 @@
 
 }
 
+.tracker-header {
+    display: block;
+    font-size: 24px;
+    color: $light;
+    text-align: center;
+    margin: 0px 30px 0px 30px;
+    border-bottom: 5px solid $light;
+}
+
 .section {
     padding-top: 50px;
     font-size: 20px;
