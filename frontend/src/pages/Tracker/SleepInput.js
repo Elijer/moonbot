@@ -25,37 +25,6 @@ const SleepInput = (props) => {
         sleepSaved: ""
     })
 
-    let setEntryHTTP = useCallback(
-        async(someData) => {
-
-            dd("initiate http request")
-
-            let response = await fetch(serverURL + 'updateSleep/', {
-                method: 'POST',
-                headers:  {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + String(authTokens.access)
-                },
-                body: JSON.stringify({
-                    ...someData,
-                    'creator': user.id,
-                    'dateString': time.dateString,
-                })
-            })
-
-            let data = await response.json()
-            if (response.status === 201){
-                dd(data)
-            } else if (response.status === 401){
-                alert("You are not authorized to update this entry")
-                //setBody(props.data.body)
-            } else if (response.status === 404){
-                alert("The entry you are trying to edit could not be found.")
-                //setBody(props.data.body)
-            }
-        }, [authTokens.access, serverURL, time.dateString, user.id]
-    )
-
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
     useEffect(() => {
