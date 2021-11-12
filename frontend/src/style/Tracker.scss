@@ -28,3 +28,18 @@
     padding-top: 50px;
     font-size: 20px;
 }
+
+.grid-container {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.grid-item {
+    padding: 10px;
+    background: #e8e8e8;
+}
+
+.selected-day {
+    background: $intense;
+}

@@ -10,7 +10,7 @@ const BCInput = (props) => {
     let { time } = useContext(TimeContext)
     let { updateEntry } = useContext(RequestContext)
 
-    let [day, setDay] = useState(0)
+    let [day, setDay] = useState(5)
     //let [month, setMonth] = useState
 
     let month = []
@@ -29,9 +29,11 @@ const BCInput = (props) => {
             <div className = "grid-container" id = "bcGrid">
 
                 {month.map((i) =>
-                <div key = {`BC-day-${i}`}> {i} </div>)}
+                <div
+                key = {`BC-day-${i}`}
+                className = {(i === day ? "selected-day" : "") + " grid-item"}> {i} </div>)}
             </div>
-            
+
         </div>
 
     )
