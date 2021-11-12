@@ -26,7 +26,6 @@ function App() {
     <div id = "app-all">
         <Router>
           <TimeProvider>
-            <FireProvider>
                 <AuthProvider>
                   <RequestProvider>
 
@@ -35,16 +34,15 @@ function App() {
                       <Switch>
                         
                         <PrivateRoute component = {Tracker} path = "/" exact />
+
                         <Route component = {LoginPage} path = "/login" />
                         <Route component = {RegisterPage} path = "/register" />
 
                         <Route component={NotFound} />
                         
                       </Switch>
-
-                    </RequestProvider>
+                  </RequestProvider>
                 </AuthProvider>
-              </FireProvider>
             </TimeProvider>
         </Router>    
     </div>

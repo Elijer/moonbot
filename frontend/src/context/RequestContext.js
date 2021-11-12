@@ -45,7 +45,7 @@ export const RequestProvider = ({children}) => {
         },
 
         // Dependency array
-        [authTokens.access, serverURL, time.dateString, user.id]
+        [authTokens?.access, serverURL, time.dateString, user?.id]
     )
     
 
