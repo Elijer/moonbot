@@ -46,8 +46,8 @@ const BCInput = (props) => {
 
     return (
 
-        <h3 className = "section">
-            <div>🌙 Took this birth control pill:</div>
+        <div className = "section">
+            <div className = "section-header">🌙 Took this birth control pill:</div>
             <div className = "grid-container">
 
                 {month.map((i) =>
@@ -57,7 +57,7 @@ const BCInput = (props) => {
                 onClick = {() => handleClick(i)}> {i} </div>)}
             </div>
 
-        </h3>
+        </div>
 
     )
 }
