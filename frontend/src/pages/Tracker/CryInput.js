@@ -12,6 +12,7 @@ const CryInput = (props) => {
     // STATE
     let [cries, setCries] = useState(0)
     let [userInteraction, setUserInteraction] = useState(false)
+    let [saved, setSaved] = useState("")
 
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
@@ -30,6 +31,8 @@ const CryInput = (props) => {
                 "cries": cries
             })
         }
+
+        setSaved("saved")
 
     }, [cries, updateEntry])
 
@@ -54,7 +57,7 @@ const CryInput = (props) => {
             className = "button"
             onClick = {() => handleClick(-1)}> - </button>
 
-            <button id = "cryNumber" className = "button"> {cries} </button>
+            <button id = "cryNumber" className = {"button " + saved}> {cries} </button>
 
             <button
             className = "button"
