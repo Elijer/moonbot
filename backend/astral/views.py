@@ -57,8 +57,10 @@ def getEntry(request):
     if Entry.objects.filter(dateString=dateString, creator=u).count() == 1:
         entry = Entry.objects.get(dateString=dateString, creator=u)
         return Response(entry.serialize())
-    else:
-        return Response("Entry does not exist or there are multiple entries. Which there shouldn't be.")
+    elif Entry.objects.filter(dateString=dateString, creator=u).count() == 0:
+        return Response("Entry does not exist yet.")
+    elif Entry.objects.filter(dateString=dateString, creator=u).count() > 1:
+        return Response("More than one entry exists, which should not be the case.")
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
