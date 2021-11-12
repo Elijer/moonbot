@@ -65,19 +65,17 @@ def getEntry(request):
 def updateSleep(request):
     data = json.loads(request.body)
     dateString = data.get("dateString", "")
-    currentUser = decodeToken(request)
-    u = User.objects.get(id=currentUser)
-    print(data.get("wake", ""))
+    u = User.objects.get(id=decodeToken(request))
     
-    entryExists = Entry.objects.filter(dateString=dateString, creator=u).count()
-    if entryExists > 0:
+    if Entry.objects.filter(dateString=dateString, creator=u).count() == 1:
         entry = Entry.objects.get(dateString=dateString, creator=u)
-    else:
+    elif Entry.objects.filter(dateString=dateString, creator=u).count() == 0:
         entry = Entry(
             creator=u,
             dateString=dateString,
         )
-        entry.save()
+    else:
+        return Response("Entry does not exist or there are multiple entries. Which there shouldn't be.")
         
     if data.get("wake", "") != "":
         entry.wake = data.get("wake", "")
