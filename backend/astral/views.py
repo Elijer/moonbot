@@ -47,6 +47,12 @@ def decodeToken(request):
     decodedToken = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
     return (decodedToken["user_id"])
 
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def updateSleep(request):
+    data = json.loads(request.body)
+    return Response("testinggggg")
+    
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])

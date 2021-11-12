@@ -140,34 +140,3 @@ const SleepInput = (props) => {
 }
 
 export default SleepInput
-
-
-
-
-
-
-// Logic blueprint for 
-
-        // Assumptions
-            // the noColon value we are reading has no colons (x)
-            // its first digit is NOT 0 (x)
-            // third digit can't be more than 5
-
-        // Rules
-        
-            // Under no circumstances can second digit be 0 (x)
-            // There may not be more than 4 digits (x)
-            // Under the following circumstances, there may not be more than 3 digits:
-                // if first two digits are more than 12
-                // if the first two digits read together are less than 10
-                // If the first two digits read together are more than 12
-                // if the third digit is more than 5
-                // there currently ARE only three digits
-
-            // if there are only two digits, there must be no colons
-            // if there can only be three digits, a colon must be added at position 2
-            // if there are four digits, a colon must be added to position 3
-
-        // Additional Validation
-            // there must be at least 3 digits when form is left or form is invalid, and will be cleared to show
-            // That no valid value exists
