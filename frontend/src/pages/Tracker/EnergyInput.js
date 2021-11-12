@@ -51,7 +51,7 @@ const EnergyInput = (props) => {
 
     return (
         <div className = "section">
-            <h3 id = "energyHeader"> ⚡️ This <span id = "dayRegion">{time.timeOfDay}</span>, I have this much energy:</h3>
+            <h3> ⚡️ This <span id = "dayRegion">{time.timeOfDay}</span>, I have this much energy:</h3>
             <p id = "energyNote"></p>
             <div id = "energyOptions">
 

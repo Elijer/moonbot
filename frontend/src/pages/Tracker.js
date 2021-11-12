@@ -54,12 +54,14 @@ const Tracker = () => {
 
 
     return (
-        <div id = "tracker">
+        <div id = "tracker-page">
             < TimeDisplay />
-            < SleepInput data= {entryData} user = {user} />
-            < CryInput data = {entryData}/>
-            < EnergyInput data = {entryData}/>
-            < BCInput data = {entryData}/>
+            <div className = "tracker-body">
+                < SleepInput data= {entryData} user = {user} />
+                < CryInput data = {entryData}/>
+                < EnergyInput data = {entryData}/>
+                < BCInput data = {entryData}/>
+            </div>
         </div>
     )
 }

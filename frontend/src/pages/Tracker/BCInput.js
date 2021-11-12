@@ -16,7 +16,7 @@ const BCInput = (props) => {
 
     // Create dirt simple month array to map through
     let month = []
-    for (let i = 0; i<31; i++){
+    for (let i = 0; i<28; i++){
         month[i] = i + 1
     }
 
@@ -46,7 +46,7 @@ const BCInput = (props) => {
 
     return (
 
-        <div className = "section">
+        <h3 className = "section">
             <h3>🌙 Took this birth control pill:</h3>
             <div className = "grid-container" id = "bcGrid">
 
@@ -57,7 +57,7 @@ const BCInput = (props) => {
                 onClick = {() => handleClick(i)}> {i} </div>)}
             </div>
 
-        </div>
+        </h3>
 
     )
 }

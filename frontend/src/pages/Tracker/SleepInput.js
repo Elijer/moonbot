@@ -110,10 +110,10 @@ const SleepInput = (props) => {
 
     return (
 
-        <div className = "section" id = "sleep-input">
+        <h3 className = "section section-header">
             🛌 Bed
             <span className = "timeInputContainer">
-                <input id = "nightInput"
+                <input
                 className = "timeInput"
                 maxLength = "5"
                 placeholder = { state.sleepSaved }
@@ -122,14 +122,14 @@ const SleepInput = (props) => {
             </span>
             , woke
             <span className = "timeInputContainer">
-                <input id = "morningInput"
+                <input
                 className = "timeInput"
                 maxLength = "5"
                 placeholder = { state.wakeSaved }
                 onChange = {(e) => handleTimeInput(e, "wake")}
                 value = {state.wake} />
             </span>.
-        </div>
+        </h3>
     )
 }
 

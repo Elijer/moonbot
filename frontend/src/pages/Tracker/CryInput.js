@@ -47,7 +47,7 @@ const CryInput = (props) => {
 
     return (
 
-        <div className = "section">
+        <h3 className = "section">
             <h3> 💧 And cried this many times:</h3>
 
             <button
@@ -67,7 +67,7 @@ const CryInput = (props) => {
             {cries > 50 && 
             <div> Jesus. You are really having a crazy day and I feel for you. It's okay to ask for help -- I recommend you call someone, even if it's just to tell them that you cried your eyes out today. </div>}
 
-        </div>
+        </h3>
 
     )
 }

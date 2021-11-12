@@ -1,40 +1,24 @@
 @import "vars";
+@import "./Time";
 @import "./Tracker/SleepInput";
 
-
-#tracker {
+// Time and components
+#tracker-page {
     font-family: 'Nunito', sans-serif;
-    font-weight: 200;
-    font-size: 16px;
-    margin: 0px 10px;
 }
 
-#date {
-    padding-top: 10px;
-    color: grey;
+// Just the input components (sections)
+.tracker-body {
+    padding: 15px 15px 20px 20px;
 
-    #day {
-        float: left;
+    h3 {
+        font-size: 20px;
     }
-
-    #time {
-        float: right;
-        padding-right: 5px;
-    }
-
 }
 
-.tracker-header {
-    display: block;
-    font-size: 24px;
-    color: $light;
-    text-align: center;
-    margin: 0px 30px 0px 30px;
-    border-bottom: 5px solid $light;
-}
 
 .section {
-    padding-top: 50px;
+    padding-bottom: 30px;
     font-size: 20px;
 }
 

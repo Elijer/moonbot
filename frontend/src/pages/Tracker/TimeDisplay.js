@@ -8,11 +8,12 @@ const TimeDisplay = () => {
 
     let { time } = useContext(TimeContext)
     let { logoutUser } = useContext(AuthContext)
-
+    
     return (
         <div id = "date">
-            <div id = "day"> {time.date}, {up(time.timeOfDay)}</div>
-            <div onClick = {logoutUser} id = "time"> Logout </div>
+            <div id = "day"> {time.date} </div>
+{/*             <div onClick = {logoutUser} id = "time"> Logout </div> */}
+            <div id = "time"> {time.time} </div>
         </div>
     )
 }
