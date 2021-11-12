@@ -30,6 +30,10 @@ export let up = (str) => {
     return capitalStr
 }
 
+export let upFirstLetterOnly = (s) => {
+    return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
 // Helper function used by formatTime
 export function insert(s, insert, index){
     const newString = s.slice(0, index) + insert + s.slice(index);

@@ -1,7 +1,7 @@
 import React, { useContext} from 'react'
 import TimeContext from '../../context/TimeContext'
 import AuthContext from '../../context/AuthContext'
-import { up } from '../../utilities/Helpers'
+import { up } from '../../utilities/utilities'
 //import dd from '../../utilities/Debugger'
 
 const TimeDisplay = () => {
