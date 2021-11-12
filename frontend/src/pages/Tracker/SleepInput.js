@@ -1,8 +1,7 @@
 
 import React, { useContext, useState, useEffect, useCallback } from 'react'
-import TimeContext from '../../context/TimeContext'
-import FireContext from '../../context/FireContext'
-import AuthContext from '../../context/AuthContext'
+// import TimeContext from '../../context/TimeContext'
+// import AuthContext from '../../context/AuthContext'
 import RequestContext from '../../context/RequestContext'
 import { formatTime } from '../../utilities/utilities'
 
@@ -13,8 +12,8 @@ import dd from '../../utilities/Debugger'
 const SleepInput = (props) => {
 
     // Create reference to entry in database
-    let { time } = useContext(TimeContext)
-    let { user, serverURL, authTokens } = useContext(AuthContext)
+    // let { time } = useContext(TimeContext)
+    // let { user, serverURL, authTokens } = useContext(AuthContext)
     let { updateEntry } = useContext(RequestContext)
 
     // State
