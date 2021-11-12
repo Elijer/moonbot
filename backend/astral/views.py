@@ -53,13 +53,14 @@ def getEntry(request):
     data = json.loads(request.body)
     dateString = data.get("dateString", "")
     u = User.objects.get(id=decodeToken(request))
+    entryCount = Entry.objects.filter(dateString=dateString, creator=u).count()
     
-    if Entry.objects.filter(dateString=dateString, creator=u).count() == 1:
+    if entryCount == 1:
         entry = Entry.objects.get(dateString=dateString, creator=u)
         return Response(entry.serialize())
-    elif Entry.objects.filter(dateString=dateString, creator=u).count() == 0:
+    elif entryCount == 0:
         return Response("Entry does not exist yet.")
-    elif Entry.objects.filter(dateString=dateString, creator=u).count() > 1:
+    elif entryCount > 1:
         return Response("More than one entry exists, which should not be the case.")
 
 @api_view(['POST'])
