@@ -2,8 +2,11 @@ import React, { useContext, useEffect, useState } from 'react'
 
 import AuthContext from '../context/AuthContext'
 import TimeContext from '../context/TimeContext'
+
 import TimeDisplay from './Tracker/TimeDisplay'
 import SleepInput from './Tracker/SleepInput'
+import EnergyInput from './Tracker/EnergyInput'
+
 import dd from '../utilities/Debugger'
 
 const Tracker = () => {
@@ -51,6 +54,7 @@ const Tracker = () => {
         <div id = "tracker">
             < TimeDisplay />
             < SleepInput data= {entryData} user = {user} />
+            < EnergyInput />
         </div>
     )
 }
