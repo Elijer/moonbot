@@ -23,3 +23,6 @@ To Run app:
 
 Package:
 `npm install firebase@9.3.0 --save`
+
+# To Do
+Make sure no HTTP requests BESIDES loading data once are getting called. For example, initial field data shouldn't get sent just cause.
