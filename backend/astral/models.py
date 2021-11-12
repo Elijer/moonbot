@@ -33,6 +33,7 @@ class Entry(models.Model):
     updatedAt = models.DateTimeField(auto_now_add=True)
     wake = models.CharField(max_length=5, default="")
     sleep = models.CharField(max_length=5, default="")
+    dateString = models.CharField(max_length=10)
 
 class Post(models.Model):
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="created_posts")

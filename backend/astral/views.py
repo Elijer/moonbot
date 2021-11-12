@@ -17,7 +17,7 @@ import jwt
 
 from .serializers import ProfileSerializer
 
-from .models import User, Post
+from .models import User, Post, Entry
 # from network.models import User, Post
 
 @api_view(['POST'])
@@ -47,11 +47,21 @@ def decodeToken(request):
     decodedToken = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
     return (decodedToken["user_id"])
 
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def updateSleep(request):
     data = json.loads(request.body)
-    return Response("testinggggg")
+    dateString = data.get("dateString", "")
+    currentUser = decodeToken(request)
+    u = User.objects.get(id=currentUser)
+    entry = Entry(
+        creator=u,
+        dateString=dateString,
+    )
+    
+    return Response(currentUser)
+
     
 
 @api_view(['POST'])

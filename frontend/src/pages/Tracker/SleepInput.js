@@ -3,6 +3,7 @@ import React, { useContext, useState, useEffect, useRef } from 'react'
 //import AuthContext from '../../context/AuthContext'
 import TimeContext from '../../context/TimeContext'
 import FireContext from '../../context/FireContext'
+import AuthContext from '../../context/AuthContext'
 import dd from '../../utilities/Debugger'
 import { insert, formatTime } from '../../utilities/utilities'
 //import dd from '../../utilities/Debugger'
@@ -12,6 +13,7 @@ const SleepInput = (props) => {
     // Create reference to entry in database
     let { time } = useContext(TimeContext)
     let { db } = useContext(FireContext)
+    let { user, serverURL, authTokens } = useContext(AuthContext)
     let entry = db.collection("entries").doc(time.dateString);
 
     // State
@@ -25,6 +27,9 @@ const SleepInput = (props) => {
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
     useEffect(() => {
+
+        setEntryHTTP({})
+
         setState({
             ...state,
             wakeSaved: props.data.wake,
@@ -65,6 +70,31 @@ const SleepInput = (props) => {
         } catch(err){
             dd(err)
             throw err
+        }
+    }
+
+    let setEntryHTTP = async(someData) => {
+        let response = await fetch(serverURL + 'updateSleep/', {
+            method: 'POST',
+            headers:  {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + String(authTokens.access)
+            },
+            body: JSON.stringify({
+                creator: user.id,
+                dateString: time.dateString
+            })
+        })
+
+        let data = await response.json()
+
+        if (data.status === 200){
+        } else if (data.status === 41){
+            alert("You are not authorized to update this entry")
+            //setBody(props.data.body)
+        } else if (data.status === 404){
+            alert("The entry you are trying to edit could not be found.")
+            //setBody(props.data.body)
         }
     }
 
