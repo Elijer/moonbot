@@ -1,9 +1,9 @@
-import { createContext, useState, useEffect} from 'react'
+import { createContext, useContext, useState, useEffect} from 'react'
 
 import TimeContext from './TimeContext'
 import AuthContext from './AuthContext'
 
-//import dd from '../utilities/Debugger'
+import dd from '../utilities/Debugger'
 
 const RequestContext = createContext()
 
@@ -14,7 +14,7 @@ export const RequestProvider = ({children}) => {
     let { time } = useContext(TimeContext)
     let { user, serverURL, authTokens } = useContext(AuthContext)
     
-    let updateEntryHTTP = async(someData, options) => {
+    let updateEntryHTTP = async(someData) => {
 
         dd("initiate http request to update data")
     
@@ -43,7 +43,7 @@ export const RequestProvider = ({children}) => {
         }
     }
 
-    contextData = {
+    let contextData = {
         updateEntryHTTP: updateEntryHTTP
     }
 

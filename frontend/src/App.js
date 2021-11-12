@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PrivateRoute from './utilities/PrivateRoute'
 import { AuthProvider } from './context/AuthContext'
 import { TimeProvider } from './context/TimeContext'
+import { RequestProvider } from './context/RequestContext'
 
 import Tracker from './pages/Tracker'
 import LoginPage from './pages/LoginPage'
@@ -27,18 +28,21 @@ function App() {
           <TimeProvider>
             <FireProvider>
                 <AuthProvider>
+                  <RequestProvider>
 
-                  <Header />
+                    <Header />
 
-                    <Switch>
-                      
-                      <PrivateRoute component = {Tracker} path = "/" exact />
-                      <Route component = {LoginPage} path = "/login" />
-                      <Route component = {RegisterPage} path = "/register" />
+                      <Switch>
+                        
+                        <PrivateRoute component = {Tracker} path = "/" exact />
+                        <Route component = {LoginPage} path = "/login" />
+                        <Route component = {RegisterPage} path = "/register" />
 
-                      <Route component={NotFound} />
-                      
-                    </Switch>
+                        <Route component={NotFound} />
+                        
+                      </Switch>
+
+                    </RequestProvider>
                 </AuthProvider>
               </FireProvider>
             </TimeProvider>
