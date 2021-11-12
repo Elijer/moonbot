@@ -15,7 +15,7 @@ const SleepInput = (props) => {
     // Create reference to entry in database
     let { time } = useContext(TimeContext)
     let { user, serverURL, authTokens } = useContext(AuthContext)
-    let { updateEntryHTTP } = useContext(RequestContext)
+    let { updateEntry } = useContext(RequestContext)
 
     // State
     let [state, setState] = useState({
@@ -24,11 +24,6 @@ const SleepInput = (props) => {
         wakeSaved: "",
         sleepSaved: ""
     })
-
-    let updateEntry = useCallback(
-        updateEntryHTTP,
-        [authTokens.access, serverURL, time.dateString, user.id]
-    )
 
     let setEntryHTTP = useCallback(
         async(someData) => {
