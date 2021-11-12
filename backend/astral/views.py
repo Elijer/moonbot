@@ -69,16 +69,19 @@ def updateSleep(request):
     data = json.loads(request.body)
     dateString = data.get("dateString", "")
     u = User.objects.get(id=decodeToken(request))
+    entryCount = Entry.objects.filter(dateString=dateString, creator=u).count()
     
-    if Entry.objects.filter(dateString=dateString, creator=u).count() == 1:
+    if entryCount == 1:
         entry = Entry.objects.get(dateString=dateString, creator=u)
-    elif Entry.objects.filter(dateString=dateString, creator=u).count() == 0:
+    elif entryCount == 0:
         entry = Entry(
             creator=u,
             dateString=dateString,
         )
+    elif entryCount > 1:
+        return Response("Found multiple entries with same datestring and creator, indicating a problem.")
     else:
-        return Response("Entry does not exist or there are multiple entries. Which there shouldn't be.")
+        return Response("Unknown problem finding and updating sleep data of correct entry")
         
     if data.get("wake", "") != "":
         entry.wake = data.get("wake", "")
