@@ -4,7 +4,7 @@ import TimeContext from '../../context/TimeContext'
 import RequestContext from '../../context/RequestContext'
 import dd from '../../utilities/Debugger'
 
-const EnergyInput = (props) => {
+const CryInput = (props) => {
 
     // Options
         /// Deselection?
@@ -74,4 +74,4 @@ const EnergyInput = (props) => {
     )
 }
 
-export default EnergyInput
+export default CryInput
