@@ -50,7 +50,8 @@ class Entry(models.Model):
             "wake": self.wake,
             "updatedAt": self.updatedAt,
             "createdAt": self.timestamp,
-            "dateString": self.dateString
+            "dateString": self.dateString,
+            "energy": self.energy
         }
 
 class Post(models.Model):
