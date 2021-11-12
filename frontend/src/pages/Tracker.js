@@ -17,7 +17,7 @@ const Tracker = () => {
 
     useEffect(() => {
 
-        getEntryHTTP({
+        getEntry({
             datString: time.dateString
         })
 
@@ -30,7 +30,7 @@ const Tracker = () => {
 
     }, [])
 
-    let getEntryHTTP = async(someData) => {
+    let getEntry = async(someData) => {
 
         dd("initiate http request")
 
@@ -47,7 +47,7 @@ const Tracker = () => {
 
         let data = await response.json()
         if (response.status === 200){
-            dd(data)
+            setEntryData(data)
         } else if (response.status === 401){
             alert("You are not authorized to update this entry")
             //setBody(props.data.body)
