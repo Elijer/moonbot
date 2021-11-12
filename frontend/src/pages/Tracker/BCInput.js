@@ -11,6 +11,7 @@ const BCInput = (props) => {
     let { updateEntry } = useContext(RequestContext)
 
     let [day, setDay] = useState(0)
+    let [userInteraction, setUserInteraction] = useState(false)
     //let [month, setMonth] = useState
 
     // Create dirt simple month array to map through
@@ -30,14 +31,16 @@ const BCInput = (props) => {
     }, [props.data.BC_day])
 
     useEffect(() => {
-
-        updateEntry({
-            "BC_day": day
-        })
+        if (userInteraction){
+            updateEntry({
+                "BC_day": day
+            })
+        }
 
     }, [day, updateEntry])
 
     let handleClick = (i) => {
+        setUserInteraction(true)
         setDay(i)
     }
 
