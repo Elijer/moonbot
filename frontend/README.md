@@ -35,3 +35,5 @@ Package:
 
 # Potential Problems
 1. Since all data is just input whenever it changes, if there are ANY artifacts, like an initial state, that is exposed to set the state somehow, it is likely it will also be able to change the data in the database, permanently erasing user data. I have run into this problem in CryInput and BCInput and fixed it by created a userInteraction boolean with useState that just determines if the user has HAD any valid interaction as a prequisite for sending any http updates requests.
+
+2. I'm not returning anything from the updateEntry callback, like data that gets rendered or *not* rendered. So each input component just sort of assumes success, and if it fails for some reason, then there's no indication to the user that anything bad has happened. I think that I need to make the function a promise (which I think it already is? Or possibly, return a promise that is saved to a data variable, so that I can do any renders to the HTML using whatever data it returns, namely NOT setting the background to buttons if pressing them didn't succeed in sending the data to the database.
