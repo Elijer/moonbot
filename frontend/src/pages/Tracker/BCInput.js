@@ -13,18 +13,23 @@ const BCInput = (props) => {
     let [day, setDay] = useState(5)
     //let [month, setMonth] = useState
 
+    // Create dirt simple month array to map through
     let month = []
     for (let i = 0; i<31; i++){
         month[i] = i + 1
     }
 
+    useEffect(() => {
+
+        updateEntry({
+            "BC_day": day
+        })
+
+    }, [day, updateEntry])
+
     let handleClick = (i) => {
         setDay(i)
     }
-
-/*     useEffect(() => {
-
-        }, []) */
 
     return (
 

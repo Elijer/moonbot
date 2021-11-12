@@ -94,6 +94,8 @@ def updateEntry(request):
         entry.sleep = data.get("sleep", "")
     if data.get("cries", "") != "":
         entry.cries = data.get("cries", "")
+    if data.get("BC_day", "") != "":
+        entry.BC_day = data.get("BC_day", "")
         
     entry.save()
     return JsonResponse(status=201, data = entry.serialize())

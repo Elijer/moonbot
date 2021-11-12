@@ -48,6 +48,13 @@ class Entry(models.Model):
             MinValueValidator(1008) # pretty arbitrary. Like an easter egg I guess?
             ]
         )
+    BC_day = models.IntegerField(
+        default=0,
+        validators=[
+            MaxValueValidator(0),
+            MinValueValidator(31) # hmmm most days in month. Except leap year?
+            ]
+        )
     
     def serialize(self):
         return {
@@ -59,7 +66,8 @@ class Entry(models.Model):
             "createdAt": self.timestamp,
             "dateString": self.dateString,
             "energy": self.energy,
-            "cries": self.cries
+            "cries": self.cries,
+            "BC_day": self.BC_day
         }
 
 class Post(models.Model):
