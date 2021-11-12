@@ -11,24 +11,27 @@ const BCInput = (props) => {
     let { updateEntry } = useContext(RequestContext)
 
     let [day, setDay] = useState(0)
+    //let [month, setMonth] = useState
 
-    useEffect(() => {
+    let month = []
+    for (let i = 0; i<31; i++){
+        month[i] = i + 1
+    }
 
-            let month = []
-            for (let i = 0; i<31; i++){
-                month[i] = i + 1
-            }
+/*     useEffect(() => {
 
-            dd(month)
-
-        }, [])
+        }, []) */
 
     return (
 
         <div className = "section">
             <h3>🌙 Took this birth control pill:</h3>
             <div className = "grid-container" id = "bcGrid">
+
+                {month.map((i) =>
+                <div key = {`BC-day-${i}`}> {i} </div>)}
             </div>
+            
         </div>
 
     )
