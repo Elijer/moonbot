@@ -54,7 +54,7 @@ const Tracker = () => {
         <div id = "tracker">
             < TimeDisplay />
             < SleepInput data= {entryData} user = {user} />
-            < EnergyInput />
+            < EnergyInput data = {entryData}/>
         </div>
     )
 }

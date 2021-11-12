@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class User(AbstractUser):
@@ -33,6 +34,13 @@ class Entry(models.Model):
     wake = models.CharField(max_length=5, default="")
     sleep = models.CharField(max_length=5, default="")
     dateString = models.CharField(max_length=10)
+    energy = models.IntegerField(
+        default=0,
+        validators=[
+            MaxValueValidator(3),
+            MinValueValidator(0)
+            ]
+        )
     
     def serialize(self):
         return {
