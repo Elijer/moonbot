@@ -52,15 +52,13 @@ def decodeToken(request):
 def getEntry(request):
     data = json.loads(request.body)
     dateString = data.get("dateString", "")
-    currentUser = decodeToken(request)
-    dateString = data.get("dateString", "")
-    u = User.objects.get(id=currentUser)
-    entryExists = Entry.objects.filter(dateString=dateString, creator=u).count()
-    if entryExists > 0:
+    u = User.objects.get(id=decodeToken(request))
+    
+    if Entry.objects.filter(dateString=dateString, creator=u).count() == 1:
         entry = Entry.objects.get(dateString=dateString, creator=u)
         return Response(entry.serialize())
     else:
-        return Response("Entry does not exist")
+        return Response("Entry does not exist or there are multiple entries. Which there shouldn't be.")
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
