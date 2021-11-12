@@ -9,6 +9,10 @@ import { formatTime } from '../../utilities/utilities'
 
 const EnergyInput = (props) => {
 
+    // Options
+        /// Deselection?
+            // false. HTTP function will not send 0. Selection can be changed but not nullified.
+
     // Create reference to entry in database
     let { time } = useContext(TimeContext)
     let { user, serverURL, authTokens } = useContext(AuthContext)
@@ -56,16 +60,24 @@ const EnergyInput = (props) => {
 
     useEffect(() => {
 
+        // As it is now, energy cannot be deselected, just changed
+        // To allow deselection: selection > -1, and uncomment additional conditional in handleSelection
         if (selection > 0 && selection < 4){
-            let data = {}
             setEnergyHTTP(selection)
         }
 
     }, [selection, setEnergyHTTP])
 
     let handleSelection = (e, n) => {
-        dd(e, n)
+
+        // This block allows for deselection
+    /* if (selection === n){
+            setSelection(0)
+        } else {
+            setSelection(n)
+        } */
         setSelection(n)
+        dd(selection)
     }
 
 

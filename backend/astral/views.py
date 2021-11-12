@@ -63,6 +63,31 @@ def getEntry(request):
     elif entryCount > 1:
         return Response("More than one entry exists, which should not be the case.")
     
+""" @api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def updateEntry(request):
+    # Non-optional data
+    data = json.loads(request.body)
+    dateString = data.get("dateString", "")
+    u = User.objects.get(id=decodeToken(request))
+    entryCount = Entry.objects.filter(dateString=dateString, creator=u).count()
+    
+    # Error handling to make sure valid entry exists
+    if entryCount == 1:
+        entry = Entry.objects.get(dateString=dateString, creator=u)
+    elif entryCount == 0:
+        entry = Entry(
+            creator=u,
+            dateString=dateString,
+        )
+    elif entryCount > 1:
+        return Response("Found multiple entries with same datestring and creator, indicating a problem.")
+    else:
+        return Response("Unknown problem finding and updating sleep data of correct entry")
+    
+    if data.get("energy", "") != "":
+        entry.energy = data.get("energy", "") """
+    
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def updateEnergy(request):
