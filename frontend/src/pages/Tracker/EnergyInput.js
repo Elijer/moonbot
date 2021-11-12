@@ -15,8 +15,9 @@ const EnergyInput = (props) => {
 
     let [selection, setSelection] = useState(0)
 
-    let handleSelection = (n) => {
-        //set
+    let handleSelection = (e, n) => {
+        dd(e, n)
+        setSelection(n)
     }
 
 
@@ -27,17 +28,17 @@ const EnergyInput = (props) => {
             <div id = "energyOptions">
 
                 <button
-                onChange = {(e) => handleSelection(e, 1)}
+                onClick = {(e) => handleSelection(e, 1)}
                 className = {"btn" + (selection === 1 ? "selected" : "")}
                 id = "little">Little</button>
 
                 <button
-                onChange = {(e) => handleSelection(e, 2)}
+                onClick = {(e) => handleSelection(e, 2)}
                 className = {"btn" + (selection === 2 ? "selected" : "")}
                 id = "some">Some</button>
 
                 <button
-                onChange = {(e) => handleSelection(e, 3)}
+                onClick = {(e) => handleSelection(e, 3)}
                 className = {"btn" + (selection === 3 ? "selected" : "")}
                 id = "lots">Lots</button>
 
