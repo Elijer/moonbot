@@ -6,7 +6,7 @@ import { TimeProvider } from './context/TimeContext'
 import { RequestProvider } from './context/RequestContext'
 
 import Tracker from './pages/Tracker'
-import LoginPage from './pages/Log'
+import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import Log from './pages/Log'
 import NotFound from './pages/NotFound'
@@ -35,9 +35,9 @@ function App() {
                       <Switch>
                         
                         <PrivateRoute component = {Tracker} path = "/" exact />
-                        <PrivateRoute component = {Log} path = "/log" />
+                        <PrivateRoute component = {Log} path = "/_log" exact/>
 
-                        <Route component = {LoginPage} path = "/login" />
+                        <Route component = {LoginPage} path = "/login" exact/>
                         <Route component = {RegisterPage} path = "/register" />
 
                         <Route component={NotFound} />

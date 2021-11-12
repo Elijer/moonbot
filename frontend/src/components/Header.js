@@ -19,7 +19,7 @@ const Header = () => {
                             {/* <Link to="/following" className = "nav-option" >Following</Link> */}
                             <div className = "tracker-title-display"> ✨ {up(user.username)}'s Mood Tracker </div>
                             <Link to="/" className = "nav-option">🌙 Moonbot </Link>
-                            <Link to="/log" className = "nav-option">🔭 Log </Link> 
+                            <Link to="/_log" className = "nav-option">🔭 Log </Link> 
                             <Link to="/" onClick = {logoutUser } className = "nav-option" >🌑 Logout</Link>
 
                     </React.Fragment>
