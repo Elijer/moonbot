@@ -48,7 +48,7 @@ const BCInput = (props) => {
 
         <h3 className = "section">
             <h3>🌙 Took this birth control pill:</h3>
-            <div className = "grid-container" id = "bcGrid">
+            <div className = "grid-container">
 
                 {month.map((i) =>
                 <div
