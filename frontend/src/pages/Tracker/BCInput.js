@@ -18,6 +18,10 @@ const BCInput = (props) => {
         month[i] = i + 1
     }
 
+    let handleClick = (i) => {
+        setDay(i)
+    }
+
 /*     useEffect(() => {
 
         }, []) */
@@ -31,7 +35,8 @@ const BCInput = (props) => {
                 {month.map((i) =>
                 <div
                 key = {`BC-day-${i}`}
-                className = {(i === day ? "selected-day" : "") + " grid-item"}> {i} </div>)}
+                className = {(i === day ? "selected-day" : "") + " grid-item"}
+                onClick = {() => handleClick(i)}> {i} </div>)}
             </div>
 
         </div>
