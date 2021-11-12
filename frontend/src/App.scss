@@ -15,5 +15,12 @@ html {
     background: $bg;
 }
 
+.logout-footer {
+    display: block;
+    color: $light;
+    font-size: 25px;
+    padding: 10px;
+}
+
 @media screen and (max-width: 480px) {
 }

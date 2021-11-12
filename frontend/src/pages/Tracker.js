@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import AuthContext from '../context/AuthContext'
 import TimeContext from '../context/TimeContext'
 
+import LogoutFooter from '../components/LogoutFooter'
+
 import TimeDisplay from './Tracker/TimeDisplay'
 import SleepInput from './Tracker/SleepInput'
 import CryInput from './Tracker/CryInput'
@@ -61,6 +63,7 @@ const Tracker = () => {
                 < CryInput data = {entryData}/>
                 < EnergyInput data = {entryData}/>
                 < BCInput data = {entryData}/>
+                < LogoutFooter />
             </div>
         </div>
     )
