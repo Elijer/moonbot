@@ -14,17 +14,17 @@ const CryInput = (props) => {
     let { updateEntry } = useContext(RequestContext)
 
     // STATE
-    let [selection, setSelection] = useState(0)
+    let [cryAmount, setCryAmount] = useState(0)
 
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
-    useEffect(() => {
+/*     useEffect(() => {
 
             setSelection(props.data.energy)
 
-    }, [props.data.energy])
+    }, [props.data.energy]) */
 
-    useEffect(() => {
+/*     useEffect(() => {
 
     // As it is now, energy cannot be deselected, just changed
     // To allow deselection:
@@ -35,42 +35,31 @@ const CryInput = (props) => {
             })
         }
 
-    }, [selection, updateEntry])
+    }, [selection, updateEntry]) */
 
-    let handleSelection = (e, n) => {
-
-        /* This block allows for deselection:
-        if (selection === n)setSelection(0)
-        else setSelection(n) */
-
-        setSelection(n)
-        dd(selection)
+    let handleClick = (amount) => {
+        if ( cryAmount > -1 )
+        setCryAmount(cryAmount + amount)
     }
 
-
     return (
+
         <div className = "section">
-            <h3 id = "energyHeader"> ⚡️ This <span id = "dayRegion">{time.timeOfDay}</span>, I have this much energy:</h3>
-            <p id = "energyNote"></p>
-            <div id = "energyOptions">
+            <h3> 💧 And cried this many times:</h3>
 
-                <button
-                onClick = {(e) => handleSelection(e, 1)}
-                className = {"btn" + (selection === 1 ? "selected" : "")}
-                id = "little">Little</button>
+            <button
+            id = "lessCry"
+            className = "btn"
+            onClick = {() => handleClick(-1)}> - </button>
 
-                <button
-                onClick = {(e) => handleSelection(e, 2)}
-                className = {"btn" + (selection === 2 ? "selected" : "")}
-                id = "some">Some</button>
+            <button id = "cryNumber"> {cryAmount} </button>
 
-                <button
-                onClick = {(e) => handleSelection(e, 3)}
-                className = {"btn" + (selection === 3 ? "selected" : "")}
-                id = "lots">Lots</button>
+            <button id = "moreCry"
+            className = "btn"
+            onClick = {() => handleClick(+1)}> + </button>
 
-            </div>
         </div>
+
     )
 }
 

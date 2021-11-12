@@ -5,6 +5,7 @@ import TimeContext from '../context/TimeContext'
 
 import TimeDisplay from './Tracker/TimeDisplay'
 import SleepInput from './Tracker/SleepInput'
+import CryInput from './Tracker/CryInput'
 import EnergyInput from './Tracker/EnergyInput'
 
 import dd from '../utilities/Debugger'
@@ -54,6 +55,7 @@ const Tracker = () => {
         <div id = "tracker">
             < TimeDisplay />
             < SleepInput data= {entryData} user = {user} />
+            < CryInput data = {entryData}/>
             < EnergyInput data = {entryData}/>
         </div>
     )
