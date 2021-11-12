@@ -41,6 +41,13 @@ class Entry(models.Model):
             MinValueValidator(0)
             ]
         )
+    cries = models.IntegerField(
+        default=0,
+        validators=[
+            MaxValueValidator(-1),
+            MinValueValidator(1008) # pretty arbitrary. Like an easter egg I guess?
+            ]
+        )
     
     def serialize(self):
         return {
@@ -51,7 +58,8 @@ class Entry(models.Model):
             "updatedAt": self.updatedAt,
             "createdAt": self.timestamp,
             "dateString": self.dateString,
-            "energy": self.energy
+            "energy": self.energy,
+            "cries": self.cries
         }
 
 class Post(models.Model):
