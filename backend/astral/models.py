@@ -42,6 +42,7 @@ class Entry(models.Model):
             "wake": self.wake,
             "updatedAt": self.updatedAt,
             "createdAt": self.timestamp,
+            "dateString": self.dateString
         }
 
 class Post(models.Model):
