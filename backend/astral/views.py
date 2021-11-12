@@ -63,7 +63,7 @@ def getEntry(request):
     elif entryCount > 1:
         return Response("More than one entry exists, which should not be the case.")
     
-""" @api_view(['POST'])
+@api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def updateEntry(request):
     # Non-optional data
@@ -85,8 +85,16 @@ def updateEntry(request):
     else:
         return Response("Unknown problem finding and updating sleep data of correct entry")
     
+    # Optional data updates to entry
     if data.get("energy", "") != "":
-        entry.energy = data.get("energy", "") """
+        entry.energy = data.get("energy", "")
+    if data.get("wake", "") != "":
+        entry.wake = data.get("wake", "")
+    if data.get("sleep", "") != "":
+        entry.sleep = data.get("sleep", "")
+        
+    entry.save()
+    return JsonResponse(status=201, data = entry.serialize())
     
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
