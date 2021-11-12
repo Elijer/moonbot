@@ -53,10 +53,12 @@ def getEntry(request):
     data = json.loads(request.body)
     dateString = data.get("dateString", "")
     currentUser = decodeToken(request)
+    dateString = data.get("dateString", "")
     u = User.objects.get(id=currentUser)
     entryExists = Entry.objects.filter(dateString=dateString, creator=u).count()
     if entryExists > 0:
-        return Response("Entry exists")
+        entry = Entry.objects.get(dateString=dateString, creator=u)
+        return Response(entry.serialize())
     else:
         return Response("Entry does not exist")
 

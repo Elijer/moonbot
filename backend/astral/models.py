@@ -28,7 +28,6 @@ class User(AbstractUser):
         
 class Entry(models.Model):
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="logged_entries")
-    date = models.TextField(max_length="10")
     timestamp = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now_add=True)
     wake = models.CharField(max_length=5, default="")
@@ -38,7 +37,11 @@ class Entry(models.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "creator": self.creator.id
+            "creator": self.creator.id,
+            "sleep": self.sleep,
+            "wake": self.wake,
+            "updatedAt": self.updatedAt,
+            "createdAt": self.timestamp,
         }
 
 class Post(models.Model):
