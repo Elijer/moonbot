@@ -2,13 +2,9 @@
 import React, { useContext, useState, useEffect, useCallback } from 'react'
 import TimeContext from '../../context/TimeContext'
 import RequestContext from '../../context/RequestContext'
-import dd from '../../utilities/Debugger'
+//import dd from '../../utilities/Debugger'
 
 const CryInput = (props) => {
-
-    // Options
-        /// Deselection?
-            // false. HTTP function will not send 0. Selection can be changed but not nullified.
 
     let { time } = useContext(TimeContext)
     let { updateEntry } = useContext(RequestContext)
@@ -28,9 +24,6 @@ const CryInput = (props) => {
 
     useEffect(() => {
 
-    // As it is now, energy cannot be deselected, just changed
-    // To allow deselection:
-    // if (selection > -1 && selection < 4){
         updateEntry({
             "cries": cries
         })
