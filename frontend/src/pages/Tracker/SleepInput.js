@@ -28,8 +28,6 @@ const SleepInput = (props) => {
     // props.data needed as dependency
     useEffect(() => {
 
-        setEntryHTTP({})
-
         setState({
             ...state,
             wakeSaved: props.data.wake,
@@ -55,7 +53,10 @@ const SleepInput = (props) => {
                 dd("setting sleep data")
             }
 
-            setEntry(data)
+            setEntryHTTP({
+                ...data,
+                "creator": 1,
+            })
 
         }
 
@@ -74,6 +75,9 @@ const SleepInput = (props) => {
     }
 
     let setEntryHTTP = async(someData) => {
+
+        dd("initiate http request")
+
         let response = await fetch(serverURL + 'updateSleep/', {
             method: 'POST',
             headers:  {
@@ -81,18 +85,19 @@ const SleepInput = (props) => {
               'Authorization': 'Bearer ' + String(authTokens.access)
             },
             body: JSON.stringify({
-                creator: user.id,
-                dateString: time.dateString
+                ...someData,
+                'creator': user.id,
+                'dateString': time.dateString,
             })
         })
 
         let data = await response.json()
-
-        if (data.status === 200){
-        } else if (data.status === 41){
+        if (response.status === 201){
+            dd(data)
+        } else if (response.status === 401){
             alert("You are not authorized to update this entry")
             //setBody(props.data.body)
-        } else if (data.status === 404){
+        } else if (response.status === 404){
             alert("The entry you are trying to edit could not be found.")
             //setBody(props.data.body)
         }

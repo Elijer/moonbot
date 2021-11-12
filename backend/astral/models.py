@@ -34,6 +34,12 @@ class Entry(models.Model):
     wake = models.CharField(max_length=5, default="")
     sleep = models.CharField(max_length=5, default="")
     dateString = models.CharField(max_length=10)
+    
+    def serialize(self):
+        return {
+            "id": self.id,
+            "creator": self.creator.id
+        }
 
 class Post(models.Model):
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="created_posts")

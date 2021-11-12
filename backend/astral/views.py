@@ -55,12 +55,22 @@ def updateSleep(request):
     dateString = data.get("dateString", "")
     currentUser = decodeToken(request)
     u = User.objects.get(id=currentUser)
-    entry = Entry(
-        creator=u,
-        dateString=dateString,
-    )
     
-    return Response(currentUser)
+    entryExists = Entry.objects.filter(dateString=dateString, creator=u).count()
+    if entryExists > 0:
+        entry = Entry.objects.get(dateString=dateString, creator=u)
+    else:
+        entry = Entry(
+            creator=u,
+            dateString=dateString,
+        )
+        
+    if 'wake' in request.POST:
+        entry.wake = data.get("wake", "")
+    if 'sleep' in request.POST:
+        entry.sleep = data.get("sleep", "")
+    entry.save()
+    return JsonResponse(status=201, data = entry.serialize())
 
     
 
