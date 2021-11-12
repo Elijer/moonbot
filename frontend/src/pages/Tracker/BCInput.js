@@ -41,9 +41,9 @@ const BCInput = (props) => {
  */
     return (
 
-        <div class = "section">
+        <div className = "section">
             <h3>🌙 Took this birth control pill:</h3>
-            <div class = "grid-container" id = "bcGrid">
+            <div className = "grid-container" id = "bcGrid">
             </div>
         </div>
 

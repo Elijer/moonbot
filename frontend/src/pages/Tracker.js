@@ -7,6 +7,7 @@ import TimeDisplay from './Tracker/TimeDisplay'
 import SleepInput from './Tracker/SleepInput'
 import CryInput from './Tracker/CryInput'
 import EnergyInput from './Tracker/EnergyInput'
+import BCInput from './Tracker/BCInput'
 
 import dd from '../utilities/Debugger'
 
@@ -57,6 +58,7 @@ const Tracker = () => {
             < SleepInput data= {entryData} user = {user} />
             < CryInput data = {entryData}/>
             < EnergyInput data = {entryData}/>
+            < BCInput data = {entryData}/>
         </div>
     )
 }
