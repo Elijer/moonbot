@@ -19,6 +19,7 @@
         .timeInput {
             color: $intense;
         }
+        
     }
 }
 
@@ -37,4 +38,8 @@
     top: 4px;
     left: 2px;
     display: inline;
+}
+
+.timeInput::placeholder {
+    color: $light;
 }
