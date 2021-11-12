@@ -1,8 +1,8 @@
 
 import React, { useContext, useState, useEffect, useCallback } from 'react'
 import TimeContext from '../../context/TimeContext'
-import FireContext from '../../context/FireContext'
 import AuthContext from '../../context/AuthContext'
+import RequestContext from '../../context/RequestContext'
 import dd from '../../utilities/Debugger'
 import { formatTime } from '../../utilities/utilities'
 //import dd from '../../utilities/Debugger'
@@ -15,11 +15,13 @@ const EnergyInput = (props) => {
 
     // Create reference to entry in database
     let { time } = useContext(TimeContext)
-    let { user, serverURL, authTokens } = useContext(AuthContext)
+    //let { user, serverURL, authTokens } = useContext(AuthContext)
+
+    let { updateEntry } = useContext(RequestContext)
 
     let [selection, setSelection] = useState(0)
 
-    let setEnergyHTTP = useCallback(
+/*     let setEnergyHTTP = useCallback(
         async(energy) => {
 
             dd("initiate http request")
@@ -48,7 +50,7 @@ const EnergyInput = (props) => {
                 //setBody(props.data.body)
             }
         }, [authTokens.access, serverURL, time.dateString, user.id]
-    )
+    ) */
 
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
@@ -64,10 +66,12 @@ const EnergyInput = (props) => {
         // To allow deselection:
      // if (selection > -1 && selection < 4){
         if (selection > 0 &&  selection < 4){
-            setEnergyHTTP(selection)
+            updateEntry({
+                "energy": selection
+            })
         }
 
-    }, [selection, setEnergyHTTP])
+    }, [selection, updateEntry])
 
     let handleSelection = (e, n) => {
 
