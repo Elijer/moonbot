@@ -49,6 +49,17 @@ def decodeToken(request):
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
+def getAllEntries(request):
+    data = json.loads(request.body)
+    u = User.objects.get(id=decodeToken(request))
+    entries = Entry.objects.filter(creator=u)
+    entryCount = entries.count()
+    options = {"entryCount": entryCount}
+    return Response(([entry.serialize() for entry in entries], options))
+    
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def getEntry(request):
     data = json.loads(request.body)
     dateString = data.get("dateString", "")
