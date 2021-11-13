@@ -50,7 +50,6 @@ def decodeToken(request):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def getAllEntries(request):
-    data = json.loads(request.body)
     u = User.objects.get(id=decodeToken(request))
     entries = Entry.objects.filter(creator=u)
     entryCount = entries.count()
