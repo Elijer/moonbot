@@ -49,6 +49,16 @@ def decodeToken(request):
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
+def graphAllEntries(request):
+    u = User.objects.get(id=decodeToken(request))
+    entries = Entry.objects.filter(creator=u).order_by('timestamp')
+    entryCount = entries.count()
+    options = {"entryCount": entryCount}
+    return Response(([entry.serializeSleep() for entry in entries], options))
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def getAllEntries(request):
     u = User.objects.get(id=decodeToken(request))
     entries = Entry.objects.filter(creator=u)

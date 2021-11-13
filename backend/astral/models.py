@@ -69,6 +69,14 @@ class Entry(models.Model):
             "cries": self.cries,
             "BC_day": self.BC_day
         }
+        
+    def serializeSleep(self):
+        return {
+            "sleep": self.sleep,
+        }
+    
+    def __str__(self):
+        return f"[id:{self.id}] ---> '{self.dateString}' ---> {self.creator.username}"
 
 class Post(models.Model):
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="created_posts")
