@@ -23,7 +23,6 @@ const Log = () => {
         })
 
         let data = await response.json()
-        dd(data)
         if (response.status === 200){
             dd(data)
         } else if (response.status === 401){
