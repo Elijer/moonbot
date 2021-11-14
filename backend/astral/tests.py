@@ -1,6 +1,5 @@
 from django.urls import reverse
-from .helpers import registration_helper
-from .helpers import timeQuantifierAMPM
+from .helpers import registration_helper, timeQuantifierAMPM, getHoursOfRest
 
 from django.db.models import Max
 from django.test import TestCase, Client
@@ -20,7 +19,10 @@ class NetworkTestCase(TestCase):
         u3.followers.set([u2, u3])
         
         e1 = Entry.objects.create(id="1", creator= u1, sleep = "12:30", sleepDomain = "am", wake = "9:45", wakeDomain = "am")
+        e2 = Entry.objects.create(id="2", creator= u2, sleep = "8:46", sleepDomain = "pm", wake = "8:47", wakeDomain = "am")
+        e3 = Entry.objects.create(id="3", creator= u3, sleep = "12:45", sleepDomain = "am", wake = "12:45", wakeDomain = "pm")
 
+        
         # Create Posts
         p1 = Post.objects.create(body="Hey!", creator=u2, id="1", timestamp="Oct 28 2021, 07:52 PM")
         # p2 = Post.objects.create(body="Hey!", creator=u1, id="1", timestamp="Oct 28 2021, 07:52 PM")
@@ -143,8 +145,36 @@ class NetworkTestCase(TestCase):
         }, content_type="application/json", **auth_headers)
 
         self.assertEqual(response2.status_code, 200)
-        
-    def test_calculate_rest(self):
+    
+    # after 12 test
+    def test_quantifyTimeAMPM_1(self):
         e1 = Entry.objects.get(id="1")
         sleepTime = timeQuantifierAMPM(e1.sleep, e1.sleepDomain)
         self.assertEqual(sleepTime, 1470)
+    
+    # waking up in the PM
+    def test_quantifyTimeAMPM_2(self):
+        e3 = Entry.objects.get(id="3")
+        sleepTime = timeQuantifierAMPM(e3.wake, e3.wakeDomain)
+        self.assertEqual(sleepTime, 765)
+        
+    def test_sleep_amount(self):
+        # e2 = Entry.objects.create(id="2", creator= u2, sleep = "8:46", sleepDomain = "pm", wake = "8:47", wakeDomain = "am")
+        e2 = Entry.objects.get(id="2")
+        sleepTime = timeQuantifierAMPM(e2.sleep, e2.sleepDomain) # 1246
+        # 1440 is the amount of minutes in a day
+        wakeTime = timeQuantifierAMPM(e2.wake, e2.wakeDomain) + 1440 # 527 + 1440 = 1967
+        rest = wakeTime - sleepTime #719
+        self.assertEqual(rest, 721)
+        
+    def test_sleep_amount_2(self):
+        # e3 = Entry.objects.create(id="3", creator= u3, sleep = "12:45", sleepDomain = "am", wake = "12:45", wakeDomain = "pm")
+        
+        # 1485
+        # 2205
+        # difference = 720
+        # / 60 = 12 exactly
+        # which makes perfect sense.
+        e3 = Entry.objects.get(id="2")
+        rest = getHoursOfRest(e3.sleep, e3.sleepDomain, e3.wake, e3.wakeDomain)
+        self.assertEqual(rest, 12)

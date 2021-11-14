@@ -47,7 +47,17 @@ def timeQuantifierAMPM(input, AMPM):
         hours = noColon[0]
         minutes = noColon[1:3]
         
-    if AMPM == "pm" or hours == 12:
-        hours = hours + 12
+    if AMPM == "pm" and hours != '12' or hours == '12' and AMPM != 'pm':
+        hours = int(hours) + 12
         
-    # now we have wonderful military time
+    output = int(hours) * 60 + int(minutes)
+    return output 
+        
+        
+def getHoursOfRest(sleepTime, sleepAMPM, wakeTime, wakeAMPM):
+    sleepTimeInMinutes = timeQuantifierAMPM(sleepTime, sleepAMPM)
+    wakeTimeInMinutes = timeQuantifierAMPM(wakeTime, wakeAMPM) + 1440
+    minutesOfRest = wakeTimeInMinutes - sleepTimeInMinutes
+    hoursOfRest = (minutesOfRest / 60)
+    rounded = round(hoursOfRest, 1)
+    return rounded
