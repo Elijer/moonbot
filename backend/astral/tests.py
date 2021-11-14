@@ -1,6 +1,6 @@
 from django.urls import reverse
 from .helpers import registration_helper
-from .helpers import timeQuantifier
+from .helpers import timeQuantifierAMPM
 
 from django.db.models import Max
 from django.test import TestCase, Client
@@ -146,5 +146,5 @@ class NetworkTestCase(TestCase):
         
     def test_calculate_rest(self):
         e1 = Entry.objects.get(id="1")
-        sleepTime = timeQuantifier(e1.sleep)
-        self.assertEqual(sleepTime, 750)
+        sleepTime = timeQuantifierAMPM(e1.sleep, e1.sleepDomain)
+        self.assertEqual(sleepTime, 1470)

@@ -17,7 +17,9 @@ def registration_helper():
 
 def timeQuantifier(input):
     noColon = input.replace(":", "")
+    
     length = len(noColon)
+    
     if length == 4:
         hours = noColon[0:2]
         minutes = noColon[2:4]
@@ -32,3 +34,20 @@ def timeQuantifier(input):
     
     output = int(hours) * 60 + int(minutes)
     return output
+
+def timeQuantifierAMPM(input, AMPM):
+    noColon = input.replace(":", "")
+    length = len(noColon)
+    
+    if length == 4:
+        hours = noColon[0:2]
+        minutes = noColon[2:4]
+        
+    elif length == 3:
+        hours = noColon[0]
+        minutes = noColon[1:3]
+        
+    if AMPM == "pm":
+        hours = hours + 12
+        
+    # now we have wonderful military time
