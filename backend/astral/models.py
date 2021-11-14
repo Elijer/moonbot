@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-
+from .graphs import quantifyTime
 
 class User(AbstractUser):
     following = models.ManyToManyField("User", related_name="followers", blank=True)
@@ -71,21 +71,23 @@ class Entry(models.Model):
         }
         
     def serializeSleep(self):
-
-        sleepNum = self.sleep.replace(':', '')
-        if (sleepNum != ""):
-            sleepNumInt = int(sleepNum)
-        else:
-            sleepNumInt = 0
-        
         
         return {
-            "dateString": self.dateString,
-            "sleep": sleepNumInt
+            # "sleep": quantifyTime(self.sleep),
+            "sleep": int(self.energy),
+            "dateString": self.dateString
         }
     
     def __str__(self):
         return f"[id:{self.id}] ---> '{self.dateString}' ---> {self.creator.username}"
+    
+    def save(self, *args, **kwargs):
+        # self.slug = slugify(self.title)
+        try:
+            print("hey!")
+        except:
+            print("extra savetime code failed")
+        super(Entry, self).save(*args, **kwargs)
 
 class Post(models.Model):
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="created_posts")

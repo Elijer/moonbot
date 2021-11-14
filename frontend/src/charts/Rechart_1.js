@@ -18,10 +18,10 @@ const Rechart_1 = (props) => {
 
     return (
       <AreaChart
-        width={600}
-        height={400}
+        width={360}
+        height={100}
         data={data}
-        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+        margin={{ top: 30, right: 6, left: -14, bottom: 0 }}
       >
          <CartesianGrid strokeDasharray="3 3" />
          <XAxis />

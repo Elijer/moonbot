@@ -39,7 +39,6 @@ const Log = () => {
 
     return (
         <div>
-            Log
 
             < Rechart_1 data = {data}> </ Rechart_1 >
 
