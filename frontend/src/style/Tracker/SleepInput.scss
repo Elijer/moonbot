@@ -33,11 +33,21 @@
     outline: none;
     border: none;
     text-align: center;
-    color: $intense;
     position: relative;
     top: 4px;
-    left: 2px;
     display: inline;
+}
+
+.AMPM {
+    background: $grey2;
+    padding: 5px 7px 5px 5px;
+    color: $intense;
+    text-align: center;
+
+    &:active {
+        background: $intense;
+        color: white;
+    }
 }
 
 .timeInput::placeholder {

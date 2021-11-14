@@ -32,6 +32,8 @@ class Entry(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now_add=True)
     wake = models.CharField(max_length=5, default="")
+    wakeDomain = models.CharField(max_length=2, default="am")
+    sleepDomain = models.CharField(max_length=2, default="pm")
     sleep = models.CharField(max_length=5, default="")
     dateString = models.CharField(max_length=10)
     energy = models.IntegerField(
