@@ -1,3 +1,6 @@
+# Shell
+# from astral.models import Entry
+
 from django.core.exceptions import ObjectDoesNotExist
 
 from backend.settings import SECRET_KEY

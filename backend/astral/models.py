@@ -21,11 +21,11 @@ class User(AbstractUser):
     def follower_count(self):
         return self.followers.count()
 
-    def follows_self(self):
+"""     def follows_self(self):
         if self.followers.filter(id=self.id).count() == 1:
             return True
         else:
-            return False
+            return False """
         
 class Entry(models.Model):
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="logged_entries")
@@ -39,12 +39,19 @@ class Entry(models.Model):
     energy = models.IntegerField(
         default=0,
         validators=[MaxValueValidator(3), MinValueValidator(0) ] )
+    
     cries = models.IntegerField(
         default=0,
         validators=[MaxValueValidator(-1), MinValueValidator(1008) ] )
+    
     BC_day = models.IntegerField(
         default=0,
         validators=[MaxValueValidator(0), MinValueValidator(31) ] )
+    
+    restCalculated = models.BooleanField()
+    rest = models.IntegerField(
+        default=0,
+        validators=[MaxValueValidator(0), MinValueValidator(24) ] )
     
     def serialize(self):
         return {
@@ -61,6 +68,13 @@ class Entry(models.Model):
             "cries": self.cries,
             "BC_day": self.BC_day
         }
+    
+    def calculateRest(self):
+        if not self.restCalculated and self.sleep is not "" and self.wake is not "":
+            return True
+        else:
+            return False
+            
 
 class Post(models.Model):
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="created_posts")
