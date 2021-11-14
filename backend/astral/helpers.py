@@ -47,7 +47,7 @@ def timeQuantifierAMPM(input, AMPM):
         hours = noColon[0]
         minutes = noColon[1:3]
         
-    if AMPM == "pm":
+    if AMPM == "pm" or hours == 12:
         hours = hours + 12
         
     # now we have wonderful military time
