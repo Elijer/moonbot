@@ -38,25 +38,13 @@ class Entry(models.Model):
     dateString = models.CharField(max_length=10)
     energy = models.IntegerField(
         default=0,
-        validators=[
-            MaxValueValidator(3),
-            MinValueValidator(0)
-            ]
-        )
+        validators=[MaxValueValidator(3), MinValueValidator(0) ] )
     cries = models.IntegerField(
         default=0,
-        validators=[
-            MaxValueValidator(-1),
-            MinValueValidator(1008) # pretty arbitrary. Like an easter egg I guess?
-            ]
-        )
+        validators=[MaxValueValidator(-1), MinValueValidator(1008) ] )
     BC_day = models.IntegerField(
         default=0,
-        validators=[
-            MaxValueValidator(0),
-            MinValueValidator(31) # hmmm most days in month. Except leap year?
-            ]
-        )
+        validators=[MaxValueValidator(0), MinValueValidator(31) ] )
     
     def serialize(self):
         return {
