@@ -21,7 +21,9 @@ const SleepInput = (props) => {
         wake: "",
         sleep: "",
         wakeSaved: "",
-        sleepSaved: ""
+        sleepSaved: "",
+        sleepDomain: "pm",
+        wakeDomain: "am"
     })
 
     let [userInteraction, setUserInteraction] = useState(false)
@@ -120,6 +122,7 @@ const SleepInput = (props) => {
                 onChange = {(e) => handleTimeInput(e, "sleep")}
                 value = {state.sleep} />
             </span>
+            <span>{state.sleepDomain}</span>
             , woke
             <span className = "timeInputContainer">
                 <input
@@ -128,7 +131,8 @@ const SleepInput = (props) => {
                 placeholder = { state.wakeSaved }
                 onChange = {(e) => handleTimeInput(e, "wake")}
                 value = {state.wake} />
-            </span>.
+            </span>
+            <span>{state.wakeDomain}</span>.
         </h3>
     )
 }
