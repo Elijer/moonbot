@@ -68,12 +68,16 @@ class Entry(models.Model):
             "BC_day": self.BC_day
         }
     
+    #
     def calculateRest(self):
-        if not self.restCalculated and self.sleep != "" and self.wake != "":
+        if not self.rest_calculated and self.sleep != "" and self.wake != "":
             rest = getHoursOfRest(self.sleep, self.sleepDomain, self.wake, self.wakeDomain)
             self.rest = rest
-            # self.
-            return True
+            self.rest_calculated = True
+            # self.save?
+            return self.rest
+        elif self.rest_calculated:
+            return self.rest
         else:
             return False
             
