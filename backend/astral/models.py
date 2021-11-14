@@ -34,27 +34,13 @@ class Entry(models.Model):
     wake = models.CharField(max_length=5, default="")
     sleep = models.CharField(max_length=5, default="")
     dateString = models.CharField(max_length=10)
+    
     energy = models.IntegerField(
-        default=0,
-        validators=[
-            MaxValueValidator(3),
-            MinValueValidator(0)
-            ]
-        )
+        default=0, validators=[ MaxValueValidator(3), MinValueValidator(0) ] )
     cries = models.IntegerField(
-        default=0,
-        validators=[
-            MaxValueValidator(-1),
-            MinValueValidator(1008) # pretty arbitrary. Like an easter egg I guess?
-            ]
-        )
+        default=0, validators=[ MaxValueValidator(-1), MinValueValidator(1008)]) # pretty arbitrary. Like an easter egg I guess?
     BC_day = models.IntegerField(
-        default=0,
-        validators=[
-            MaxValueValidator(0),
-            MinValueValidator(31) # hmmm most days in month. Except leap year?
-            ]
-        )
+        default=0, validators=[ MaxValueValidator(0), MinValueValidator(31) ] )
     
     def serialize(self):
         return {
