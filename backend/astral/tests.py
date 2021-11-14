@@ -3,7 +3,7 @@ from .helpers import registration_helper
 
 from django.db.models import Max
 from django.test import TestCase, Client
-from .models import User, Post
+from .models import User, Post, Entry
 
 from rest_framework.test import RequestsClient
 
@@ -17,6 +17,8 @@ class NetworkTestCase(TestCase):
         u2 = User.objects.create(id="2", username="Rae", email="Rae@gmail.com")
         u3 = User.objects.create(id="3", username="Joe", email="Joe@gmail.com", password="p")
         u3.followers.set([u2, u3])
+        
+        e1 = Entry.objects.create(id="1", creator= u1, sleep = "12:30", sleepDomain = "am", wake = "9:45", wakeDomain = "am")
 
         # Create Posts
         p1 = Post.objects.create(body="Hey!", creator=u2, id="1", timestamp="Oct 28 2021, 07:52 PM")
@@ -140,5 +142,8 @@ class NetworkTestCase(TestCase):
         }, content_type="application/json", **auth_headers)
 
         self.assertEqual(response2.status_code, 200)
+        
+"""     def test_calculate_rest(self):
+        
 
-    # I should definitely test the new following route
+    # I should definitely test the new following route """

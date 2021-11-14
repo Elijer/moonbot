@@ -48,7 +48,7 @@ class Entry(models.Model):
         default=0,
         validators=[MaxValueValidator(0), MinValueValidator(31) ] )
     
-    restCalculated = models.BooleanField()
+    restCalculated = models.BooleanField(default = False)
     rest = models.IntegerField(
         default=0,
         validators=[MaxValueValidator(0), MinValueValidator(24) ] )
