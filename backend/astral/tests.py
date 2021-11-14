@@ -75,6 +75,16 @@ class NetworkTestCase(TestCase):
         }, content_type="application/json")
 
         self.assertEqual(response2.status_code, 200)
+        
+    
+
+
+
+
+
+
+
+    # ----- UNUSED -----
 
     # /getPosts/
     # Tests whether a registered user can get posts
