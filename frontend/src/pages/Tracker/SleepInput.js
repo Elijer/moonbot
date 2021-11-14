@@ -35,16 +35,22 @@ const SleepInput = (props) => {
         setState({
             ...state,
             wakeSaved: props.data.wake,
-            sleepSaved: props.data.sleep
+            sleepSaved: props.data.sleep,
+            wakeDomain: props.data.wakeDomain,
+            sleepDomain: props.data.sleepDomain,
         })
     }, [props.data])
 
+    // set wake and sleep times
     useEffect(() => {
+
         let wakeIsValid = validateTime(state.wake)
         let sleepIsValid = validateTime(state.sleep)
 
         if (wakeIsValid || sleepIsValid){
 
+
+            // current task -- making sure sleep and wake Domain data getting saved to DB along with other stuff
             let data = {}
 
             if (wakeIsValid){
@@ -58,12 +64,32 @@ const SleepInput = (props) => {
             }
 
             if (userInteraction) updateEntry(data)
-
         }
 
     }, [state.wake, state.sleep, updateEntry])
 
+
+    // set new wakeDomain value
+    useEffect(() => {
+        let data = {}
+        data.wakeDomain = state.wakeDomain
+        if (userInteraction) updateEntry(data)
+
+    }, [state.wakeDomain, updateEntry])
+
+    // set new sleepDomain value
+    useEffect(() => {
+        let data = {}
+        data.sleepDomain = state.sleepDomain
+        if (userInteraction) {
+            dd(data)
+            updateEntry(data)
+        }
+    }, [state.sleepDomain, updateEntry])
+
     let handleAMPM = (sleepScenario) => {
+
+        setUserInteraction(true)
 
         let AMPMproperty = `${sleepScenario}Domain`
         let newVal;
