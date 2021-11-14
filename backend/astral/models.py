@@ -70,7 +70,7 @@ class Entry(models.Model):
         }
     
     def calculateRest(self):
-        if not self.restCalculated and self.sleep is not "" and self.wake is not "":
+        if not self.restCalculated and self.sleep != "" and self.wake != "":
             return True
         else:
             return False
