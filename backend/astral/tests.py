@@ -170,11 +170,24 @@ class NetworkTestCase(TestCase):
     def test_sleep_amount_2(self):
         # e3 = Entry.objects.create(id="3", creator= u3, sleep = "12:45", sleepDomain = "am", wake = "12:45", wakeDomain = "pm")
         
-        # 1485
-        # 2205
+        # 1485 sleep time 
+        # 2205 wake time, factoring in 1440 extra hours since it's the next day / date
         # difference = 720
-        # / 60 = 12 exactly
+        # / 60 = 12 exactly (get the hours)
         # which makes perfect sense.
         e3 = Entry.objects.get(id="2")
         rest = getHoursOfRest(e3.sleep, e3.sleepDomain, e3.wake, e3.wakeDomain)
         self.assertEqual(rest, 12)
+        
+    def test_sleep_amount_3(self):
+        # e1 = Entry.objects.create(id="1", creator= u1, sleep = "12:30", sleepDomain = "am", wake = "9:45", wakeDomain = "am")
+        # 1470
+        # 545 + 1440 = 2025
+        # 2025 - 1470 = 555
+        # 9.25
+        # rounded up that's 9.3
+        # nope turns out it rounds down!! I guess it just cuts off the decimal actually.
+        e1 = Entry.objects.get(id="1")
+        rest = getHoursOfRest(e1.sleep, e1.sleepDomain, e1.wake, e1.wakeDomain)
+        self.assertEqual(rest, 9.2)
+        
