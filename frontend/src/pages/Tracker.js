@@ -54,6 +54,16 @@ const Tracker = () => {
         }
     }
 
+    const data = [
+        { moose: 'Page A', sleep: 4000 },
+        { moose: 'Page B', sleep: 3000 },
+        { moose: 'Page C', sleep: 2000 },
+        { moose: 'Page D', sleep: 2780 },
+        { moose: 'Page E', sleep: 1890 },
+        { moose: 'Page F', sleep: 2390 },
+        { moose: 'Page G', sleep: 3490 }
+    ];
+
 
     return (
         <div id = "tracker-page">
@@ -63,7 +73,7 @@ const Tracker = () => {
                 < CryInput data = {entryData}/>
                 < EnergyInput data = {entryData}/>
                 < BCInput data = {entryData}/>
-                < LogoutFooter />
+                {/* < LogoutFooter /> */}
             </div>
         </div>
     )

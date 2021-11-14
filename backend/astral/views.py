@@ -54,7 +54,7 @@ def graphAllEntries(request):
     entries = Entry.objects.filter(creator=u).order_by('timestamp')
     entryCount = entries.count()
     options = {"entryCount": entryCount}
-    return Response(([entry.serializeSleep() for entry in entries], options))
+    return Response([entry.serializeSleep() for entry in entries])
 
 
 @api_view(['POST'])

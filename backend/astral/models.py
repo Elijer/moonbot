@@ -71,8 +71,17 @@ class Entry(models.Model):
         }
         
     def serializeSleep(self):
+
+        sleepNum = self.sleep.replace(':', '')
+        if (sleepNum != ""):
+            sleepNumInt = int(sleepNum)
+        else:
+            sleepNumInt = 0
+        
+        
         return {
-            "sleep": self.sleep,
+            "dateString": self.dateString,
+            "sleep": sleepNumInt
         }
     
     def __str__(self):

@@ -16,7 +16,7 @@ const Log = () => {
 
     let getData = async() => {
 
-        let response = await fetch(serverURL + 'getAllEntries/', {
+        let response = await fetch(serverURL + 'graphAllEntries/', {
             method: 'POST',
             headers:  {
               'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ const Log = () => {
         <div>
             Log
 
-            < Rechart_1 data = {data[0]}> </ Rechart_1 >
+            < Rechart_1 data = {data}> </ Rechart_1 >
 
         </div>
     )
