@@ -106,6 +106,10 @@ def updateEntry(request):
         entry.cries = data.get("cries", "")
     if data.get("BC_day", "") != "":
         entry.BC_day = data.get("BC_day", "")
+    if data.get("sleepDomain", "") != "":
+        entry.sleepDomain = data.get("sleepDomain", "")
+    if data.get("wakeDomain", "") != "":
+        entry.wakeDomain = data.get("wakeDomain", "")
         
     entry.save()
     return JsonResponse(status=201, data = entry.serialize())
