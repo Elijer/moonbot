@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from .helpers import getHoursOfRest
 
 
 class User(AbstractUser):
@@ -48,10 +49,8 @@ class Entry(models.Model):
         default=0,
         validators=[MaxValueValidator(0), MinValueValidator(31) ] )
     
-    restCalculated = models.BooleanField(default = False)
-    rest = models.IntegerField(
-        default=0,
-        validators=[MaxValueValidator(0), MinValueValidator(24) ] )
+    rest_calculated = models.BooleanField(default = False)
+    rest = models.DecimalField(default=0, max_digits = 3, decimal_places = 1 )
     
     def serialize(self):
         return {
@@ -71,6 +70,9 @@ class Entry(models.Model):
     
     def calculateRest(self):
         if not self.restCalculated and self.sleep != "" and self.wake != "":
+            rest = getHoursOfRest(self.sleep, self.sleepDomain, self.wake, self.wakeDomain)
+            self.rest = rest
+            # self.
             return True
         else:
             return False
