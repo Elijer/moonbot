@@ -144,6 +144,4 @@ class NetworkTestCase(TestCase):
         self.assertEqual(response2.status_code, 200)
         
 """     def test_calculate_rest(self):
-        
-
-    # I should definitely test the new following route """
+         """
