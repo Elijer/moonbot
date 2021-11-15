@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect} from 'react'
 import moment from 'moment';
+import dd from '../utilities/Debugger';
 //import dd from '../utilities/Debugger'
 
 const TimeContext = createContext()
@@ -35,20 +36,20 @@ export const TimeProvider = ({children}) => {
     }, [loading])
 
     useEffect(()=> {
-        if (loading === false){
+        if (loadingTimeZone === false){
             let m = moment()
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            dd(tz)
 
             setTime({
-                time: m.format('h:mm a'),
-                date: m.format('dddd, MMM Do'),
-                dateString: m.format('L').replace(/\//g, "-"),
-                timeOfDay: getTimeOfDay(m)
+                ...time,
+                timezone: tz
             });
 
-            setLoading(false)
+            setLoadingTimeZone(false)
 
         }
-    }, [loading])
+    }, [loadingTimeZone])
 
     var getTimeOfDay = function(m){
         var timeOfDay;
