@@ -3,7 +3,8 @@
       "model": "astral.user",
       "pk": 1001,
       "fields": {
-        "username": "a1"
+        "username": "a1",
+        "password": "a1"
       }
     },
     {

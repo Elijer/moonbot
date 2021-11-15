@@ -35,7 +35,7 @@ def timeQuantifier(input):
     output = int(hours) * 60 + int(minutes)
     return output
 
-def timeQuantifierAMPM(input, AMPM):
+def wakeQuantifier(input, AMPM):
     noColon = input.replace(":", "")
     length = len(noColon)
     
@@ -46,21 +46,42 @@ def timeQuantifierAMPM(input, AMPM):
     elif length == 3:
         hours = noColon[0]
         minutes = noColon[1:3]
-        
-    if AMPM == "pm" and hours != '12' or hours == '12' and AMPM != 'pm':
+    
+    if AMPM == "pm" and hours != '12':
         hours = int(hours) + 12
+    elif AMPM == "am" and hours == '12':
+        hours = 0
+        
+    output = (int(hours) + 24) * 60 + int(minutes)
+    return output
+
+def sleepQuantifier(input, AMPM):
+    noColon = input.replace(":", "")
+    length = len(noColon)
+    
+    if length == 4:
+        hours = noColon[0:2]
+        minutes = noColon[2:4]
+        
+    elif length == 3:
+        hours = noColon[0]
+        minutes = noColon[1:3]
+    
+    if AMPM == "pm" and hours != '12':
+        hours = int(hours) + 12
+    elif AMPM == "am" and hours == '12':
+        hours = 24
+    elif AMPM == "am" and hours != '12':
+        hours = int(hours) + 24
         
     output = int(hours) * 60 + int(minutes)
     return output
 
 # 2:14am, 6:46am
         
-        
 def getHoursOfRest(sleepTime, sleepAMPM, wakeTime, wakeAMPM):
-    sleepTimeInMinutes = timeQuantifierAMPM(sleepTime, sleepAMPM)
-    if (sleepAMPM == "am"):
-        sleepTimeInMinutes = sleepTimeInMinutes + 1440
-    wakeTimeInMinutes = timeQuantifierAMPM(wakeTime, wakeAMPM) + 1440
+    sleepTimeInMinutes = sleepQuantifier(sleepTime, sleepAMPM)
+    wakeTimeInMinutes = wakeQuantifier(wakeTime, wakeAMPM)
     minutesOfRest = wakeTimeInMinutes - sleepTimeInMinutes
     hoursOfRest = (minutesOfRest / 60)
     rounded = round(hoursOfRest, 1)
