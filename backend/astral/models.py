@@ -48,7 +48,7 @@ class Entry(models.Model):
         default=0, validators=[MinValueValidator(0), MaxValueValidator(3) ] )
     
     cries = models.IntegerField(
-        default=0, validators=[MinValueValidator(1008), MinValueValidator(-1) ] )
+        default=0, validators=[MinValueValidator(-1), MinValueValidator(1008) ] )
     
     BC_day = models.IntegerField(
         default=0, validators=[MinValueValidator(0), MaxValueValidator(31) ] )
