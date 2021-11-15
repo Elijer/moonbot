@@ -39,3 +39,13 @@ export function insert(s, insert, index){
     const newString = s.slice(0, index) + insert + s.slice(index);
     return newString;
 }
+
+export function getBeginningOfDayInSeconds(){
+    let date = new Date()
+    let day = date.getDate()
+    let month = date.getMonth()
+    let year = date.getFullYear()
+    let simpleDate = new Date(year, month, day);
+    let beginningOfday = simpleDate.getTime()
+    return beginningOfday
+}
