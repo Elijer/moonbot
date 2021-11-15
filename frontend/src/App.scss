@@ -18,5 +18,18 @@
     padding: 10px;
 }
 
+.recharts-container {
+    width: 95%;
+    height: 500px;
+}
+
 @media screen and (max-width: 480px) {
+    .recharts-container {
+        height: 500px;
+        overflow-x: scroll;
+    }
+
+/*     .chart-overflow {
+        width: 250%;
+    } */
 }

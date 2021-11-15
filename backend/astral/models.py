@@ -77,6 +77,16 @@ class Entry(models.Model):
             "sleep": int(self.energy),
             "dateString": self.dateString
         }
+    
+    def serializeMultiple(self):
+        return {
+            # "sleep": quantifyTime(self.sleep),
+            "rest": self.calculateRest(),
+            "energy": int(self.energy),
+            "cries": int(self.cries),
+            "dim": self.dayInMilliseconds,
+            "dateString": self.dateString
+        }
         
     def serializeRest(self):
         return {
