@@ -22,35 +22,34 @@ class User(AbstractUser):
     def follower_count(self):
         return self.followers.count()
 
-"""     def follows_self(self):
+    def follows_self(self):
         if self.followers.filter(id=self.id).count() == 1:
             return True
         else:
-            return False """
+            return False
         
 class Entry(models.Model):
+    
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="logged_entries")
     timestamp = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now_add=True)
+    dateString = models.CharField(max_length=10)
+    
     wake = models.CharField(max_length=5, default="")
     wakeDomain = models.CharField(max_length=2, default="am")
     sleepDomain = models.CharField(max_length=2, default="pm")
     sleep = models.CharField(max_length=5, default="")
-    dateString = models.CharField(max_length=10)
-    energy = models.IntegerField(
-        default=0,
-        validators=[MaxValueValidator(3), MinValueValidator(0) ] )
-    
-    cries = models.IntegerField(
-        default=0,
-        validators=[MaxValueValidator(-1), MinValueValidator(1008) ] )
-    
-    BC_day = models.IntegerField(
-        default=0,
-        validators=[MaxValueValidator(0), MinValueValidator(31) ] )
-    
     rest_calculated = models.BooleanField(default = False)
     rest = models.DecimalField(default=0, max_digits = 3, decimal_places = 1 )
+    
+    energy = models.IntegerField(
+        default=0, validators=[MaxValueValidator(3), MinValueValidator(0) ] )
+    
+    cries = models.IntegerField(
+        default=0, validators=[MaxValueValidator(-1), MinValueValidator(1008) ] )
+    
+    BC_day = models.IntegerField(
+        default=0, validators=[MaxValueValidator(0), MinValueValidator(31) ] )
     
     def serialize(self):
         return {
