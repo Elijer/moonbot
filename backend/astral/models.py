@@ -3,7 +3,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 # from .graphs import quantifyTime
-from .helpers import getHoursOfRest
+from .helpers import getHoursOfRest, datestring_date_converter
 
 class User(AbstractUser):
     following = models.ManyToManyField("User", related_name="followers", blank=True)
@@ -35,7 +35,7 @@ class Entry(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now_add=True)
     dateString = models.CharField(max_length=10)
-    day = models.DateTimeField(null = True)
+    day = models.DateTimeField(null = True, blank=True)
     
     wake = models.CharField(max_length=5, default="")
     wakeDomain = models.CharField(max_length=2, default="am")
@@ -86,6 +86,9 @@ class Entry(models.Model):
         # self.slug = slugify(self.title)
         try:
             print("hey!")
+            if not self.day:
+                date_obj = datestring_date_converter(self.dateString)
+                self.day = date_obj
         except:
             print("extra savetime code failed")
         super(Entry, self).save(*args, **kwargs)

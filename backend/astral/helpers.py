@@ -61,3 +61,17 @@ def getHoursOfRest(sleepTime, sleepAMPM, wakeTime, wakeAMPM):
     hoursOfRest = (minutesOfRest / 60)
     rounded = round(hoursOfRest, 1)
     return rounded
+
+def datestring_date_converter(date_string):
+    from datetime import datetime, date, time, timezone
+    import re
+    
+    date_items = re.split("\-", date_string)
+    
+    for i in range(0, len(date_items)):
+        date_items[i] = int(date_items[i])
+    
+    d = datetime( date_items[1], date_items[2], date_items[0])
+    return d
+
+# print(datestring_date_converter("11-12-2012"))
