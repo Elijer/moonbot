@@ -54,11 +54,7 @@ def decodeToken(request):
 @permission_classes([IsAuthenticated])
 def graphRest(request):
     u = User.objects.get(id=decodeToken(request))
-    entries = Entry.objects.filter(creator=u)
-    for entry in entries:
-        entry.update_day()
-    
-    entries = Entry.objects.filter(creator=u).order_by('day')
+    entries = Entry.objects.filter(creator=u).order_by('dayInMilliseconds')
     return Response([entry.serializeRest() for entry in entries])
 
 @api_view(['POST'])
