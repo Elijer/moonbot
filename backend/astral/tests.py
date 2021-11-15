@@ -4,7 +4,7 @@ from datetime import datetime
 
 from django.db.models import Max
 from django.test import TestCase, Client
-from .models import User, Post, Entry
+from .models import User, Entry
 
 from rest_framework.test import RequestsClient
 
@@ -25,7 +25,7 @@ class NetworkTestCase(TestCase):
 
         
         # Create Posts
-        p1 = Post.objects.create(body="Hey!", creator=u2, id="1", timestamp="Oct 28 2021, 07:52 PM")
+        # p1 = Post.objects.create(body="Hey!", creator=u2, id="1", timestamp="Oct 28 2021, 07:52 PM")
         # p2 = Post.objects.create(body="Hey!", creator=u1, id="1", timestamp="Oct 28 2021, 07:52 PM")
 
     # Make sure tests are working as expected
@@ -81,52 +81,6 @@ class NetworkTestCase(TestCase):
         }, content_type="application/json")
 
         self.assertEqual(response2.status_code, 200)
-        
-    
-
-
-
-
-
-
-
-    # ----- UNUSED -----
-
-    # /getPosts/
-    # Tests whether a registered user can get posts
-    def test_getPosts_success(self):
-        response = registration_helper()
-        self.assertEqual(response['status'], 200)
-
-        auth_headers = {
-            'HTTP_AUTHORIZATION': 'Bearer ' + response['access']
-        }
-
-        c = Client()
-        response2 = c.post('/getPosts/',
-        {
-            'id':'1'
-        }, content_type="application/json", **auth_headers)
-        self.assertEqual(response2.status_code, 200)
-
-    # /newPost/
-    # Tests whether a valid reistered user with valid access key can createa a post
-    def test_make_post(self):
-        response = registration_helper()
-        self.assertEqual(response['status'], 200)
-
-        auth_headers = {
-            'HTTP_AUTHORIZATION': 'Bearer ' + response['access']
-        }
-        
-        c = Client()
-        response2 = c.post('/newPost/',
-        {
-            'id':'1',
-            'body':'This is a test post created by tests dot py!'
-        }, content_type="application/json", **auth_headers)
-
-        self.assertEqual(response2.status_code, 201)
     
     
     # /getProfile/

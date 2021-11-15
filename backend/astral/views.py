@@ -20,7 +20,7 @@ import jwt
 
 from .serializers import ProfileSerializer
 
-from .models import User, Post, Entry
+from .models import User, Entry
 # from network.models import User, Post
 
 @api_view(['POST'])
