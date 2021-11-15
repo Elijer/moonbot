@@ -9,12 +9,15 @@ const Log = () => {
 
     let { user, authTokens, serverURL } = useContext(AuthContext)
     let [data, setData] = useState({})
+    let [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        if (loading = true){
+            setLoading(false)
+            getData()
+        }
 
-        getData()
-
-    }, [])
+    }, [loading])
 
     let getData = async() => {
 
@@ -38,9 +41,11 @@ const Log = () => {
             });
             setData(someData)
         } else if (response.status === 401){
+            setLoading(false)
             alert("You are not authorized to update this entry")
             //setBody(props.data.body)
         } else if (response.status === 404){
+            setLoading(false)
             alert("The entry you are trying to edit could not be found.")
             //setBody(props.data.body)
         }
@@ -50,7 +55,7 @@ const Log = () => {
         <div>
 
             < Rechart_1 data = {data}> </ Rechart_1 >
-
+            
         </div>
     )
 }
