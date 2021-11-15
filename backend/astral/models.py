@@ -63,8 +63,6 @@ class Entry(models.Model):
             "sleepDomain": self.sleepDomain,
             "wake": self.wake,
             "wakeDomain": self.wakeDomain,
-            "updatedAt": self.updatedAt,
-            "createdAt": self.timestamp,
             "dateString": self.dateString,
             "energy": self.energy,
             "cries": self.cries,
