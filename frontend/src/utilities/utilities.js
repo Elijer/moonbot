@@ -40,7 +40,7 @@ export function insert(s, insert, index){
     return newString;
 }
 
-export function getBeginningOfDayInSeconds(){
+export function dayInMilliseconds(){
     let date = new Date()
     let day = date.getDate()
     let month = date.getMonth()

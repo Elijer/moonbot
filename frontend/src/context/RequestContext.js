@@ -4,6 +4,7 @@ import TimeContext from './TimeContext'
 import AuthContext from './AuthContext'
 
 import dd from '../utilities/Debugger'
+import { dayInMilliseconds } from '../utilities/utilities'
 
 const RequestContext = createContext()
 
@@ -29,6 +30,7 @@ export const RequestProvider = ({children}) => {
                     ...someData,
                     'creator': user.id,
                     'dateString': time.dateString,
+                    'dayInMilliseconds': dayInMilliseconds()
                 })
             })
         

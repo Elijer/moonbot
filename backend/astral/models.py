@@ -53,6 +53,8 @@ class Entry(models.Model):
     
     BC_day = models.IntegerField(
         default=0, validators=[MinValueValidator(0), MaxValueValidator(31) ] )
+    
+    dayInMilliseconds = models.PositiveBigIntegerField(validators=[MaxValueValidator(35185644000000) ])
 
     
     def serialize(self):
@@ -68,7 +70,8 @@ class Entry(models.Model):
             "dateString": self.dateString,
             "energy": self.energy,
             "cries": self.cries,
-            "BC_day": self.BC_day
+            "BC_day": self.BC_day,
+            "dim": self.dayInMilliseconds
         }
 
         

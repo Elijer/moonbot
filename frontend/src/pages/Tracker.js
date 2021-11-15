@@ -12,7 +12,7 @@ import EnergyInput from './Tracker/EnergyInput'
 import BCInput from './Tracker/BCInput'
 
 import dd from '../utilities/Debugger'
-import { getBeginningOfDayInSeconds } from '../utilities/utilities'
+import { dayInMilliseconds } from '../utilities/utilities'
 
 const Tracker = () => {
 
@@ -38,7 +38,7 @@ const Tracker = () => {
             },
             body: JSON.stringify({
                 'dateString': time.dateString,
-                'beginningOfDay': getBeginningOfDayInSeconds()
+                //'dayInMilliseconds': dayInMilliseconds()
             })
         })
 

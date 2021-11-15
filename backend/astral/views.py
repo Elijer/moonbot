@@ -86,6 +86,7 @@ def getAllEntries(request):
 def getEntry(request):
     data = json.loads(request.body)
     dateString = data.get("dateString", "")
+    # dayInMilliseconds = data.get("dayInMilliseconds", "")
     u = User.objects.get(id=decodeToken(request))
     entryCount = Entry.objects.filter(dateString=dateString, creator=u).count()
     
@@ -103,6 +104,7 @@ def updateEntry(request):
     # Non-optional data
     data = json.loads(request.body)
     dateString = data.get("dateString", "")
+    dayInMilliseconds = data.get("dayInMilliseconds", "")
     u = User.objects.get(id=decodeToken(request))
     entryCount = Entry.objects.filter(dateString=dateString, creator=u).count()
     
@@ -113,6 +115,7 @@ def updateEntry(request):
         entry = Entry(
             creator=u,
             dateString=dateString,
+            dayInMilliseconds=dayInMilliseconds
         )
     elif entryCount > 1:
         return Response("Found multiple entries with same datestring and creator, indicating a problem.")
