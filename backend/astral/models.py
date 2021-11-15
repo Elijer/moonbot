@@ -84,7 +84,7 @@ class Entry(models.Model):
             # "sleep": quantifyTime(self.sleep),
             "rest": self.calculateRest(),
             "dateString": self.dateString,
-            "day": self.day
+            "day": self.day.total_seconds()
         }
     
     def __str__(self):

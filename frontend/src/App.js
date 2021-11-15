@@ -26,8 +26,8 @@ function App() {
   return (
     <div id = "app-all">
         <Router>
-          <TimeProvider>
-                <AuthProvider>
+          <AuthProvider>
+                <TimeProvider>
                   <RequestProvider>
 
                     <Header />
@@ -44,8 +44,8 @@ function App() {
                         
                       </Switch>
                   </RequestProvider>
-                </AuthProvider>
-            </TimeProvider>
+                </TimeProvider>
+            </AuthProvider>
         </Router>    
     </div>
   );

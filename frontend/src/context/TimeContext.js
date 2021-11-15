@@ -16,6 +16,23 @@ export const TimeProvider = ({children}) => {
     })
 
     let [loading, setLoading] = useState(false)
+    let [loadingTimeZone, setLoadingTimeZone] = useState(false)
+
+    useEffect(()=> {
+        if (loading === false){
+            let m = moment()
+
+            setTime({
+                time: m.format('h:mm a'),
+                date: m.format('dddd, MMM Do'),
+                dateString: m.format('L').replace(/\//g, "-"),
+                timeOfDay: getTimeOfDay(m)
+            });
+
+            setLoading(false)
+
+        }
+    }, [loading])
 
     useEffect(()=> {
         if (loading === false){
