@@ -13,7 +13,8 @@ export const TimeProvider = ({children}) => {
         time: "",
         date: "",
         dateString: "",
-        timeOfDay: ""
+        timeOfDay: "",
+        timezone: ""
     })
 
     let [loading, setLoading] = useState(false)
@@ -39,7 +40,6 @@ export const TimeProvider = ({children}) => {
         if (loadingTimeZone === false){
             let m = moment()
             const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            dd(tz)
 
             setTime({
                 ...time,
