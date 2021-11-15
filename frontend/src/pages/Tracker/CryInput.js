@@ -1,12 +1,12 @@
 
-import React, { useContext, useState, useEffect, useCallback } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import TimeContext from '../../context/TimeContext'
 import RequestContext from '../../context/RequestContext'
 //import dd from '../../utilities/Debugger'
 
 const CryInput = (props) => {
 
-    let { time } = useContext(TimeContext)
+    //let { time } = useContext(TimeContext)
     let { updateEntry } = useContext(RequestContext)
 
     // STATE

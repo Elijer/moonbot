@@ -1,5 +1,5 @@
 
-import React, { useContext, useState, useEffect, useCallback } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import TimeContext from '../../context/TimeContext'
 import RequestContext from '../../context/RequestContext'
 import dd from '../../utilities/Debugger'
@@ -16,7 +16,6 @@ const EnergyInput = (props) => {
     // STATE
     let [selection, setSelection] = useState(0)
     let [userInteraction, setUserInteraction] = useState(false)
-    let [saved, setSaved] = useState(0)
 
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
@@ -65,15 +64,13 @@ const EnergyInput = (props) => {
                 <button
                 onClick = {(e) => handleSelection(e, 2)}
                 className = {"button button-energy "
-                + (selection === 2 ? "selected saved" : "")
-                + ` ${saved}`}
+                + (selection === 2 ? "selected saved" : "")}
                 >Some</button>
 
                 <button
                 onClick = {(e) => handleSelection(e, 3)}
                 className = {"button button-energy "
-                + (selection === 3 ? "selected saved" : "")
-                + ` ${saved}`}
+                + (selection === 3 ? "selected saved" : "")}
                 >Lots</button>
 
             </div>

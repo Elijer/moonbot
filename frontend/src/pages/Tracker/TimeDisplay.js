@@ -1,13 +1,13 @@
 import React, { useContext} from 'react'
 import TimeContext from '../../context/TimeContext'
 import AuthContext from '../../context/AuthContext'
-import { up } from '../../utilities/utilities'
+// import { up } from '../../utilities/utilities'
 //import dd from '../../utilities/Debugger'
 
 const TimeDisplay = () => {
 
     let { time } = useContext(TimeContext)
-    let { logoutUser } = useContext(AuthContext)
+    // let { logoutUser } = useContext(AuthContext)
     
     return (
         <div id = "date">

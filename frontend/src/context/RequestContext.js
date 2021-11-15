@@ -34,7 +34,7 @@ export const RequestProvider = ({children}) => {
         
             let data = await response.json()
             if (response.status === 201){
-                //dd(data)
+                dd(data)
             } else if (response.status === 401){
                 alert("You are not authorized to update this entry")
                 //setBody(props.data.body)

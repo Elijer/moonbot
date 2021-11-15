@@ -16,8 +16,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //import dd from './utilities/Debugger'
 
-// Firebase
-//import firebase from 'firebase/compat/app'
 import 'firebase/compat/firestore'
 
 function App() {
