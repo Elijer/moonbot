@@ -23,7 +23,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "export PORT=9000; react-scripts start",
+    "start": "DISABLE_ESLINT_PLUGIN=true; export PORT=9000; react-scripts start",
+    "startlint": "export PORT=9000; react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
