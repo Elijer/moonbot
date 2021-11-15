@@ -78,6 +78,14 @@ class Entry(models.Model):
             "sleep": int(self.energy),
             "dateString": self.dateString
         }
+        
+    def serializeRest(self):
+        return {
+            # "sleep": quantifyTime(self.sleep),
+            "rest": self.calculateRest(),
+            "dateString": self.dateString,
+            "day": self.day
+        }
     
     def __str__(self):
         return f"[id:{self.id}] ---> '{self.dateString}' ---> {self.creator.username}"
@@ -94,6 +102,8 @@ class Entry(models.Model):
         else:
             return False
         
+    def update_day(self):
+        self.day = datestring_converter(self.dateString)
 
 class Post(models.Model):
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="created_posts")
