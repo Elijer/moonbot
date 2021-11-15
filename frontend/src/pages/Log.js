@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import AuthContext from '../context/AuthContext'
 import Rechart_1 from '../charts/Rechart_1'
+import moment from 'moment';
 import Rechart_Linechart_1 from '../charts/Rechart_Linechart_1'
 import dd from '../utilities/Debugger'
 
@@ -25,10 +26,16 @@ const Log = () => {
             }
         })
 
-        let data = await response.json()
+        let someData = await response.json()
         if (response.status === 200){
-            dd(data)
-            setData(data)
+            let reformatted = []
+            let count = 0
+            someData.forEach(element => {
+                let m = moment(element.dim)
+                let niceDate = m.format("MMM Do");
+                element.niceDate = niceDate
+            });
+            setData(someData)
         } else if (response.status === 401){
             alert("You are not authorized to update this entry")
             //setBody(props.data.body)

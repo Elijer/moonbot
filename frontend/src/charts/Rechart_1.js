@@ -39,7 +39,7 @@ const Rechart_1 = (props) => {
                 margin={{ top: 30, right: 6, left: -14, bottom: 0 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey = "dateString"  />
+                <XAxis dataKey = "niceDate"  />
                 <YAxis />
                 <Tooltip />
                 <Legend />
