@@ -13,7 +13,6 @@ import NotFound from './pages/NotFound'
 import Header from './components/Header'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FireProvider } from './context/FireContext';
 
 //import dd from './utilities/Debugger'
 
