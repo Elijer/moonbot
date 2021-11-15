@@ -31,8 +31,9 @@ const Log = () => {
             let reformatted = []
             let count = 0
             someData.forEach(element => {
+                element.energy = element.energy * 5
                 let m = moment(element.dim)
-                let niceDate = m.format("MMM Do");
+                let niceDate = m.format("MMM D");
                 element.niceDate = niceDate
             });
             setData(someData)

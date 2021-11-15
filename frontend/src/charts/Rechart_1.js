@@ -42,24 +42,26 @@ const Rechart_1 = (props) => {
                 <XAxis dataKey = "niceDate"  />
                 <YAxis />
                 <Tooltip />
-                <Legend />
                 <Area
                   type='monotone'
+
                   dataKey='rest'
                   stroke='#8884d8'
                   fill='#8884d8'
                 />
-                  <Area
+                <Area
                   type='monotone'
-                  dataKey='cries'
-                  stroke='#0f5a94'
-                  fill='#8accff'
-                />
-                  <Area
-                  type='monotone'
+
                   dataKey='energy'
                   stroke='#ff8c00'
                   fill='#ffd24a'
+                />
+                <Area
+                  type='monotone'
+
+                  dataKey='cries'
+                  stroke='#0f5a94'
+                  fill='#8accff'
                 />
               </AreaChart>
             </ResponsiveContainer>
