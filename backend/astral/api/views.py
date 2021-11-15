@@ -39,8 +39,6 @@ def getRoutes(request):
     routes = [
         '/api/token',
         '/api/token/refresh',
-        'api/newPost',
-        'api/posts',
         'api/register'
     ]
 
