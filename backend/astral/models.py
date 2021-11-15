@@ -99,6 +99,6 @@ class Entry(models.Model):
             return self.rest
         else:
             return False
-        
+    
     def update_day(self):
         self.day = datestring_converter(self.dateString)

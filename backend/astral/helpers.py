@@ -51,11 +51,15 @@ def timeQuantifierAMPM(input, AMPM):
         hours = int(hours) + 12
         
     output = int(hours) * 60 + int(minutes)
-    return output 
+    return output
+
+# 2:14am, 6:46am
         
         
 def getHoursOfRest(sleepTime, sleepAMPM, wakeTime, wakeAMPM):
     sleepTimeInMinutes = timeQuantifierAMPM(sleepTime, sleepAMPM)
+    if (sleepAMPM == "am"):
+        sleepTimeInMinutes = sleepTimeInMinutes + 1440
     wakeTimeInMinutes = timeQuantifierAMPM(wakeTime, wakeAMPM) + 1440
     minutesOfRest = wakeTimeInMinutes - sleepTimeInMinutes
     hoursOfRest = (minutesOfRest / 60)

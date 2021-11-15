@@ -41,13 +41,17 @@ const SleepInput = (props) => {
         })
     }, [props.data])
 
+    // set wake and sleep times as time strings AND as millisecond objects
+
     // set wake and sleep times
     useEffect(() => {
 
         let wakeIsValid = validateTime(state.wake)
         let sleepIsValid = validateTime(state.sleep)
 
-        if (wakeIsValid || sleepIsValid){
+        if (wakeIsValid && sleepIsValid){
+            console.log("yup!")
+        } else if (wakeIsValid || sleepIsValid){
 
 
             // current task -- making sure sleep and wake Domain data getting saved to DB along with other stuff
@@ -81,10 +85,7 @@ const SleepInput = (props) => {
     useEffect(() => {
         let data = {}
         data.sleepDomain = state.sleepDomain
-        if (userInteraction) {
-            dd(data)
-            updateEntry(data)
-        }
+        if (userInteraction) updateEntry(data)
     }, [state.sleepDomain, updateEntry])
 
     let handleAMPM = (sleepScenario) => {
@@ -128,23 +129,7 @@ const SleepInput = (props) => {
             [sleepScenario]: newValue
         })
 
-        // set data in firestore
-        // But this is actually just done in useEffect for any state.sleep or state.wake changes
-/*         setEntry({
-            [sleepScenario]: newValue
-        }) */
-
     }
-
-/*     let handleBlur = (e, sleepScenario) => {
-        let val = e.target.value
-        let valid = validateTime(val)
-        if (valid){
-            setEntry({
-                [sleepScenario]: val
-            })
-        }
-    } */
 
     let validateTime = (val) => {
         let regex = /^(([0-9]{1}|1[0-2]{1}):[0-5]{1}[0-9]{1}){1}$/y
