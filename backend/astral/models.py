@@ -45,13 +45,13 @@ class Entry(models.Model):
     rest = models.DecimalField(default=0, max_digits = 3, decimal_places = 1 )
     
     energy = models.IntegerField(
-        default=0, validators=[MaxValueValidator(3), MinValueValidator(0) ] )
+        default=0, validators=[MinValueValidator(0), MaxValueValidator(3) ] )
     
     cries = models.IntegerField(
-        default=0, validators=[MaxValueValidator(-1), MinValueValidator(1008) ] )
+        default=0, validators=[MinValueValidator(1008), MinValueValidator(-1) ] )
     
     BC_day = models.IntegerField(
-        default=0, validators=[MaxValueValidator(0), MinValueValidator(31) ] )
+        default=0, validators=[MinValueValidator(0), MaxValueValidator(31) ] )
 
     
     def serialize(self):
