@@ -41,3 +41,15 @@ Package:
 3. Put more succinctly, UI state is changing based on HTTP requests, not responses. It should be the other way around.
 
 4. Making multiple entries for the same datestring -- this seems to be happening already. Figure out how it can happen, shut it down.
+
+
+# Create React App
+The eslint warnings were really getting to me. Mostly about things left out of dependency arrays and imports that I wasn't using. Many of which were not very important during the current moment. I disabled them. To re-enable them, go to `package.json` and add this block after the `scripts` section:
+```json
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+```
