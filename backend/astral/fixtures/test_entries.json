@@ -1,0 +1,27 @@
+[
+    {
+      "model": "astral.entru",
+      "pk": 1001,
+      "fields": {
+        "dateString": "11-13-2021",
+        "DayInMilliseconds": 1636783200000
+      }
+    },
+    {
+      "model": "astral.entry",
+      "pk": 1002,
+      "fields": {
+        "dateString": "11-14-2021",
+        "DayInMilliseconds": 1636869600000
+      }
+    },
+    {
+      "model": "astral.entry",
+      "pk": 1003,
+      "fields": {
+        "dateString": "11-15-2021",
+        "email": "a1@gmail.com",
+        "DayInMilliseconds": 1636956000000
+      }
+    }
+  ]

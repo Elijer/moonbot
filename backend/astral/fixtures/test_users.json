@@ -1,0 +1,23 @@
+[
+    {
+      "model": "astral.user",
+      "pk": 1001,
+      "fields": {
+        "username": "a1"
+      }
+    },
+    {
+      "model": "astral.user",
+      "pk": 1002,
+      "fields": {
+        "username": "a2"
+      }
+    },
+    {
+      "model": "astral.user",
+      "pk": 1003,
+      "fields": {
+        "username": "a1"
+      }
+    }
+  ]
