@@ -21,7 +21,9 @@ const SleepInput = (props) => {
         wake: "",
         sleep: "",
         wakeSaved: "",
-        sleepSaved: ""
+        sleepSaved: "",
+        sleepDomain: "pm",
+        wakeDomain: "am"
     })
 
     let [userInteraction, setUserInteraction] = useState(false)
@@ -33,16 +35,22 @@ const SleepInput = (props) => {
         setState({
             ...state,
             wakeSaved: props.data.wake,
-            sleepSaved: props.data.sleep
+            sleepSaved: props.data.sleep,
+            wakeDomain: props.data.wakeDomain,
+            sleepDomain: props.data.sleepDomain,
         })
     }, [props.data])
 
+    // set wake and sleep times
     useEffect(() => {
+
         let wakeIsValid = validateTime(state.wake)
         let sleepIsValid = validateTime(state.sleep)
 
         if (wakeIsValid || sleepIsValid){
 
+
+            // current task -- making sure sleep and wake Domain data getting saved to DB along with other stuff
             let data = {}
 
             if (wakeIsValid){
@@ -56,10 +64,46 @@ const SleepInput = (props) => {
             }
 
             if (userInteraction) updateEntry(data)
-
         }
 
     }, [state.wake, state.sleep, updateEntry])
+
+
+    // set new wakeDomain value
+    useEffect(() => {
+        let data = {}
+        data.wakeDomain = state.wakeDomain
+        if (userInteraction) updateEntry(data)
+
+    }, [state.wakeDomain, updateEntry])
+
+    // set new sleepDomain value
+    useEffect(() => {
+        let data = {}
+        data.sleepDomain = state.sleepDomain
+        if (userInteraction) {
+            dd(data)
+            updateEntry(data)
+        }
+    }, [state.sleepDomain, updateEntry])
+
+    let handleAMPM = (sleepScenario) => {
+
+        setUserInteraction(true)
+
+        let AMPMproperty = `${sleepScenario}Domain`
+        let newVal;
+        if (state[AMPMproperty] === "am"){
+            newVal = "pm"
+        } else if (state[AMPMproperty] === "pm"){
+            newVal = "am"
+        }
+
+        setState({
+            ...state,
+            [AMPMproperty]: newVal
+        })
+    }
 
     // Fired when time inputs change
     let handleTimeInput = (e, sleepScenario) => {
@@ -120,6 +164,9 @@ const SleepInput = (props) => {
                 onChange = {(e) => handleTimeInput(e, "sleep")}
                 value = {state.sleep} />
             </span>
+            <span
+            className = "AMPM"
+            onClick = {() => handleAMPM("sleep")}>{state.sleepDomain}</span>
             , woke
             <span className = "timeInputContainer">
                 <input
@@ -128,7 +175,10 @@ const SleepInput = (props) => {
                 placeholder = { state.wakeSaved }
                 onChange = {(e) => handleTimeInput(e, "wake")}
                 value = {state.wake} />
-            </span>.
+            </span>
+            <span
+            className = "AMPM"
+            onClick = {() => handleAMPM("wake")}>{state.wakeDomain}</span>.
         </h3>
     )
 }
