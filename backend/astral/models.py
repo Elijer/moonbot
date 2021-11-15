@@ -82,17 +82,6 @@ class Entry(models.Model):
     def __str__(self):
         return f"[id:{self.id}] ---> '{self.dateString}' ---> {self.creator.username}"
     
-    def save(self, *args, **kwargs):
-        # self.slug = slugify(self.title)
-        try:
-            print("hey!")
-            if not self.day:
-                date_obj = datestring_date_converter(self.dateString)
-                self.day = date_obj
-        except:
-            print("extra savetime code failed")
-        super(Entry, self).save(*args, **kwargs)
-    
     def calculateRest(self):
         if not self.rest_calculated and self.sleep != "" and self.wake != "":
             rest = getHoursOfRest(self.sleep, self.sleepDomain, self.wake, self.wakeDomain)

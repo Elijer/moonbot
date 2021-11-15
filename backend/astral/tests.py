@@ -1,5 +1,6 @@
 from django.urls import reverse
-from .helpers import registration_helper, timeQuantifierAMPM, getHoursOfRest
+from .helpers import registration_helper, timeQuantifierAMPM, getHoursOfRest, datestring_date_converter
+from datetime import datetime
 
 from django.db.models import Max
 from django.test import TestCase, Client
@@ -18,7 +19,7 @@ class NetworkTestCase(TestCase):
         u3 = User.objects.create(id="3", username="Joe", email="Joe@gmail.com", password="p")
         u3.followers.set([u2, u3])
         
-        e1 = Entry.objects.create(id="1", creator= u1, sleep = "12:30", sleepDomain = "am", wake = "9:45", wakeDomain = "am")
+        e1 = Entry.objects.create(id="1", dateString = "11-14-2021", creator= u1, sleep = "12:30", sleepDomain = "am", wake = "9:45", wakeDomain = "am")
         e2 = Entry.objects.create(id="2", creator= u2, sleep = "8:46", sleepDomain = "pm", wake = "8:47", wakeDomain = "am")
         e3 = Entry.objects.create(id="3", creator= u3, sleep = "12:45", sleepDomain = "am", wake = "12:45", wakeDomain = "pm")
 
@@ -190,4 +191,18 @@ class NetworkTestCase(TestCase):
         e1 = Entry.objects.get(id="1")
         rest = getHoursOfRest(e1.sleep, e1.sleepDomain, e1.wake, e1.wakeDomain)
         self.assertEqual(rest, 9.2)
+        
+    def test_assess_dateString(self):
+        e1 = Entry.objects.get(id="1")
+        self.assertEqual(e1.dateString, "11-14-2021")
+        
+    def test_save_day_field(self):
+        e1 = Entry.objects.get(id="1")
+        e1.day = datestring_date_converter(e1.dateString)
+        e1.save()
+        
+        # datetime takes args: year, month, day
+        d = datetime( 2021, 11, 14)
+        
+        self.assertEqual(e1.day, d)
         

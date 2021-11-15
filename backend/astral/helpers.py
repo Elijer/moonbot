@@ -70,8 +70,10 @@ def datestring_date_converter(date_string):
     
     for i in range(0, len(date_items)):
         date_items[i] = int(date_items[i])
-    
-    d = datetime( date_items[1], date_items[2], date_items[0])
+    # starting format is month, day, year
+    # so conversion is a bit wonky.
+    # datetime takes args: year, month, day
+    d = datetime( date_items[2], date_items[0], date_items[1])
     return d
 
 # print(datestring_date_converter("11-12-2012"))
