@@ -35,6 +35,7 @@ class Entry(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now_add=True)
     dateString = models.CharField(max_length=10)
+    day = models.DateTimeField(null = True)
     
     wake = models.CharField(max_length=5, default="")
     wakeDomain = models.CharField(max_length=2, default="am")
