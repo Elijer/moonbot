@@ -4,7 +4,8 @@
       "pk": 1001,
       "fields": {
         "dateString": "11-13-2021",
-        "dayInMilliseconds": 1636783200000 
+        "dayInMilliseconds": 1636783200000,
+        "creator": 1001 
       }
     },
     {
@@ -12,7 +13,8 @@
       "pk": 1002,
       "fields": {
         "dateString": "11-14-2021",
-        "dayInMilliseconds": 1636869600000
+        "dayInMilliseconds": 1636869600000,
+        "creator": 1002 
       }
     },
     {
@@ -20,8 +22,8 @@
       "pk": 1003,
       "fields": {
         "dateString": "11-15-2021",
-        "email": "a1@gmail.com",
-        "dayInMilliseconds": 1636956000000
+        "dayInMilliseconds": 1636956000000,
+        "creator": 1003
       }
     }
   ]
