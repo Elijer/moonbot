@@ -32,7 +32,6 @@ class User(AbstractUser):
 class Entry(models.Model):
     
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="logged_entries")
-    timestamp = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now_add=True)
     dateString = models.CharField(max_length=10)
     day = models.DateTimeField(null = True, blank=True)
