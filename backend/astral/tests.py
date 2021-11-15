@@ -1,5 +1,5 @@
 from django.urls import reverse
-from .helpers import registration_helper, timeQuantifierAMPM, getHoursOfRest, datestring_date_converter
+from .helpers import registration_helper, timeQuantifierAMPM, getHoursOfRest, datestring_converter
 from datetime import datetime
 
 from django.db.models import Max
@@ -82,25 +82,6 @@ class NetworkTestCase(TestCase):
 
         self.assertEqual(response2.status_code, 200)
     
-    
-    # /getProfile/
-    # Test to see if a valid registered user with access token can get the profile info of another user
-    def test_get_profile(self):
-        response = registration_helper()
-        self.assertEqual(response['status'], 200)
-
-        auth_headers = {
-            'HTTP_AUTHORIZATION': 'Bearer ' + response['access']
-        }
-
-        c = Client()
-        response2 = c.post('/getProfile/',
-        {
-            'id':'2'
-        }, content_type="application/json", **auth_headers)
-
-        self.assertEqual(response2.status_code, 200)
-    
     # after 12 test
     def test_quantifyTimeAMPM_1(self):
         e1 = Entry.objects.get(id="1")
@@ -152,7 +133,7 @@ class NetworkTestCase(TestCase):
         
     def test_save_day_field(self):
         e1 = Entry.objects.get(id="1")
-        e1.day = datestring_date_converter(e1.dateString)
+        e1.day = datestring_converter(e1.dateString)
         e1.save()
         
         # datetime takes args: year, month, day
