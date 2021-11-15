@@ -3,7 +3,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 # from .graphs import quantifyTime
-from .helpers import getHoursOfRest, datestring_date_converter
+from .helpers import getHoursOfRest, datestring_converter
 
 class User(AbstractUser):
     following = models.ManyToManyField("User", related_name="followers", blank=True)

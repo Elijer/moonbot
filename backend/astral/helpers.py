@@ -62,7 +62,8 @@ def getHoursOfRest(sleepTime, sleepAMPM, wakeTime, wakeAMPM):
     rounded = round(hoursOfRest, 1)
     return rounded
 
-def datestring_date_converter(date_string):
+# takes a datestring and converts it into a naive python datestring object
+def datestring_converter(date_string):
     from datetime import datetime, date, time, timezone
     import re
     
