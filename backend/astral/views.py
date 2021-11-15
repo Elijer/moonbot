@@ -61,7 +61,7 @@ def graphRest(request):
 @permission_classes([IsAuthenticated])
 def graphAllEntries(request):
     u = User.objects.get(id=decodeToken(request))
-    entries = Entry.objects.filter(creator=u).order_by('timestamp')
+    entries = Entry.objects.filter(creator=u).order_by('dayInMilliseconds')
     entryCount = entries.count()
     options = {"entryCount": entryCount}
     return Response([entry.serializeSleep() for entry in entries])
