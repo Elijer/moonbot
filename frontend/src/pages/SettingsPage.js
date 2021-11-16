@@ -52,6 +52,10 @@ const SettingsPage = () => {
         }
     }
 
+    let handleSettingsChange = (settingsObj) => {
+        dd(settingsObj)
+    }
+
     return (
         <div className = "settings-container">
             <div className = "settings-header"> Select which data to track. </div>
@@ -63,8 +67,10 @@ const SettingsPage = () => {
 
                         <span className = "settings-label" > {i[0]}: </span>
                         <span className = "settings-value" >
-                            <span className = {"settings-value-inner "
-                                + `settings-${i[1] === true ? "on" : "off"}`}>
+                            <span
+                            onClick = {() => handleSettingsChange(i)}
+                            className = {"settings-value-inner "
+                            + `settings-${i[1] === true ? "on" : "off"}`}>
 
                                 {i[1] == true ? "On" : "Off"}
 
