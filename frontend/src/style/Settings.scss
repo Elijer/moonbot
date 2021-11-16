@@ -1,5 +1,33 @@
 @import "vars";
 
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (min-width: 480px) {
+
+    .settings-container {
+
+        div.settings-header {
+            font-size: 50px;
+            display: inline;
+            margin-bottom: 30px;
+        }
+        
+        div.settings-item {
+
+            width: 50%;
+            
+            span.settings-label {
+                font-size: 32px;
+            }
+
+            span.settings-value-inner {
+                font-size: 38px;
+            }
+        }
+    }
+}
+
 .settings-container {
     padding: 0px;
     margin: 18%;
@@ -13,7 +41,7 @@
     }
 
     .settings-control-panel {
-        padding: 00px;
+        padding: 0px;
         margin-top: 40px;
     }
 
@@ -22,32 +50,32 @@
         grid-template-columns: 3fr 1fr;
         width: 240px;
         margin-bottom: 20px;
-
-        .settings-label, .settings-value {
-            font-size: 20px;
-            display: inline;
-            text-align: right;
-            //background: $grey2;
-        }
-
-        .settings-label {
-            font-size: 17px;
-            text-align: left;
-        }
-
-        .settings-value-inner {
-            padding: 8px;
-            border-radius: 15px;
-        }
-
-        .settings-on {
-            background: $light;
-            color: $intense;
-        }
-
-        .settings-off {
-            background: $grey2;
-        }
-
     }
+
+    .settings-label, .settings-value {
+        font-size: 20px;
+        display: inline;
+        text-align: right;
+        //background: $grey2;
+    }
+
+    .settings-label {
+        font-size: 17px;
+        text-align: left;
+    }
+
+    .settings-value-inner {
+        padding: 8px;
+        border-radius: 15px;
+    }
+
+    .settings-on {
+        background: $light;
+        color: $intense;
+    }
+
+    .settings-off {
+        background: $grey2;
+    }
+
 }
