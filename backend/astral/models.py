@@ -6,7 +6,6 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from .helpers import getHoursOfRest, datestring_converter
 
 class User(AbstractUser):
-    following = models.ManyToManyField("User", related_name="followers", blank=True)
 
     def __str__(self):
         return f"User {self.id} with username: {self.username}"
