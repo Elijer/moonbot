@@ -66,6 +66,7 @@ def graphAllEntries(request):
     
     return Response({
         "entries": [entry.serializeMultiple() for entry in entries],
+        #"yesterday_bc": entry.yesterdayBC(),
         "entryCount": entryCount
         })
 

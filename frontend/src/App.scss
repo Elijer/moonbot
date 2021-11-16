@@ -7,6 +7,7 @@
 @import "./style/LoginRegister";
 @import "./style/Header";
 @import "./style/Tracker";
+@import "./style/Charts/Recharts_1";
 
 @import "./style/Comp";
 @import "./style/vars";
@@ -16,29 +17,4 @@
     color: $light;
     font-size: 25px;
     padding: 10px;
-}
-
-.recharts-container {
-    width: 95%;
-}
-
-@media screen and (max-width: 480px) {
-    .recharts-container {
-        overflow-x: scroll;
-    }
-
-    .my-legend {
-        display: grid;
-        padding: 10px 70px 10px 70px;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .legend-item {
-        text-align: center;
-        padding: 4px;
-    }
-
-    .chart-overflow {
-        width: 100%;
-    }
 }

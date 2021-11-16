@@ -1,0 +1,31 @@
+.recharts-container {
+    width: 95%;
+}
+
+.my-legend {
+    display: grid;
+    padding: 10px 70px 10px 70px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.legend-item {
+    text-align: center;
+    padding: 4px;
+}
+
+@media screen and (max-width: 480px) {
+    .recharts-container {
+        overflow-x: scroll;
+    }
+
+    .chart-overflow {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .my-legend {
+        font-size: 20px;
+        padding: 10px 40% 10px;
+    }
+}
