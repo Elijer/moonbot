@@ -70,7 +70,7 @@ const Tracker = () => {
         <div id = "tracker-page">
             < TimeDisplay />
             <div className = "tracker-body">
-                {/* < SleepInput data= {entryData} user = {user} /> */}
+                < SleepInput data= {entryData} user = {user} />
                 < CryInput data = {entryData}/>
                 < EnergyInput data = {entryData}/>
                 < BCInput data = {entryData}/>

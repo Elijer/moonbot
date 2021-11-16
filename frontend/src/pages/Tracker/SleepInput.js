@@ -1,19 +1,12 @@
 
 import React, { useContext, useState, useEffect } from 'react'
-// import TimeContext from '../../context/TimeContext'
-// import AuthContext from '../../context/AuthContext'
 import RequestContext from '../../context/RequestContext'
 import { formatTime } from '../../utilities/utilities'
-
-//import { updateEntryHTTP } from '../../HTTP/updateEntry'
 
 import dd from '../../utilities/Debugger'
 
 const SleepInput = (props) => {
 
-    // Create reference to entry in database
-    // let { time } = useContext(TimeContext)
-    // let { user, serverURL, authTokens } = useContext(AuthContext)
     let { updateEntry } = useContext(RequestContext)
 
     // State
@@ -39,9 +32,7 @@ const SleepInput = (props) => {
             wakeDomain: props.data.wakeDomain,
             sleepDomain: props.data.sleepDomain,
         })
-    }, [props.data])
-
-    // set wake and sleep times as time strings AND as millisecond objects
+    }, [props.data.wake, props.data.sleep, props.data.wakeDomain, props.data.sleepDomain])
 
     // set wake and sleep times
     useEffect(() => {
@@ -49,9 +40,7 @@ const SleepInput = (props) => {
         let wakeIsValid = validateTime(state.wake)
         let sleepIsValid = validateTime(state.sleep)
 
-        if (wakeIsValid && sleepIsValid){
-            console.log("yup!")
-        } else if (wakeIsValid || sleepIsValid){
+        if (wakeIsValid || sleepIsValid){
 
 
             // current task -- making sure sleep and wake Domain data getting saved to DB along with other stuff
