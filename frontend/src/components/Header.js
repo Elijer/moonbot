@@ -17,10 +17,10 @@ const Header = () => {
 
                             {/* <Link to={`/profile/${user.id}`} className = "nav-option" >{user.uppercaseUsername}</Link> */}
                             {/* <Link to="/following" className = "nav-option" >Following</Link> */}
-                            <div className = "tracker-title-display"> ✨ {up(user.username)}'s Mood Tracker </div>
-                            <Link to="/" className = "nav-option">🌙 Moonbot </Link>
-                            <Link to="/_log" className = "nav-option">🔭 Log </Link> 
-                            <Link to="/" onClick = {logoutUser } className = "nav-option" >🌑 Logout</Link>
+                            <div className = "tracker-title-display"> ✨&nbsp;{up(user.username)}'s Mood Tracker </div>
+                            <Link to="/" className = "nav-option">🌙&nbsp;Moonbot </Link>
+                            <Link to="/_log" className = "nav-option">🔭&nbsp;Log </Link> 
+                            <Link to="/" onClick = {logoutUser } className = "nav-option" >🌑&nbsp;Logout</Link>
 
                     </React.Fragment>
 
