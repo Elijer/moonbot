@@ -61,7 +61,7 @@ export const RequestProvider = ({children}) => {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + String(authTokens.access)
                 },
-                body: JSON.stringify({someData})
+                body: JSON.stringify(someData)
             })
         
             let data = await response.json()

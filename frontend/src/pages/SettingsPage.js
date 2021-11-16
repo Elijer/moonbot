@@ -7,7 +7,7 @@ import { s } from 'redom'
 
 const SettingsPage = () => {
 
-    let { time } = useContext(TimeContext)
+    //let { time } = useContext(TimeContext)
     let { user, serverURL, authTokens } = useContext(AuthContext)
     let { updateSettings } = useContext(RequestContext)
     let [settings, setSettings] = useState({})
@@ -25,7 +25,7 @@ const SettingsPage = () => {
 
         dd(settings)
 
-        updateSettings({settings})
+        updateSettings(settings)
 
     }, [settings])
 
@@ -37,7 +37,7 @@ const SettingsPage = () => {
     }, [])
 
     let getSettings = async() => {
-        dd(time)
+        //dd(time)
 
         let response = await fetch(serverURL + 'getSettings/', {
             method: 'POST',

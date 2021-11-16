@@ -110,10 +110,10 @@ def updateSettings(request):
     u = User.objects.get(id=decodeToken(request))
     data = json.loads(request.body)
     if data.get("display_cries", "") != "":
-        u.display_cry = data.get("display_cries", "")
+        u.display_cries = data.get("display_cries", "")
         
-    if data.get("display_sleep", "") != "":
-        u.display_rest = data.get("display_sleep", "")
+    if data.get("display_rest", "") != "":
+        u.display_rest = data.get("display_rest", "")
         
     if data.get("display_energy", "") != "":
         u.display_energy = data.get("display_energy", "")
