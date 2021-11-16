@@ -7,13 +7,11 @@ const SettingsPage = () => {
 
     let { time } = useContext(TimeContext)
     let { user, serverURL, authTokens } = useContext(AuthContext)
-    let [settings, setSettings] = useState({})
+    let [settings, setSettings] = useState([])
 
     useEffect(() => {
 
-        getSettings({
-            dateString: time.dateString
-        })
+        getSettings()
 
     }, [time.dateString])
 
@@ -34,8 +32,17 @@ const SettingsPage = () => {
 
         let data = await response.json()
         if (response.status === 200){
-            setSettings(data)
-            dd(data)
+            let settingsArray = []
+
+            // iterate data into an array and save to state
+            for (const property in data) {
+                settingsArray.push([
+                    property,
+                    data[property]
+                ])
+            }
+            dd(settingsArray)
+            setSettings(settingsArray)
         } else if (response.status === 401){
             alert("You are not authorized to read this user's settings")
             //setBody(props.data.body)
@@ -46,7 +53,15 @@ const SettingsPage = () => {
     }
 
     return (
-        <div> Settings </div>
+        <div>
+            {settings.map((i) =>
+                <div
+                key = {`settings-item-${i[0]}`}
+                className = "settings-item">
+                    <span> {i[0]}: </span>
+                    <span> {i[1] == true ? "Active" : "Inactive"} </span>
+            </div>)}
+        </div>
     )
 }
 
