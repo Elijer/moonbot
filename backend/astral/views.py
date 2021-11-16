@@ -100,6 +100,11 @@ def getEntry(request):
     
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
+def getUserSettings(request):
+    u = User.objects.get(id=decodeToken(request))
+    
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def updateEntry(request):
     # Non-optional data
     data = json.loads(request.body)

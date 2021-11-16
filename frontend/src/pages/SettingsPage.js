@@ -17,7 +17,7 @@ const SettingsPage = () => {
 
     }, [time.dateString])
 
-    let getSettings = async(someData) => {
+    let getSettings = async() => {
         dd(time)
 
         let response = await fetch(serverURL + 'getUserSettings/', {
@@ -26,10 +26,10 @@ const SettingsPage = () => {
               'Content-Type': 'application/json',
               'Authorization': 'Bearer ' + String(authTokens.access)
             },
-            body: JSON.stringify({
+/*             body: JSON.stringify({
                 'dateString': time.dateString,
                 //'dayInMilliseconds': dayInMilliseconds()
-            })
+            }) */
         })
 
         let data = await response.json()
