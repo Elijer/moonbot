@@ -35,6 +35,8 @@ export const AuthProvider = ({children}) => {
         }
     })
 
+    let [settings, setSettings] = useState({})
+
     const [loginAttempt, setLoginAttempt] = useState(false)
     const [loading, setLoading] = useState(true)
 
@@ -194,6 +196,33 @@ export const AuthProvider = ({children}) => {
 
     }, [authTokens, loading, updateToken])
 
+    let getSettings = async() => {
+        //dd(time)
+
+        let response = await fetch(serverURL + 'getSettings/', {
+            method: 'POST',
+            headers:  {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + String(authTokens.access)
+            },
+/*             body: JSON.stringify({
+                'dateString': time.dateString,
+                //'dayInMilliseconds': dayInMilliseconds()
+            }) */
+        })
+
+        let data = await response.json()
+        if (response.status === 200){
+            setSettings(data)
+        } else if (response.status === 401){
+            alert("You are not authorized to read this user's settings")
+            //setBody(props.data.body)
+        } else if (response.status === 404){
+            alert("The user you are trying to view could not be found.")
+            //setBody(props.data.body)
+        }
+    }
+
     // 'Export' functions/variables to the component which will wrap other components, thus sharing its context
     let contextData = {
         // Variables
@@ -201,11 +230,14 @@ export const AuthProvider = ({children}) => {
         authTokens:authTokens,
         serverURL: serverURL,
         loginAttempt: loginAttempt,
-
+        settings: settings,
+        
         // Functions:
+        setSettings: setSettings,
         loginUser: loginUser,
         logoutUser: logoutUser,
-        registerUser: registerUser
+        registerUser: registerUser,
+        getSettings: getSettings
     
     }
 

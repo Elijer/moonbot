@@ -8,9 +8,9 @@ import { s } from 'redom'
 const SettingsPage = () => {
 
     //let { time } = useContext(TimeContext)
-    let { user, serverURL, authTokens } = useContext(AuthContext)
+    let { getSettings, setSettings, settings } = useContext(AuthContext)
     let { updateSettings } = useContext(RequestContext)
-    let [settings, setSettings] = useState({})
+    //let [settings, setSettings] = useState({})
 
     let displayKey = {
         display_cries: "💧 Cry Tracker",
@@ -35,33 +35,6 @@ const SettingsPage = () => {
         getSettings()
 
     }, [])
-
-    let getSettings = async() => {
-        //dd(time)
-
-        let response = await fetch(serverURL + 'getSettings/', {
-            method: 'POST',
-            headers:  {
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer ' + String(authTokens.access)
-            },
-/*             body: JSON.stringify({
-                'dateString': time.dateString,
-                //'dayInMilliseconds': dayInMilliseconds()
-            }) */
-        })
-
-        let data = await response.json()
-        if (response.status === 200){
-            setSettings(data)
-        } else if (response.status === 401){
-            alert("You are not authorized to read this user's settings")
-            //setBody(props.data.body)
-        } else if (response.status === 404){
-            alert("The user you are trying to view could not be found.")
-            //setBody(props.data.body)
-        }
-    }
 
     let handleSettingsChange = (key) => {
         setSettings({
