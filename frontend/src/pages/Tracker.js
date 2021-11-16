@@ -17,11 +17,19 @@ import { dayInMilliseconds } from '../utilities/utilities'
 const Tracker = () => {
 
     let { time } = useContext(TimeContext)
-    let { user, authTokens, serverURL } = useContext(AuthContext)
+    let { user, authTokens, serverURL, settings, getSettings } = useContext(AuthContext)
     let [entryData, setEntryData] = useState({})
     let [sleepSet, setSleepSet] = useState(false)
     let [energySet, setEnergySet] = useState(false)
     let [BCSet, setBCSet] = useState(false)
+
+    useEffect(() => {
+        getSettings()
+    }, [])
+
+/*     useEffect(() => {
+        dd(settings)
+    }, [settings]) */
 
     useEffect(() => {
 
@@ -83,25 +91,32 @@ const Tracker = () => {
         <div id = "tracker-page">
             < TimeDisplay />
             <div className = "tracker-body">
-
-                {!sleepSet ?
-                < SleepInput data= {entryData} user = {user} time = {time} /> :
-                <h3 className = "section section-header"> 🛌 Nice! You already set your sleep data. </h3>
+                
+                { settings.display_rest &&
+                    (!sleepSet ?
+                    < SleepInput data= {entryData} user = {user} time = {time} /> :
+                    <h3 className = "section section-header"> 🛌 Nice! You already set your sleep data. </h3>
+                    )
                 }
 
-                < CryInput data = {entryData}/>
-
-
-                {!energySet ?
-                < EnergyInput data = {entryData}/> :
-                <h3 className = "section section-header"> {`⚡️ Good work, you've already set your ${time.timeOfDay} energy level.` }</h3>
+                {settings.display_cries &&
+                    < CryInput data = {entryData}/>
                 }
 
-                {!BCSet ?
-                < BCInput data = {entryData}/> :
-                <h3 className = "section section-header"> {`🌙 Awesome. You logged taking birth control pill #${entryData.BC_day}. `}
-                    <span className = "bc-change" onClick = {handleBirthControlChange}> Tap here to change it.</span>
-                </h3>
+                {settings.display_energy &&
+                    (!energySet ?
+                    < EnergyInput data = {entryData}/> :
+                    <h3 className = "section section-header"> {`⚡️ Good work, you've already set your ${time.timeOfDay} energy level.` }</h3>
+                    )
+                }
+
+                {settings.display_bc &&
+                    (!BCSet ?
+                    < BCInput data = {entryData}/> :
+                    <h3 className = "section section-header"> {`🌙 Awesome. You logged taking birth control pill #${entryData.BC_day}. `}
+                        <span className = "bc-change" onClick = {handleBirthControlChange}> Tap here to change it.</span>
+                    </h3>
+                    )
                 }
                 {/* < LogoutFooter /> */}
             </div>
