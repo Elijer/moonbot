@@ -54,15 +54,22 @@ const SettingsPage = () => {
 
     return (
         <div className = "settings-container">
-            <div className = "settings-header"> 🌒 Choose what data you want to track. </div>
-            <div>
+            <div className = "settings-header"> Select which data to track. </div>
+            <div className = "settings-control-panel">
                 {settings.map((i) =>
                     <div
                     key = {`settings-item-${i[0]}`}
                     className = "settings-item">
 
                         <span className = "settings-label" > {i[0]}: </span>
-                        <span className = "settings-value" > {i[1] == true ? "Active" : "Inactive"} </span>
+                        <span className = "settings-value" >
+                            <span className = {"settings-value-inner "
+                                + `settings-${i[1] === true ? "on" : "off"}`}>
+
+                                {i[1] == true ? "On" : "Off"}
+
+                            </span>
+                        </span>
 
                     </div>)}
             </div>

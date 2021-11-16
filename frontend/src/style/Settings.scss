@@ -1,27 +1,52 @@
 @import "vars";
 
 .settings-container {
-    padding: 30px;
+    padding: 0px;
+    margin: 18%;
+    margin-top: 30px;
 
     .settings-header {
-        font-size: 30px;
+        font-size: 20px;
+        border-bottom: 3px solid $light;
+        padding-bottom: 4px;
+        display: block;
+    }
+
+    .settings-control-panel {
+        padding: 00px;
+        margin-top: 40px;
     }
 
     .settings-item {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 3fr 1fr;
+        width: 240px;
+        margin-bottom: 20px;
 
         .settings-label, .settings-value {
-            font-size: 30px;
+            font-size: 20px;
+            display: inline;
+            text-align: right;
             //background: $grey2;
         }
 
         .settings-label {
-
+            font-size: 17px;
+            text-align: left;
         }
 
-        .settings-value {
+        .settings-value-inner {
+            padding: 8px;
+            border-radius: 15px;
+        }
 
+        .settings-on {
+            background: $light;
+            color: $intense;
+        }
+
+        .settings-off {
+            background: $grey2;
         }
 
     }
