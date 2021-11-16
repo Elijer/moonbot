@@ -20,16 +20,26 @@ const SettingsPage = () => {
         display_outside: "🦉 Outside Log"
     }
 
+    // Log changes in settings to database
+    useEffect(() => {
+
+        dd(settings)
+
+        updateSettings({settings})
+
+    }, [settings])
+
+    // Load initial settings
     useEffect(() => {
 
         getSettings()
 
-    }, [time.dateString])
+    }, [])
 
     let getSettings = async() => {
         dd(time)
 
-        let response = await fetch(serverURL + 'getUserSettings/', {
+        let response = await fetch(serverURL + 'getSettings/', {
             method: 'POST',
             headers:  {
               'Content-Type': 'application/json',

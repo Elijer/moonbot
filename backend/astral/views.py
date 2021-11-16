@@ -100,13 +100,13 @@ def getEntry(request):
     
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-def getUserSettings(request):
+def getSettings(request):
     u = User.objects.get(id=decodeToken(request))
     return Response(u.serialize())
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-def updateUserSettings(request):
+def updateSettings(request):
     u = User.objects.get(id=decodeToken(request))
     data = json.loads(request.body)
     if data.get("display_cries", "") != "":
