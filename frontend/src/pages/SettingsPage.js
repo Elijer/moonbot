@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 import AuthContext from '../context/AuthContext'
 import TimeContext from '../context/TimeContext'
+import RequestContext from '../context/RequestContext'
 import dd from '../utilities/Debugger'
 
 const SettingsPage = () => {
 
     let { time } = useContext(TimeContext)
     let { user, serverURL, authTokens } = useContext(AuthContext)
+    let { updateSettings } = useContext(RequestContext)
     let [settings, setSettings] = useState([])
 
     useEffect(() => {
@@ -56,7 +58,7 @@ const SettingsPage = () => {
         dd(settingsObj)
         for (let setting in settings){
             if (settings[0] == settingsObj[0]){
-                dd(setting)
+
             }
         }
     }
