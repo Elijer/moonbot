@@ -24,7 +24,13 @@ class Entry(models.Model):
     rest_calculated = models.BooleanField(default = False)
     rest = models.DecimalField(default=0, max_digits = 3, decimal_places = 1 )
     
-    energy = models.IntegerField(
+    energy_morning = models.IntegerField(
+        default=0, validators=[MinValueValidator(0), MaxValueValidator(3) ] )
+    
+    energy_midday = models.IntegerField(
+        default=0, validators=[MinValueValidator(0), MaxValueValidator(3) ] )
+    
+    energy_evening = models.IntegerField(
         default=0, validators=[MinValueValidator(0), MaxValueValidator(3) ] )
     
     cries = models.IntegerField(

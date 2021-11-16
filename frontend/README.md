@@ -42,6 +42,13 @@ Package:
 
 4. Making multiple entries for the same datestring -- this seems to be happening already. Figure out how it can happen, shut it down.
 
+5. Time input is very convoluted, mostly on this logic -- there are 4 fields sent back and forth,
+- sleep
+- wake
+- sleepDomain
+- wakeDomain
+
+But there could be just 2 passed back and forth, which would minimize all sorts of annoying complexity. The trick is settling on a format that both python and javascript are happy with, and committing to a similar time library to use for both frontend and backend. But there's nothing wrong with it, it's just overly complicated.
 
 # Create React App
 The eslint warnings were really getting to me. Mostly about things left out of dependency arrays and imports that I wasn't using. Many of which were not very important during the current moment. I disabled them. To re-enable them, go to `package.json` and add this block after the `scripts` section:
