@@ -12,7 +12,7 @@ import EnergyInput from './Tracker/EnergyInput'
 import BCInput from './Tracker/BCInput'
 
 import dd from '../utilities/Debugger'
-import { dayInMilliseconds } from '../utilities/utilities'
+import { up } from '../utilities/utilities'
 
 const Tracker = () => {
 
@@ -95,7 +95,7 @@ const Tracker = () => {
                 { settings.display_rest &&
                     (!sleepSet ?
                     < SleepInput data= {entryData} user = {user} time = {time} /> :
-                    <h3 className = "section section-header"> 🛌 Nice! You already set your sleep data. </h3>
+                    <h3 className = "section section-header"> 🛌 Nice! Sleep data logged. </h3>
                     )
                 }
 
@@ -106,15 +106,15 @@ const Tracker = () => {
                 {settings.display_energy &&
                     (!energySet ?
                     < EnergyInput data = {entryData}/> :
-                    <h3 className = "section section-header"> {`⚡️ Good work, you've already set your ${time.timeOfDay} energy level.` }</h3>
+                    <h3 className = "section section-header"> {`⚡️ ${up(time.timeOfDay)} energy level set.` }</h3>
                     )
                 }
 
                 {settings.display_bc &&
                     (!BCSet ?
                     < BCInput data = {entryData}/> :
-                    <h3 className = "section section-header"> {`🌙 Awesome. You logged taking birth control pill #${entryData.BC_day}. `}
-                        <span className = "bc-change" onClick = {handleBirthControlChange}> Tap here to change it.</span>
+                    <h3 className = "section section-header"> {`🌙 Birth control pill: #${entryData.BC_day}. `}
+                        <div className = "bc-change" onClick = {handleBirthControlChange}> Tap here to change it.</div>
                     </h3>
                     )
                 }
