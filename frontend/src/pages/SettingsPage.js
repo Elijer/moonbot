@@ -3,6 +3,7 @@ import AuthContext from '../context/AuthContext'
 import TimeContext from '../context/TimeContext'
 import RequestContext from '../context/RequestContext'
 import dd from '../utilities/Debugger'
+import { s } from 'redom'
 
 const SettingsPage = () => {
 
@@ -58,7 +59,11 @@ const SettingsPage = () => {
         dd(settingsObj)
         for (let setting in settings){
             if (settings[0] == settingsObj[0]){
-
+                dd(settings[setting])
+                setSettings({
+                    ...settings,
+                    [settings[setting]]: !settings[setting][1]
+                })
             }
         }
     }

@@ -6,7 +6,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from .helpers import getHoursOfRest, datestring_converter
 
 class User(AbstractUser):
-    display_cry = models.BooleanField(default = True)
+    display_cries = models.BooleanField(default = True)
     display_rest = models.BooleanField(default = True)
     display_energy = models.BooleanField(default = True)
     display_bc = models.BooleanField(default = True)
@@ -18,11 +18,11 @@ class User(AbstractUser):
     
     def serialize(self):
         return {
-            "💧 Cries Counter": self.display_cry,
-            "🛌 Sleep Tracker": self.display_rest,
-            "⚡️ Energy Tracker": self.display_energy,
-            "🌙 Birth Control": self.display_bc,
-            "🦉 Outside Tracker": self.display_outside
+            "display_cries": self.display_cries,
+            "display_rest": self.display_rest,
+            "display_energy": self.display_energy,
+            "display_bc": self.display_bc,
+            "display_outside": self.display_outside
         }
 
         

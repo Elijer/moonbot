@@ -109,20 +109,20 @@ def getUserSettings(request):
 def updateUserSettings(request):
     u = User.objects.get(id=decodeToken(request))
     data = json.loads(request.body)
-    if data.get("💧 Cries Counter", "") != "":
-        u.display_cry = data.get("💧 Cries Counter", "")
+    if data.get("display_cries", "") != "":
+        u.display_cry = data.get("display_cries", "")
         
-    if data.get("🛌 Sleep Tracker", "") != "":
-        u.display_rest = data.get("🛌 Sleep Tracker", "")
+    if data.get("display_sleep", "") != "":
+        u.display_rest = data.get("display_sleep", "")
         
-    if data.get("⚡️ Energy Tracker", "") != "":
-        u.display_energy = data.get("⚡️ Energy Tracker", "")
+    if data.get("display_energy", "") != "":
+        u.display_energy = data.get("display_energy", "")
         
-    if data.get("🌙 Birth Control", "") != "":
-        u.display_bc = data.get("🌙 Birth Control", "")
+    if data.get("display_bc", "") != "":
+        u.display_bc = data.get("display_bc", "")
         
-    if data.get("🦉 Outside Tracker", "") != "":
-        u.display_outside = data.get("🦉 Outside Tracker" "")
+    if data.get("display_outside", "") != "":
+        u.display_outside = data.get("display_outside" "")
     
     u.save()
     return Response(u.serialize())
