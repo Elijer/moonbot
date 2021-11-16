@@ -102,6 +102,7 @@ def getEntry(request):
 @permission_classes([IsAuthenticated])
 def getUserSettings(request):
     u = User.objects.get(id=decodeToken(request))
+    return Response(u.serialize())
     
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])

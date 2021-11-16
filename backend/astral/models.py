@@ -18,7 +18,11 @@ class User(AbstractUser):
     
     def serialize(self):
         return {
-            "Dummy": "dummy"
+            "cry": self.display_cry,
+            "rest": self.display_rest,
+            "energy": self.display_energy,
+            "bc": self.display_bc,
+            "outside": self.display_outside
         }
 
         

@@ -6,7 +6,7 @@ import dd from '../utilities/Debugger'
 const SettingsPage = () => {
 
     let { time } = useContext(TimeContext)
-    let { user } = useContext(AuthContext)
+    let { user, serverURL, authTokens } = useContext(AuthContext)
     let [settings, setSettings] = useState({})
 
     useEffect(() => {
@@ -33,7 +33,6 @@ const SettingsPage = () => {
         })
 
         let data = await response.json()
-        dd(data)
         if (response.status === 200){
             setSettings(data)
             dd(data)
