@@ -21,9 +21,9 @@ const EnergyInput = (props) => {
     // props.data needed as dependency
     useEffect(() => {
 
-            setSelection(props.data.energy)
+            setSelection(props.data[`energy_${time.timeOfDay}`])
 
-    }, [props.data[`energy ${time.timeOfDay}`]])
+    }, [props.data[`energy_${time.timeOfDay}`]])
 
     useEffect(() => {
 
@@ -32,7 +32,7 @@ const EnergyInput = (props) => {
     // if (selection > -1 && selection < 4){
         if (selection > 0 &&  selection < 4 && userInteraction){
             updateEntry({
-                [`energy ${time.timeOfDay}`]: selection
+                [`energy_${time.timeOfDay}`]: selection
             })
         }
 

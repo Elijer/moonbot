@@ -51,7 +51,9 @@ class Entry(models.Model):
             "wake": self.wake,
             "wakeDomain": self.wakeDomain,
             "dateString": self.dateString,
-            "energy": self.energy,
+            "energy_morning": self.energy_morning,
+            "energy_midday": self.energy_midday,
+            "energy_evening": self.energy_evening,
             "cries": self.cries,
             "BC_day": self.BC_day,
             "dim": self.dayInMilliseconds

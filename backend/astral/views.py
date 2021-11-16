@@ -122,8 +122,15 @@ def updateEntry(request):
         return Response("Unknown problem finding and updating sleep data of correct entry")
     
     # Optional data updates to entry
-    if data.get("energy", "") != "":
-        entry.energy = data.get("energy", "")
+    if data.get("energy_morning", "") != "":
+        entry.energy_morning = data.get("energy_morning", "")
+        
+    if data.get("energy_midday", "") != "":
+        entry.energy_midday = data.get("energy_midday", "")
+        
+    if data.get("energy_evening", "") != "":
+        entry.energy_evening = data.get("energy_evening", "")
+        
     if data.get("wake", "") != "":
         entry.wake = data.get("wake", "")
     if data.get("sleep", "") != "":
