@@ -33,13 +33,13 @@ const Log = () => {
         if (response.status === 200){
             let reformatted = []
             let count = 0
-            someData.forEach(element => {
+            someData.entries.forEach(element => {
                 element.energy = element.energy * 5
                 let m = moment(element.dim)
                 let niceDate = m.format("MMM D");
                 element.niceDate = niceDate
             });
-            setData(someData)
+            setData(someData.entries)
         } else if (response.status === 401){
             setLoading(false)
             alert("You are not authorized to update this entry")
@@ -55,6 +55,7 @@ const Log = () => {
         <div>
 
             < Rechart_1 data = {data}> </ Rechart_1 >
+            < div> </div>
             
         </div>
     )

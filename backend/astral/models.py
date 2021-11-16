@@ -8,26 +8,9 @@ from .helpers import getHoursOfRest, datestring_converter
 class User(AbstractUser):
     following = models.ManyToManyField("User", related_name="followers", blank=True)
 
-    def serialize(self):
-        return {
-            "id": self.id,
-            "username": self.username,
-            "following": self.following,
-            "followers": self.followers.all(),
-            "email": self.email
-        }
-
     def __str__(self):
         return f"User {self.id} with username: {self.username}"
 
-    def follower_count(self):
-        return self.followers.count()
-
-    def follows_self(self):
-        if self.followers.filter(id=self.id).count() == 1:
-            return True
-        else:
-            return False
         
 class Entry(models.Model):
     

@@ -36,7 +36,7 @@ const Rechart_1 = (props) => {
             <ResponsiveContainer width="99%" height={200}>
               <AreaChart
                 data={data}
-                margin={{ top: 30, right: 6, left: -14, bottom: 0 }}
+                margin={{ top: 30, right: 14, left: -22, bottom: 0 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey = "niceDate"  />
