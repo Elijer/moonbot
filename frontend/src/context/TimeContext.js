@@ -18,11 +18,11 @@ export const TimeProvider = ({children}) => {
     })
 
     let [loading, setLoading] = useState(false)
-    let [loadingTimeZone, setLoadingTimeZone] = useState(false)
 
     useEffect(()=> {
         if (loading === false){
             let m = moment()
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
             dd(m.format('dddd, MMM Do'))
 
@@ -30,28 +30,14 @@ export const TimeProvider = ({children}) => {
                 time: m.format('h:mm a'),
                 date: m.format('dddd, MMM Do'),
                 dateString: m.format('L').replace(/\//g, "-"),
-                timeOfDay: getTimeOfDay(m)
+                timeOfDay: getTimeOfDay(m),
+                timezone: tz
             });
 
             setLoading(false)
 
         }
     }, [loading])
-
-    useEffect(()=> {
-        if (loadingTimeZone === false){
-            let m = moment()
-            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-            setTime({
-                ...time,
-                timezone: tz
-            });
-
-            setLoadingTimeZone(false)
-
-        }
-    }, [loadingTimeZone])
 
     var getTimeOfDay = function(m){
         var timeOfDay;
