@@ -53,14 +53,19 @@ const SettingsPage = () => {
     }
 
     return (
-        <div>
-            {settings.map((i) =>
-                <div
-                key = {`settings-item-${i[0]}`}
-                className = "settings-item">
-                    <span> {i[0]}: </span>
-                    <span> {i[1] == true ? "Active" : "Inactive"} </span>
-            </div>)}
+        <div className = "settings-container">
+            <div className = "settings-header"> 🌒 Choose what data you want to track. </div>
+            <div>
+                {settings.map((i) =>
+                    <div
+                    key = {`settings-item-${i[0]}`}
+                    className = "settings-item">
+
+                        <span className = "settings-label" > {i[0]}: </span>
+                        <span className = "settings-value" > {i[1] == true ? "Active" : "Inactive"} </span>
+
+                    </div>)}
+            </div>
         </div>
     )
 }

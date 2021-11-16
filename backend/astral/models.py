@@ -18,11 +18,11 @@ class User(AbstractUser):
     
     def serialize(self):
         return {
-            "cry": self.display_cry,
-            "rest": self.display_rest,
-            "energy": self.display_energy,
-            "bc": self.display_bc,
-            "outside": self.display_outside
+            "Cries Counter": self.display_cry,
+            "Sleep Tracker": self.display_rest,
+            "Energy Tracker": self.display_energy,
+            "Birth Control Tracker": self.display_bc,
+            "Outside Tracker": self.display_outside
         }
 
         

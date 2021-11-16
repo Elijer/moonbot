@@ -1,0 +1,28 @@
+@import "vars";
+
+.settings-container {
+    padding: 30px;
+
+    .settings-header {
+        font-size: 30px;
+    }
+
+    .settings-item {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .settings-label, .settings-value {
+            font-size: 30px;
+            //background: $grey2;
+        }
+
+        .settings-label {
+
+        }
+
+        .settings-value {
+
+        }
+
+    }
+}
