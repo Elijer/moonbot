@@ -10,7 +10,7 @@ const SettingsPage = () => {
     let { time } = useContext(TimeContext)
     let { user, serverURL, authTokens } = useContext(AuthContext)
     let { updateSettings } = useContext(RequestContext)
-    let [settings, setSettings] = useState([])
+    let [settings, setSettings] = useState({})
 
     let displayKey = {
         display_cries: "💧 Cry Tracker",
@@ -43,17 +43,7 @@ const SettingsPage = () => {
 
         let data = await response.json()
         if (response.status === 200){
-            let settingsArray = []
-
-            // iterate data into an array and save to state
-            for (const property in data) {
-                settingsArray.push([
-                    property,
-                    data[property]
-                ])
-            }
-            dd(settingsArray)
-            setSettings(settingsArray)
+            setSettings(data)
         } else if (response.status === 401){
             alert("You are not authorized to read this user's settings")
             //setBody(props.data.body)
@@ -64,6 +54,14 @@ const SettingsPage = () => {
     }
 
     let handleSettingsChange = (key) => {
+        setSettings({
+            ...settings,
+            [key]: !settings[key]
+        })
+
+/*         updateSettings({
+            [updatedSettings[key][0]]: updatedSettings[key][1]
+        }) */
         // settings is an array or arrays
         // key is just one item, an array of two values, the property, like 'display_bc', and the value,
         // either true or false
@@ -86,19 +84,19 @@ const SettingsPage = () => {
         <div className = "settings-container">
             <div className = "settings-header"> Select which data to track. </div>
             <div className = "settings-control-panel">
-                {settings.map((i) =>
+                {Object.keys(settings).map((key, index) =>
                     <div
-                    key = {`settings-item-${i[0]}`}
+                    key = {`settings-item-${key}`}
                     className = "settings-item">
 
-                        <span className = "settings-label" > {displayKey[i[0]]}: </span>
+                        <span className = "settings-label" > {displayKey[key]}: </span>
                         <span className = "settings-value" >
                             <span
-                            onClick = {() => handleSettingsChange(i)}
+                            onClick = {() => handleSettingsChange(key)}
                             className = {"settings-value-inner "
-                            + `settings-${i[1] === true ? "on" : "off"}`}>
+                            + `settings-${settings[key] === true ? "on" : "off"}`}>
 
-                                {i[1] == true ? "On" : "Off"}
+                                {settings[key] == true ? "On" : "Off"}
 
                             </span>
                         </span>
