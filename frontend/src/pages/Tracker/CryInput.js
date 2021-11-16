@@ -51,7 +51,7 @@ const CryInput = (props) => {
     return (
 
             <div className = "section">
-                <div className = "section-header"> 💧 And cried this many times:</div>
+                <div className = "section-header"> 💧 Cried this many times:</div>
 
                 <button
                 className = "button"

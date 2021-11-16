@@ -9,6 +9,7 @@ import Tracker from './pages/Tracker'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import Log from './pages/Log'
+import SettingsPage from './pages/SettingsPage'
 import NotFound from './pages/NotFound'
 import Header from './components/Header'
 
@@ -33,6 +34,7 @@ function App() {
                         
                         <PrivateRoute component = {Tracker} path = "/" exact />
                         <PrivateRoute component = {Log} path = "/_log" exact/>
+                        <PrivateRoute component = {SettingsPage} path = "/settings" exact/>
 
                         <Route component = {LoginPage} path = "/login" exact/>
                         <Route component = {RegisterPage} path = "/register" />
