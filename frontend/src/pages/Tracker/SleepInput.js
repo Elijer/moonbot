@@ -19,20 +19,25 @@ const SleepInput = (props) => {
         wakeDomain: "am"
     })
 
+    let [time, setTime] = useState({})
+
     let [userInteraction, setUserInteraction] = useState(false)
 
     // Props not available on first render -- must be saved to state here in useEffect
     // props.data needed as dependency
     useEffect(() => {
 
+        setTime(props.time)
+        
         setState({
             ...state,
             wakeSaved: props.data.wake,
             sleepSaved: props.data.sleep,
-            wakeDomain: props.data.wakeDomain,
-            sleepDomain: props.data.sleepDomain,
+            wakeDomain: props.data.wakeDomain ? props.data.wakeDomain : state.wakeDomain,
+            sleepDomain: props.data.sleepDomain ? props.data.sleepDomain : state.sleepDomain,
         })
-    }, [props.data.wake, props.data.sleep, props.data.wakeDomain, props.data.sleepDomain])
+
+    }, [props.data.wake, props.data.sleep, props.data.wakeDomain, props.data.sleepDomain, props.time])
 
     // set wake and sleep times
     useEffect(() => {

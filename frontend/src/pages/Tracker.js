@@ -19,6 +19,7 @@ const Tracker = () => {
     let { time } = useContext(TimeContext)
     let { user, authTokens, serverURL } = useContext(AuthContext)
     let [entryData, setEntryData] = useState({})
+    let [sleepSet, setSleepSet] = useState(false)
 
     useEffect(() => {
 
@@ -43,9 +44,12 @@ const Tracker = () => {
         })
 
         let data = await response.json()
+        dd(data)
         if (response.status === 200){
             setEntryData(data)
-            dd(data)
+/*             if (typof data.sleep_set){
+
+            } */
         } else if (response.status === 401){
             alert("You are not authorized to update this entry")
             //setBody(props.data.body)
@@ -55,22 +59,11 @@ const Tracker = () => {
         }
     }
 
-    const data = [
-        { moose: 'Page A', sleep: 4000 },
-        { moose: 'Page B', sleep: 3000 },
-        { moose: 'Page C', sleep: 2000 },
-        { moose: 'Page D', sleep: 2780 },
-        { moose: 'Page E', sleep: 1890 },
-        { moose: 'Page F', sleep: 2390 },
-        { moose: 'Page G', sleep: 3490 }
-    ];
-
-
     return (
         <div id = "tracker-page">
             < TimeDisplay />
             <div className = "tracker-body">
-                < SleepInput data= {entryData} user = {user} />
+                < SleepInput data= {entryData} user = {user} time = {time} />
                 < CryInput data = {entryData}/>
                 < EnergyInput data = {entryData}/>
                 < BCInput data = {entryData}/>

@@ -56,7 +56,8 @@ class Entry(models.Model):
             "energy_evening": self.energy_evening,
             "cries": self.cries,
             "BC_day": self.BC_day,
-            "dim": self.dayInMilliseconds
+            "dim": self.dayInMilliseconds,
+            "sleep_set": self.calculateRest()
         }
 
         
