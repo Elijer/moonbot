@@ -38,23 +38,22 @@
 
 
 @media screen and (min-width: 480px) {
+
     .nav-bar {
         padding: 30px 0px 30px 100px;
         margin: 0px 0px 00px 0px;
         display: block;
     }
 
-    .nav-option {
+    .nav-option, .tracker-title-display {
         display: inline;
         font-family: 'Roboto Mono', monospace;
         margin: 0px;
-        font-size: 22px;
-        padding: 0px;
-        margin-right: 50px;
+        font-size: 25px;
         text-decoration: none;
+        padding-right: 8%;
         color: gold;
         text-align: left;
-        float: right;
 
         &:hover {
             color: rgb(255, 166, 0);
