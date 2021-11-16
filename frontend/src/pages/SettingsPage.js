@@ -63,17 +63,23 @@ const SettingsPage = () => {
         }
     }
 
-    let handleSettingsChange = (settingsObj) => {
-        dd(settingsObj)
-        for (let setting in settings){
-            if (settings[0] == settingsObj[0]){
-                dd(settings[setting])
-                setSettings({
-                    ...settings,
-                    [settings[setting]]: !settings[setting][1]
-                })
-            }
-        }
+    let handleSettingsChange = (key) => {
+        // settings is an array or arrays
+        // key is just one item, an array of two values, the property, like 'display_bc', and the value,
+        // either true or false
+        // settings[settingsKey] will return me the correct object in settings
+
+
+        // create a clone of the settings array
+        //let updatedSettings = settings
+        // find THIS item, the one that's been clicked, and change it's second value to the opposite of what it was
+        //updatedSettings[key][1] = !settings[key][1]
+        //dd(updatedSettings[key])
+
+/*         setSettings(updateSettings)
+        updateSettings({
+            [updatedSettings[key][0]]: updatedSettings[key][1]
+        }) */
     }
 
     return (
