@@ -54,6 +54,11 @@ const SettingsPage = () => {
 
     let handleSettingsChange = (settingsObj) => {
         dd(settingsObj)
+        for (let setting in settings){
+            if (settings[0] == settingsObj[0]){
+                dd(setting)
+            }
+        }
     }
 
     return (

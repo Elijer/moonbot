@@ -49,10 +49,41 @@ export const RequestProvider = ({children}) => {
         // Dependency array
         [authTokens?.access, serverURL, time.dateString, user?.id]
     )
+
+    let updateSettings = useCallback(
+        async(someData) => {
+
+            //dd("initiate http request to update data")
+        
+            let response = await fetch(serverURL + 'updateSettings/', {
+                method: 'POST',
+                headers:  {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + String(authTokens.access)
+                },
+                body: JSON.stringify({someData})
+            })
+        
+            let data = await response.json()
+            if (response.status === 201){
+                dd(data)
+            } else if (response.status === 401){
+                alert("You are not authorized to update this user's settings")
+                //setBody(props.data.body)
+            } else if (response.status === 404){
+                alert("The user you are trying to edit could not be found.")
+                //setBody(props.data.body)
+            }
+        },
+
+        // Dependency array
+        [authTokens?.access, serverURL, user?.id]
+    )
     
 
     let contextData = {
-        updateEntry: updateEntry
+        updateEntry: updateEntry,
+        updateSettings: updateSettings
     }
 
     return (
