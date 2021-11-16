@@ -14,6 +14,27 @@ const Rechart_1 = (props) => {
 
     }, [props.data])
 
+    let legend = [
+      {
+        name: "rest",
+        dataName: "rest",
+        stroke: '#544fb3',
+        fill: '#8884d8'
+      },
+      {
+        name: "energy",
+        dataName: "energy_total",
+        stroke: '#ff8c00',
+        fill: '#ffd24a'
+      },
+      {
+        name: "cries",
+        dataName: "cries",
+        stroke: '#0f5a94',
+        fill: '#8accff'
+      },
+    ]
+
     // so I need to restructure my data in order to render it into something
 
 /*     <ResponsiveContainer width={700} height="80%">
@@ -46,28 +67,39 @@ const Rechart_1 = (props) => {
                   type='monotone'
 
                   dataKey='rest'
-                  stroke='#8884d8'
-                  fill='#8884d8'
+                  stroke={legend[0].stroke}
+                  fill={legend[0].fill}
                 />
+
                 <Area
                   type='monotone'
 
-                  dataKey='energy'
-                  stroke='#ff8c00'
-                  fill='#ffd24a'
+                  dataKey='energy_total'
+                  stroke={legend[1].stroke}
+                  fill={legend[1].fill}
                 />
+
                 <Area
                   type='monotone'
 
                   dataKey='cries'
-                  stroke='#0f5a94'
-                  fill='#8accff'
+                  stroke={legend[2].stroke}
+                  fill={legend[2].fill}
                 />
               </AreaChart>
             </ResponsiveContainer>
             </div>
         </div>
-        <div> Halloo ! </div>
+        <div className = "my-legend">
+        {legend.map((i) =>
+                <div
+                key = {`legend-${i.name}`}
+                style = {{color: i.stroke, background: i.fill}}
+                className = "legend-item">
+                  {i.name}
+                </div>)
+        }
+        </div>
       </div>
      );
 }

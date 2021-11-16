@@ -27,6 +27,17 @@
         overflow-x: scroll;
     }
 
+    .my-legend {
+        display: grid;
+        padding: 10px 70px 10px 70px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .legend-item {
+        text-align: center;
+        padding: 4px;
+    }
+
     .chart-overflow {
         width: 100%;
     }

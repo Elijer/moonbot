@@ -68,10 +68,13 @@ class Entry(models.Model):
         }
     
     def serializeMultiple(self):
+
+        energyTotal = int(self.energy_morning) + int(self.energy_midday) + int(self.energy_evening)
+        
         return {
             # "sleep": quantifyTime(self.sleep),
             "rest": self.calculateRest(),
-            "energy": int(self.energy),
+            "energy_total": energyTotal,
             "cries": int(self.cries),
             "dim": self.dayInMilliseconds,
             "dateString": self.dateString
