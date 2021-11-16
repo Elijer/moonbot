@@ -15,17 +15,17 @@
 @media screen and (max-width: 480px) {
 
     .nav-bar {
-        padding: 14px 10px 14px 10px;
+        padding: 14px 0px 14px;
         display: block;
-        text-align: left;     
+        text-align: center;     
     }
 
     .nav-option {
         font-family: 'Roboto Mono', monospace;
-        font-size: 14px;
+        font-size: 12px;
         color: $gold;
         text-decoration: none;
-        padding: 10px 25px 10px 18px;
+        padding: 10px 8px 10px 8px;
 
         &:active, &:visited {
             color: $gold;
