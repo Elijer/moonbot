@@ -12,6 +12,14 @@ const SettingsPage = () => {
     let { updateSettings } = useContext(RequestContext)
     let [settings, setSettings] = useState([])
 
+    let displayKey = {
+        display_cries: "💧 Cry Tracker",
+        display_energy: "⚡️ Energy Tracker",
+        display_rest: "🛌 Rest Tracker",
+        display_bc: "🌙 Birth Control",
+        display_outside: "🦉 Outside Log"
+    }
+
     useEffect(() => {
 
         getSettings()
@@ -77,7 +85,7 @@ const SettingsPage = () => {
                     key = {`settings-item-${i[0]}`}
                     className = "settings-item">
 
-                        <span className = "settings-label" > {i[0]}: </span>
+                        <span className = "settings-label" > {displayKey[i[0]]}: </span>
                         <span className = "settings-value" >
                             <span
                             onClick = {() => handleSettingsChange(i)}
