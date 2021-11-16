@@ -54,7 +54,7 @@ class Entry(models.Model):
     BC_day = models.IntegerField(
         default=0, validators=[MinValueValidator(0), MaxValueValidator(31) ] )
     
-    dayInMilliseconds = models.PositiveBigIntegerField(validators=[MaxValueValidator(35185644000000) ])
+    dayInMilliseconds = models.PositiveBigIntegerField(null=True, validators=[MaxValueValidator(35185644000000) ])
 
     
     def serialize(self):
