@@ -20,6 +20,8 @@ const Tracker = () => {
     let { user, authTokens, serverURL } = useContext(AuthContext)
     let [entryData, setEntryData] = useState({})
     let [sleepSet, setSleepSet] = useState(false)
+    let [energySet, setEnergySet] = useState(false)
+    let [BCSet, setBCSet] = useState(false)
 
     useEffect(() => {
 
@@ -30,6 +32,7 @@ const Tracker = () => {
     }, [time.dateString])
 
     let getEntry = async(someData) => {
+        dd(time)
 
         let response = await fetch(serverURL + 'getEntry/', {
             method: 'POST',
@@ -47,9 +50,22 @@ const Tracker = () => {
         dd(data)
         if (response.status === 200){
             setEntryData(data)
-/*             if (typof data.sleep_set){
 
-            } */
+            // If after morning and sleep has been set, the form isn't displayed
+            if(typeof data.sleep_set == 'number'){
+                if (time.timeOfDay && time.timeOfDay !== 'morning'){
+                    setSleepSet(true)
+                }
+            }
+
+            if(typeof data[`energy_${time.timeOfDay}`] == 'number'){
+                setEnergySet(true)
+            }
+
+            if(typeof data.BC_day === 'number'){
+                setBCSet(true)
+            }
+
         } else if (response.status === 401){
             alert("You are not authorized to update this entry")
             //setBody(props.data.body)
@@ -59,14 +75,34 @@ const Tracker = () => {
         }
     }
 
+    let handleBirthControlChange = () => {
+        setBCSet(false)
+    }
+
     return (
         <div id = "tracker-page">
             < TimeDisplay />
             <div className = "tracker-body">
-                < SleepInput data= {entryData} user = {user} time = {time} />
+
+                {!sleepSet ?
+                < SleepInput data= {entryData} user = {user} time = {time} /> :
+                <h3 className = "section section-header"> 🛌 Nice! You already set your sleep data. </h3>
+                }
+
                 < CryInput data = {entryData}/>
-                < EnergyInput data = {entryData}/>
-                < BCInput data = {entryData}/>
+
+
+                {!energySet ?
+                < EnergyInput data = {entryData}/> :
+                <h3 className = "section section-header"> {`⚡️ Good work, you've already set your ${time.timeOfDay} energy level.` }</h3>
+                }
+
+                {!BCSet ?
+                < BCInput data = {entryData}/> :
+                <h3 className = "section section-header"> {`🌙 Awesome. You logged taking birth control pill #${entryData.BC_day}. `}
+                    <span className = "bc-change" onClick = {handleBirthControlChange}> Tap here to change it.</span>
+                </h3>
+                }
                 {/* < LogoutFooter /> */}
             </div>
         </div>
