@@ -9,7 +9,10 @@ urlpatterns = [
     path('updateEnergy/', views.updateEnergy, name="updateEnergy"),
     path('updateEntry/', views.updateEntry, name="updateEntry"),
     path('getEntry/', views.getEntry, name="getEntry"),
+    
     path('getUserSettings/', views.getUserSettings, name="getUserSettings"),
+    path('updateUserSettings/', views.updateUserSettings, name="updateUserSettings"),
+    
     path('getAllEntries/', views.getAllEntries, name="getEntry"),
     path('graphAllEntries/', views.graphAllEntries, name="graphEntry"),
     path('graphRest/', views.graphRest, name="graphRest"),

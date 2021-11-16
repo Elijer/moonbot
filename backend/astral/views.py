@@ -103,7 +103,31 @@ def getEntry(request):
 def getUserSettings(request):
     u = User.objects.get(id=decodeToken(request))
     return Response(u.serialize())
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def updateUserSettings(request):
+    u = User.objects.get(id=decodeToken(request))
+    data = json.loads(request.body)
+    if data.get("💧 Cries Counter", "") != "":
+        u.display_cry = data.get("💧 Cries Counter", "")
+        
+    if data.get("🛌 Sleep Tracker", "") != "":
+        u.display_rest = data.get("🛌 Sleep Tracker", "")
+        
+    if data.get("⚡️ Energy Tracker", "") != "":
+        u.display_energy = data.get("⚡️ Energy Tracker", "")
+        
+    if data.get("🌙 Birth Control", "") != "":
+        u.display_bc = data.get("🌙 Birth Control", "")
+        
+    if data.get("🦉 Outside Tracker", "") != "":
+        u.display_outside = data.get("🦉 Outside Tracker" "")
     
+    u.save()
+    return Response(u.serialize())
+
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def updateEntry(request):
