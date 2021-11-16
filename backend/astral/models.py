@@ -15,12 +15,11 @@ class Entry(models.Model):
     
     creator = models.ForeignKey("User", on_delete=models.CASCADE, related_name="logged_entries")
     dateString = models.CharField(max_length=10)
-    day = models.DateTimeField(null = True, blank=True)
     
     wake = models.CharField(max_length=5, default="")
     wakeDomain = models.CharField(max_length=2, default="am")
-    sleepDomain = models.CharField(max_length=2, default="pm")
     sleep = models.CharField(max_length=5, default="")
+    sleepDomain = models.CharField(max_length=2, default="pm")
 
     rest_calculated = models.BooleanField(default = False)
     rest = models.DecimalField(default=0, max_digits = 3, decimal_places = 1 )
