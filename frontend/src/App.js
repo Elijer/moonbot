@@ -13,8 +13,6 @@ import SettingsPage from './pages/SettingsPage'
 import NotFound from './pages/NotFound'
 import Header from './components/Header'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 //import dd from './utilities/Debugger'
 
 import 'firebase/compat/firestore'
