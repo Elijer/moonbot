@@ -19,16 +19,19 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "recharts": "^2.1.6",
+    "sass": "^1.43.4",
     "spacetime": "^6.16.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "DISABLE_ESLINT_PLUGIN=true; export PORT=9000; react-scripts start",
-    "startlint": "export PORT=9000; react-scripts start",
+    "start": "react-scripts start",
+    "startlint": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "ems": "firebase emulators:start"
+    "ems": "firebase emulators:start",
+    "dockerDev": "docker-compose -f docker-compose.dev.yml up",
+    "dockerBuild": "docker-compose -f docker-compose.prod.yml build"
   },
   "browserslist": {
     "production": [
@@ -42,7 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "sass": "^1.43.4"
-  }
+  "devDependencies": {}
 }
