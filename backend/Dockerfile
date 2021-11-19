@@ -15,4 +15,3 @@ ENV PORT=7000
 EXPOSE 7000
 
 CMD ["python3", "manage.py", "runserver", "0.0.0.0:7000"]
-

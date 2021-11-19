@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: frontend-prod
+    image: moonbot-frontend-image-prod
+    build:
+      context: ./frontend
+      target: production
+    ports:
+      - "90:90"
+
+  backend:
+    container_name: backend-prod
+    image: moonbot-backend-image-prod
+    build: ./backend
+    ports:
+    - "7000:7000"

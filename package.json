@@ -1,0 +1,22 @@
+{
+  "name": "moonbot",
+  "version": "1.0.0",
+  "description": "Django port: `7000` React Port: `9000` Firestore emulators: `8090`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "docker-compose -f docker-compose.dev.yml -p moonbot_dev up",
+    "prod": "docker-compose -f docker-compose.prod.yml -p moonbot_prod up"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elijer/moonbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elijer/moonbot/issues"
+  },
+  "homepage": "https://github.com/Elijer/moonbot#readme"
+}
