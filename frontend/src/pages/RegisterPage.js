@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react'
 import AuthContext from '../context/AuthContext'
 import { Link } from 'react-router-dom'
-import backgroundImage from '../images/snowy_moon.jpeg';
+import { RequestProvider } from '../context/RequestContext'
+import background from '../images/snowy_moon.jpeg'
 
 const RegisterPage = () => {
 
@@ -10,7 +11,7 @@ const RegisterPage = () => {
     return (
         <div>
             <div id = "bg-color">
-                <img id = "bg-image" src = {backgroundImage} alt = "" />
+                <img id = "bg-image" src = {background} alt = "" />
             </div>
             <div className = "login register">
                 <div className = "login-panel">

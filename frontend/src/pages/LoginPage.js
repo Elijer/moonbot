@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import AuthContext from '../context/AuthContext'
 import { Link } from 'react-router-dom'
-import backgroundImage from '../images/pink_sky.jpeg';
+import background from '../images/pink_sky.jpeg';
 //import dd from '../utilities/Debugger'
 
 
@@ -12,9 +12,8 @@ const LoginPage = () => {
     return (
         <div>
             <div id = "bg-color">
-                <img id = "bg-image" src = {backgroundImage} alt = ""/>
+                <img id = "bg-image" src = {background} alt = ""/>
             </div>
-            
             <div className = "login">
                 <div className = "login-panel">
 
