@@ -12,6 +12,7 @@ import Log from './pages/Log'
 import SettingsPage from './pages/SettingsPage'
 import NotFound from './pages/NotFound'
 import Header from './components/Header'
+import background from './images/pink_sky.jpeg';
 
 //import dd from './utilities/Debugger'
 
@@ -21,6 +22,11 @@ function App() {
 
   return (
     <div id = "app-all">
+
+      <div id = "bg-color">
+        <img id = "bg-image" src = {background} alt = ""/>
+      </div>
+
         <Router>
           <AuthProvider>
                 <TimeProvider>
