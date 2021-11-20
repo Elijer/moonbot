@@ -9,6 +9,8 @@ const LoginPage = () => {
 
     let { loginUser, loginAttempt } = useContext(AuthContext)
 
+    console.log(process.env.NODE_ENV)
+    
     return (
         <div>
             <div id = "bg-color">
