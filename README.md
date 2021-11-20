@@ -60,7 +60,7 @@ And also a `Dockerfile` and a `.dockerignore` in both the frontend and backend d
 
 # File Structure
 
-The frontend file structure contains a React.js app built with the [create-react-app CLI tool.](https://create-react-app.dev/docs/getting-started). 
+The frontend file structure contains a React.js app built with the [create-react-app CLI tool.](https://create-react-app.dev/docs/getting-started). I have kept their file structure intact, mostly working within the `src` directory.
 
 <br>
 <br>
