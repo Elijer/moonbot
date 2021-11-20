@@ -9,12 +9,13 @@ const LoginPage = () => {
 
     let { loginUser, loginAttempt } = useContext(AuthContext)
 
-    console.log(process.env.NODE_ENV)
+    //console.log(process.env.NODE_ENV)
     
     return (
         <div>
             <div id = "bg-color">
-                <img id = "bg-image" src = {background} alt = ""/>
+                <img id = "bg-image" src = {background}
+                alt = ""/>
             </div>
             <div className = "login">
                 <div className = "login-panel">
