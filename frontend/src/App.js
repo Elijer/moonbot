@@ -12,7 +12,6 @@ import Log from './pages/Log'
 import SettingsPage from './pages/SettingsPage'
 import NotFound from './pages/NotFound'
 import Header from './components/Header'
-
 //import dd from './utilities/Debugger'
 
 import 'firebase/compat/firestore'
@@ -21,6 +20,7 @@ function App() {
 
   return (
     <div id = "app-all">
+
         <Router>
           <AuthProvider>
                 <TimeProvider>

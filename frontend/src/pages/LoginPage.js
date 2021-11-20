@@ -1,22 +1,22 @@
 import React, { useContext, useState } from 'react'
 import AuthContext from '../context/AuthContext'
 import { Link } from 'react-router-dom'
+import background from '../images/pink_sky.jpeg';
 //import dd from '../utilities/Debugger'
 
 
 const LoginPage = () => {
 
     let { loginUser, loginAttempt } = useContext(AuthContext)
-    let [img] = useState(
-        "https://images.unsplash.com/photo-1537196369054-c87dc3fb7db0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80"
-        )
 
+    //console.log(process.env.NODE_ENV)
+    
     return (
         <div>
             <div id = "bg-color">
-                <img id = "bg-image" src = {img} alt = ""/>
+                <img id = "bg-image" src = {background}
+                alt = ""/>
             </div>
-            
             <div className = "login">
                 <div className = "login-panel">
 
