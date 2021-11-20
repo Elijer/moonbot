@@ -1,7 +1,7 @@
 {
   "name": "moonbot",
   "version": "1.0.0",
-  "description": "Django port: `7000` React Port: `9000` Firestore emulators: `8090`",
+  "description": "Django port: `7000` React Port: `3000` Firestore emulators: `8090`",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
