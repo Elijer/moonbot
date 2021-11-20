@@ -9,10 +9,3 @@ services:
       target: production
     ports:
       - "90:90"
-
-  backend:
-    container_name: backend-prod
-    image: moonbot-backend-image-prod
-    build: ./backend
-    ports:
-    - "7000:7000"
