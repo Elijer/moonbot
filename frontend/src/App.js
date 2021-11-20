@@ -14,8 +14,6 @@ import NotFound from './pages/NotFound'
 import Header from './components/Header'
 //import dd from './utilities/Debugger'
 
-import 'firebase/compat/firestore'
-
 function App() {
 
   return (
