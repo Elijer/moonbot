@@ -109,6 +109,9 @@ In the top directory of moonbot, there should be a yaml file for Insomnia nd a t
 <br>
 <br>
 
+# Problems
+1. The background images for the Login and Register pages will not display in production build (but no problem in development build). The developer-tools say that they are requested successfully, `200 OK`. I've tried loading them many different ways.
+
 # Potential Problems
 
 1. Since all data is just input whenever it changes, if there are ANY artifacts, like an initial state, that is exposed to set the state somehow, it is likely it will also be able to change the data in the database, permanently erasing user data for the field in question. I have run into this problem in CryInput and BCInput and fixed it by created a userInteraction boolean with useState that just determines if the user has HAD any valid interaction as a prequisite for sending any http updates requests.
