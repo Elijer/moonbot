@@ -6,6 +6,7 @@ pipenv shell
 pipenv run run
 cd ..
 cd frontend
+npm install
 npm start
 ```
 Then go to `http://localhost:3000/` to see frontend of app.

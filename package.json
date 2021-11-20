@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/Elijer/moonbot/issues"
   },
-  "homepage": "https://github.com/Elijer/moonbot#readme"
+  "homepage": "https://github.com/Elijer/moonbot#readme",
+  "dependencies": {}
 }
