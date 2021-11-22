@@ -36,8 +36,7 @@ Note that SQLITE will work on a server, but it is not meant for production. It w
 For frontend:
 ```bash
 cd frontend
-npm run build
-npx serve -s build
+npm run runBuild
 ```
 That should do it! This will create a build folder for you that can be run with the `npx serve -s build` command on a server. It could also be served with an NGINX proxy.
 
