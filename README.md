@@ -106,18 +106,36 @@ This is really the folder where the frontend of `moonbot` was built. It has seve
 
 #### `frontend/src/charts`
 stores the chart components used to visualize `moonbot` data on the `Log` page
+1. `Rechart_1.js` This component renders a Rechart.js AreaChart component. This is the chart currently fully developed and being used.
+2. `Rechart_Linechart_1.js` This is not a fully built component that uses Rechart's LineChart component.
 
 #### `frontend/src/components`
 This folder stores miscellaneous components that can be re-used for multiple pages
+1. `Header.js`: This component renders the navbar. It is visible on every page of the app, but displays different nav items depending on whether the user is logged in or not.
+2. `LogoutFooter.js`: This is a currently un-used componented that renders a logout option at the bottom of any given page. It is not being used because this option exists in the Header component.
 
 #### `frontend/src/context`
 This folder stores context-providing components: these components make use of React's
+1. `AuthContext.js: This component checks for a JWT user-access token in the browser storage, and if one exists, it attempts to log that user in using the authentication routes in the backend. It also handles the authentication and browser-storage for manually logging in and logging out. Additionally, it updates the access and refresh tokens at given interavls to keep them fresh as long as the user token is actively being used.
+2. `Config.js`: The concept for this component was to keep configuration variables in their own dedicated space. The only variable that ended up being necesssary so far is the serverURL variable, which stores the address and port number by which the backend can be accessed. All HTTP requests throughout the front-end should make use of this contextual variable.
+3. `RequestContext.js`: This context component was designed to reduce un-DRY HTTP requests that are made in the same way across multiple components. So far this includes the `updateEntry` and `updateSettings` methods, which are each used by more than one component. The pattern of storing a re-useable HTTP requests inside of a context component is that although HTTP requests within `moonbot` often have many contextual dependencies, like the app's `time` object, the `user` object and the `config` context, as well as many react and other imports, they can be used by other components with just one import and one line of usage, drastically reducing the amount of code and reducing the complexity of the dependency web.
+4. 'TimeContext`: moonbot is a heavily time-reliant app. Time is frequently parsed, interpreted and used in database queries throughout the app. The time context gets the time once, parses it into several forms, and then allows access to that same information through the app.
 
 #### `frontend/src/images`
-a couple of background jpeg images are used by `moonbot`. They are stored here.
+Two background jpeg images are used by `moonbot`. They are stored here. There is `pink_sky.jpeg' and 'snowy_moon.jpeg', which are used by the `LoginPage` and the 'RegisterPage' components, respectively.
 
 #### `frontend/src/pages`
-this is where components that render an entire page are stored.
+this is where components that render an entire page are stored. It is also worth noting that `pages` contains a `Tracker` subdirectory. This subdirectory is where all of the sub-components for the `Tracker.js` component are stored.
+1. `Log.js`: This component renders the content of the `/_log` route, where user data is rendered into a Recharts.js area graph.
+2. `LoginPage.js`: This page is where the user logs in.
+4. `NotFound.js`: This is a 404 page that is rendered when the user navigates to a route outside of the url pattern.
+5. 'RegisterPage.js`: This page is where the user can register a new account.
+6. `SettingsPage.js`: This page allows the user to customize which mood tracking components they see on the main page. The user can choose to see all or none of them. This page includes one component that does not exist yet: the outside tracker.
+7. `Tracker.js`: This is the main page displayed to a logged-in user, and the hotspot of functionality in the app. It contains several data-input/data-display components that are included in the `frontend/src/Pages/Tracker` subdirectory. These components all have a similar structure but a different purpose. Each component checks to see if data has been input into one of their fields that day (or in the case of the energy tracker, that _part_ of the day). If so, they show that data has been rendered with the placeholder value or with backround color. Regardless, they also have handlers that listen for changes and log them to the database if the new information is valid. Note that none of these components are actually responsible for querying existing data from the database, which is actually passed down to them through props from `Tracker.js`. Tracker.js makes a request to the `getEntry` route of the backend 
+---
+
+#### `frontend/src/pages/Tracker`
+1. `BCInput.js`: This component renders a grid of 28 days and is designed to help the user keep keep track of which birth control pill was taken on which day. Similar to the other tracker components.
 
 #### `frontend/src/pages`
 this is where all style files are stored, except for the entry-level `App.scss` file, which loads all files in this directory.
