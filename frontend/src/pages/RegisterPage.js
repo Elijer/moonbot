@@ -5,13 +5,17 @@ import background from '../images/snowy_moon.jpeg'
 
 const RegisterPage = () => {
 
-    let { registerUser } = useContext(AuthContext)
+    let { registerUser, loginAttempt } = useContext(AuthContext)
 
     return (
         <div>
 
             <img className = "bg-image" src = {background} alt = "" />
             <div className = "bg-color"></div>
+
+            { loginAttempt && 
+                <div className = "login-message"> Couldn't create an account. Check that you entered the same password in confirm password! </div>
+            }
 
             <div className = "login register">
                 <div className = "login-panel">

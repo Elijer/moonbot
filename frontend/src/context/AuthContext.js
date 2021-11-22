@@ -128,10 +128,16 @@ export const AuthProvider = ({children}) => {
         let data = await response.json()
         if (response.status === 200){
             loginEvent(data)
+            setLoginAttempt(false)
         } else {
+            setLoginAttempt(true)
             dd("error")
         }
 
+    }
+    
+    let clearLoginAttempt = () => {
+        setLoginAttempt(false)
     }
 
     let updateToken = useCallback(
@@ -234,6 +240,7 @@ export const AuthProvider = ({children}) => {
         
         // Functions:
         setSettings: setSettings,
+        clearLoginAttempt: clearLoginAttempt,
         loginUser: loginUser,
         logoutUser: logoutUser,
         registerUser: registerUser,

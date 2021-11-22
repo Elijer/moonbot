@@ -5,7 +5,7 @@ import { up } from '../utilities/utilities'
 
 
 const Header = () => {
-    let { user, logoutUser, loginAttempt} = useContext(AuthContext)
+    let { user, logoutUser, loginAttempt, clearLoginAttempt} = useContext(AuthContext)
 
     return (
             <div className = {"nav-bar " + (user ? "in" : "out")}>
@@ -29,8 +29,11 @@ const Header = () => {
 
                     <React.Fragment>
 
-                            <Link to="/login" className = "nav-option" >🌙 Login</Link>
-                            <Link to="/register" className = "nav-option" >✨ Register</Link>
+                            <Link to="/login" className = "nav-option"
+                            onClick = {clearLoginAttempt}> 🌙 Login</Link>
+
+                            <Link to="/register" className = "nav-option"
+                            onClick = {clearLoginAttempt}> ✨ Register</Link>
 
                     </React.Fragment>
                     
