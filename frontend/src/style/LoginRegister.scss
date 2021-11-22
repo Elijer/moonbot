@@ -2,11 +2,13 @@
 
 .bg-image, .bg-color {
     width: 100%;
-    height: 100%;
+    height: 175%;
     position: absolute;
     top: 0;
+    z-index: -10;
     object-fit: cover;
-    z-index: -10
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .bg-image {
@@ -21,6 +23,14 @@
 
 .login {
     z-index: 999
+}
+
+.login-message {
+    font-family: 'Roboto Mono', monospace;
+    padding: 15px;
+    background: orange;
+    text-align: center;
+    color: white;
 }
 
 @media screen and (max-width: 480px) {
@@ -115,13 +125,13 @@
         }
 
 
-        .form-header {
+/*         .form-header {
             font-family: 'Zen Kaku Gothic Antique', sans-serif;
             font-weight: 900;
             font-size: 60px;
             color: rgb(0, 0, 0, .8);
             margin-bottom: 42px;
-        }
+        } */
 
         .form-line::placeholder {
             //color: rgb(255, 255, 255, .6);

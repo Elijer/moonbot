@@ -38,11 +38,11 @@ const Header = () => {
 
                     {/* <Link to="/" className = "header-title nav-option"> 🌙 MoonBot ✨ </Link> */}
                 
-                {loginAttempt &&
-                <div id = "msg-danger" className="alert alert-danger" role="alert">
-                    Login Failed
-                </div>
-                }
+{/*                 {loginAttempt &&
+                    <div id = "msg-danger" className="alert alert-danger" role="alert">
+                        Login Failed
+                    </div>
+                } */}
             </div>
     )
 }

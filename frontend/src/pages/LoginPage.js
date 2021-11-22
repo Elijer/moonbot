@@ -17,6 +17,10 @@ const LoginPage = () => {
             <div className = "bg-color"></div>
             <img className = "bg-image" src = {background} alt = ""/>
 
+            { loginAttempt && 
+                <div className = "login-message"> Couldn't log you in. You probably supplied the wrong credentials. </div>
+            }
+
             <div className = "login">
                 <div className = "login-panel">
 
@@ -27,10 +31,6 @@ const LoginPage = () => {
                         <input className = "form-line" type = "password" name = "password" placeholder = "password" autoComplete="off" />
                         <input className = "form-line form-submit" type = "submit" value = "login" />
                     </form>
-
-                    { loginAttempt && 
-                    <div className = "form-header"> Couldn't log you in. You probably supplied the wrong credentials. </div>
-                    }
 
                 </div>
 
