@@ -15,7 +15,7 @@ const LoginPage = () => {
         <div>
 
             <div className = "bg-color"></div>
-            <img className = "bg-image" src = {background} alt = ""/>
+            <img className = "bg-image bg-image-1" src = {background} alt = ""/>
 
             { loginAttempt && 
                 <div className = "login-message"> Couldn't log you in. You probably supplied the wrong credentials. </div>
