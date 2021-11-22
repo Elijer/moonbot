@@ -3,23 +3,31 @@
 ```bash
 cd backend
 pipenv shell
+pipenv install
 pipenv run run
 cd ..
 cd frontend
 npm install
 npm start
 ```
+
 Then go to `http://localhost:3000/` to see frontend of app.
 
 To see the Django admin console for the backend, got to `http://localhost:7000/admin`
 
-You will probably have to create a Django superUser, like this:
+To enter the admin console, you will probably have to create a Django superUser, like this:
 ```django
 cd backend
 pipenv shell
 pipenv run su
 ```
 Then enter your user information when prompted.
+
+If you don't have pipenv, you can install it with pip:
+`pip3 install pipenv`
+
+If you would rather not install and use `pipenv`, you should be able to install all the dependencies using pip like this:
+`pip3 install -r requirements.txt`
 
 <br>
 <br>
