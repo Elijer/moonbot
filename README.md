@@ -66,12 +66,15 @@ And also a `Dockerfile` and a `.dockerignore` in both the frontend and backend d
 <br>
 <br>
 
-# Files and File Structure
+# Frontend Files and File Structure
 
 The frontend file structure contains a React.js app built with the [create-react-app CLI tool.](https://create-react-app.dev/docs/getting-started). I have kept their file structure intact, mostly working within the `src` directory.
 
 ### `App.js` File
 This is the top level component of `moonbot`'s frontend. It includes the arrangement of all data contexts and uses react-router to create the layout and define the routing for the page-views in the app through the `header` component and the page components included in the `pages` folder. It also defines a `404` page to be displayed if the route is outside the route requested is outside the route pattern.
+
+### `index.js` File
+This is the true entry level javascript file that imports the top-level `App.js` component and appends it to the body of the single `root` element in `index.html`. This is a common pattern in single page apps, where all javascript files are bundled, minified, and then loaded as a single, enormous file or, in this case, cache-able chunks, into a single HTML elements.
 
 ### `.gitignore` File
 This git configuration file tells git which files not to track.
@@ -114,32 +117,90 @@ This is really the folder where the frontend of `moonbot` was built. It has seve
 
 #### `frontend/src/charts`
 stores the chart components used to visualize `moonbot` data on the `Log` page
+1. `Rechart_1.js` This component renders a Rechart.js AreaChart component. This is the chart currently fully developed and being used.
+2. `Rechart_Linechart_1.js` This is not a fully built component that uses Rechart's LineChart component.
 
 #### `frontend/src/components`
 This folder stores miscellaneous components that can be re-used for multiple pages
+1. `Header.js`: This component renders the navbar. It is visible on every page of the app, but displays different nav items depending on whether the user is logged in or not.
+2. `LogoutFooter.js`: This is a currently un-used componented that renders a logout option at the bottom of any given page. It is not being used because this option exists in the Header component.
 
 #### `frontend/src/context`
 This folder stores context-providing components: these components make use of React's
+1. `AuthContext.js: This component checks for a JWT user-access token in the browser storage, and if one exists, it attempts to log that user in using the authentication routes in the backend. It also handles the authentication and browser-storage for manually logging in and logging out. Additionally, it updates the access and refresh tokens at given interavls to keep them fresh as long as the user token is actively being used.
+2. `Config.js`: The concept for this component was to keep configuration variables in their own dedicated space. The only variable that ended up being necesssary so far is the serverURL variable, which stores the address and port number by which the backend can be accessed. All HTTP requests throughout the front-end should make use of this contextual variable.
+3. `RequestContext.js`: This context component was designed to reduce un-DRY HTTP requests that are made in the same way across multiple components. So far this includes the `updateEntry` and `updateSettings` methods, which are each used by more than one component. The pattern of storing a re-useable HTTP requests inside of a context component is that although HTTP requests within `moonbot` often have many contextual dependencies, like the app's `time` object, the `user` object and the `config` context, as well as many react and other imports, they can be used by other components with just one import and one line of usage, drastically reducing the amount of code and reducing the complexity of the dependency web.
+4. 'TimeContext`: moonbot is a heavily time-reliant app. Time is frequently parsed, interpreted and used in database queries throughout the app. The time context gets the time once, parses it into several forms, and then allows access to that same information through the app.
 
 #### `frontend/src/images`
-a couple of background jpeg images are used by `moonbot`. They are stored here.
+Two background jpeg images are used by `moonbot`. They are stored here. There is `pink_sky.jpeg' and 'snowy_moon.jpeg', which are used by the `LoginPage` and the 'RegisterPage' components, respectively.
 
 #### `frontend/src/pages`
-this is where components that render an entire page are stored.
+this is where components that render an entire page are stored. It is also worth noting that `pages` contains a `Tracker` subdirectory. This subdirectory is where all of the sub-components for the `Tracker.js` component are stored.
+1. `Log.js`: This component renders the content of the `/_log` route, where user data is rendered into a Recharts.js area graph.
+2. `LoginPage.js`: This page is where the user logs in.
+4. `NotFound.js`: This is a 404 page that is rendered when the user navigates to a route outside of the url pattern.
+5. 'RegisterPage.js`: This page is where the user can register a new account.
+6. `SettingsPage.js`: This page allows the user to customize which mood tracking components they see on the main page. The user can choose to see all or none of them. This page includes one component that does not exist yet: the outside tracker.
+7. `Tracker.js`: This is the main page displayed to a logged-in user, and the hotspot of functionality in the app. It contains several data-input/data-display components that are included in the `frontend/src/Pages/Tracker` subdirectory. These components all have a similar structure but a different purpose. Each component checks to see if data has been input into one of their fields that day (or in the case of the energy tracker, that _part_ of the day). If so, they show that data has been rendered with the placeholder value or with backround color. Regardless, they also have handlers that listen for changes and log them to the database if the new information is valid. Note that none of these components are actually responsible for querying existing data from the database, which is actually passed down to them through props from `Tracker.js`. It turns out that in order to render data from props when a component is initialized, props must be saved to state inside ofa useEffect block with the props object listed in the dependency array, as props data is actually _not_ available when the component renders for the first time. Tracker.js makes a request to the `getEntry` route from the backend.
+---
 
-#### `frontend/src/pages`
-this is where all style files are stored, except for the entry-level `App.scss` file, which loads all files in this directory.
+#### `frontend/src/pages/Tracker`
+1. `BCInput.js`: This component renders a grid of 28 days and is designed to help the user keep keep track of which birth control pill was taken on which day. Similar to the other tracker components.
+2. `CryInput.js`: This component renders a number and a plus and minus button on either side of it used to increase or decrease the number.
+3. `EnergyInput.js: This component renders three buttons that represent three different energy levels: `little`, `some`, and `lots`.
+4. `SleepInput.js`: Although it is visually small, this is the most complex of the tracker components. It has four inputs: sleepTime, wakeTime, sleepDomain and wakeDomain. The `domain` fields represent the am or pm value of the wake and sleep times. This component relies on the `formatTime` helper function imported from `frontend/src/utilities/utilities.js` to reformat user input and prevent them from entering characters that would represent non-existant or innacurate times. Note: this custom helper function is very logically complex and might be replaced by a tested and existing method from a trusted time-formatting library.
+5. `TimeDisplay.js`: This component is not like the others in this folder, but it lives here because like them, it is also used by the tracker component. The `TimeDisplay` compenent asks the `TimeContext` provider what time it is and uses that information to render the date and time on the top right and left corners of the screen underneath the header component.
+
+#### `frontend/src/style`
+This is where all `style` files live, excepting `frontend/src/App.scss`, which is responsible for loading them. Because style uses the Sass preprocessor, they can be split up into separate files and then imported, making style organization much more effective and CSS specificity (potentially) easier to manage. I will not write up a description for each individual style sheet because I think they are well-organized and the correspondance of names to the components they are styling in sufficient in describing what their purpose is. However, I will do a general desciption of the layout of this folder.
+- The `Charts` folder holds a single file, `Recharts_1.scss`, which styles the `Recharts_1` component.
+- The `Tracker` folder holds a stylesheet for most, but not all, of the components in `frontend/src/pages/Tracker`.
+- The `_vars.scss` file contains eight color values that are used throughout `moonbot`. There may be some hard-coded color values in the application, but for the most part only these eight variables are used to make re-coloring easier and to keep the color scheme consistent and tight.
+
+All remaining files in this directory correspond to a page, _except_ for `reset.scss`, a popular styling convention that removes certain implicit style supplied by web browsers in different ways.
 
 #### `frontend/src/utilities`
 This folder stores helpful functions and components that have a broad function needed in certain pages or components.
+1. `Debugger.js`: this file defines a debugger method, `dd`, which is used throughout the project. It's much faster to type than `console.log`, and it can be turned off with a single environmental variable in production. Importantly, because it is bound to the `window.console` context, it produces error tracing in the developer console logged from the file with the error, instead of from the `Debugger.js` file itself, which would prevent the developer from effectively finding where errors where occuring.
+2. `PrivateRoute.js`: This react component is actually an extension of the `Route` component provided by react-router-dom. It has been modified from the original by checking to see if the user is logged in, and only displaying the contents of the route if they are. It is a simple component, but it is based almost entirely off of an idea provided by Dennis Ivy, a youtuber who makes many videos about Django/React integration.
+3. `utilities.js`: this is where the rest of the utility/helper functions Moonbot relies on are stored. There's `formatTime`, which is mentioned above in the `sleepInput` component. There is also `up`, which simply capitalizes all of the first letters of words in any string passed to it. The similar `upFirstLetterOnly` only capitalizes the first letter of the input string. `insert` insterts a string inside of another string at the specified index. Lastly, `dayInMilliseconds` gets the current date and returns that date as a value of milliseconds since January 1st, 1970, which is arguably the only way to pass time between Javascript and Django in a way that can be fully trusted in all circumstances. That would be a paranoid argument, but too much (or not enough) date parsing can do weird things to a developer.
+
+----
+<br>
+<br>
+
+# Backend Files and File Structure
+### `astral` directory.
+`astral` is the is the main app in the `backend` Django project. It's not the most intentional space metaphor, but it gets the job done. astral has a special sub-directory called `api`, which handles all user/user-auth functionality, whereas the main `astral` directory can be considered responsible for handling requests for all other types of data.
+
+#### `backend/astral/api/urls.py` and `backend/astral/api/views.py`
+This `urls` file loads the four routes that comprise the user-auth section of `moonbot`'s backend.
+1. `path('', views.getRoutes)`: `http://{__url__}:7000/api/` uses rest_API's formatting to display the other routes of astral/api.
+2. `http://{__url__}:7000/api/register` takes a user password and username, creates a user, and returns a JWT access and refresh toke
+3. `http://{__url__}:7000/api/token` takes a modified version of `rest_framework_simplejwt`'s TokenObtainPairSerializer serializer and uses a modified version of `rest_framework_simplejwt`'s `TokenObtainPairView` method to return a refresh/token pair when valid username/password credentials are given.
+4. `http://localhost:7000/api/token/refresh` uses `rest_framework_simplejwt`'s `TokenRefreshView` to take an refresh token and, if valid, return new valid access and refresh token.
 
 
+#### `backend/astral/fixtures`
+This fixtures directory stores user and entry data that can be loaded into the database directly, saving time if the database needs to be deleted in the development environment.
 
+#### `backend/astral/views.py` and `backend/astral/urls.py`
+These include various routes and views used to write, update and retrieve mood tracker data and, in one case, user settings.
 
+#### `Dockerfile` and `.dockerignore`
+The Dockerfile file is used by Docker as blueprints that define how to create an image with all of the environmental dependencies and conditions necessary for running the moonbot backend and exposing the proper ports.
 
+#### `Pipfile` and `Pipfile.lock`
+I used pipenv to manage python package dependencies in the backend of moonbot. It's a super convenient and powerful tool for abstractly maintaining a virtual python environment for hte project.
 
+#### `.python-version
+This file was generated by the `pyenv` package and is used to store a local python version that this project was built with.
 
+#### `requirements.txt`
+This is where all pip dependencies and their version numbers have been exported to a file. This file can be used by pip or docker to reinstall dependencies for the project if they don't exit.
 
+----
 <br>
 <br>
 
