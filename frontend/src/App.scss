@@ -13,6 +13,10 @@
 @import "./style/Comp";
 @import "./style/vars";
 
+html {
+    background: black;
+}
+
 .logout-footer {
     display: block;
     color: $light;

@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import AuthContext from '../context/AuthContext'
 import { Link } from 'react-router-dom'
-import { RequestProvider } from '../context/RequestContext'
 import background from '../images/snowy_moon.jpeg'
 
 const RegisterPage = () => {
@@ -10,9 +9,10 @@ const RegisterPage = () => {
 
     return (
         <div>
-            <div id = "bg-color">
-                <img id = "bg-image" src = {background} alt = "" />
-            </div>
+
+            <img className = "bg-image" src = {background} alt = "" />
+            <div className = "bg-color"></div>
+
             <div className = "login register">
                 <div className = "login-panel">
                     <form onSubmit = {registerUser} >
@@ -24,7 +24,7 @@ const RegisterPage = () => {
                     </form>
                 </div>
 
-                <div className = "register-message login"> Have an account? <br></br> <Link to="/login" className = "register-link">Login here</Link>
+                <div className = "register-message"> Have an account? <br></br> <Link to="/login" className = "register-link">Login here</Link>
                 </div>
 
             </div>

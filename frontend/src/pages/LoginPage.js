@@ -13,10 +13,10 @@ const LoginPage = () => {
     
     return (
         <div>
-            <div id = "bg-color">
-                <img id = "bg-image" src = {background}
-                alt = ""/>
-            </div>
+
+            <div className = "bg-color"></div>
+            <img className = "bg-image" src = {background} alt = ""/>
+
             <div className = "login">
                 <div className = "login-panel">
 
