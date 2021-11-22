@@ -34,7 +34,7 @@ const LoginPage = () => {
 
                 </div>
 
-                <div className = "register-message login"> Don't have an account? <br></br> <Link to="/register" className = "register-link">Register here</Link>
+                <div className = "register-message"> Don't have an account? <br></br> <Link to="/register" className = "register-link">Register here</Link>
                 </div>
                 
             </div>
