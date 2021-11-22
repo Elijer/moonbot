@@ -58,12 +58,15 @@ And also a `Dockerfile` and a `.dockerignore` in both the frontend and backend d
 <br>
 <br>
 
-# Files and File Structure
+# Frontend Files and File Structure
 
 The frontend file structure contains a React.js app built with the [create-react-app CLI tool.](https://create-react-app.dev/docs/getting-started). I have kept their file structure intact, mostly working within the `src` directory.
 
 ### `App.js` File
 This is the top level component of `moonbot`'s frontend. It includes the arrangement of all data contexts and uses react-router to create the layout and define the routing for the page-views in the app through the `header` component and the page components included in the `pages` folder. It also defines a `404` page to be displayed if the route is outside the route requested is outside the route pattern.
+
+### `index.js` File
+This is the true entry level javascript file that imports the top-level `App.js` component and appends it to the body of the single `root` element in `index.html`. This is a common pattern in single page apps, where all javascript files are bundled, minified, and then loaded as a single, enormous file or, in this case, cache-able chunks, into a single HTML elements.
 
 ### `.gitignore` File
 This git configuration file tells git which files not to track.
@@ -141,19 +144,27 @@ this is where components that render an entire page are stored. It is also worth
 4. `SleepInput.js`: Although it is visually small, this is the most complex of the tracker components. It has four inputs: sleepTime, wakeTime, sleepDomain and wakeDomain. The `domain` fields represent the am or pm value of the wake and sleep times. This component relies on the `formatTime` helper function imported from `frontend/src/utilities/utilities.js` to reformat user input and prevent them from entering characters that would represent non-existant or innacurate times. Note: this custom helper function is very logically complex and might be replaced by a tested and existing method from a trusted time-formatting library.
 5. `TimeDisplay.js`: This component is not like the others in this folder, but it lives here because like them, it is also used by the tracker component. The `TimeDisplay` compenent asks the `TimeContext` provider what time it is and uses that information to render the date and time on the top right and left corners of the screen underneath the header component.
 
-#### `frontend/src/pages`
-this is where all style files are stored, except for the entry-level `App.scss` file, which loads all files in this directory.
+#### `frontend/src/style`
+This is where all `style` files live, excepting `frontend/src/App.scss`, which is responsible for loading them. Because style uses the Sass preprocessor, they can be split up into separate files and then imported, making style organization much more effective and CSS specificity (potentially) easier to manage. I will not write up a description for each individual style sheet because I think they are well-organized and the correspondance of names to the components they are styling in sufficient in describing what their purpose is. However, I will do a general desciption of the layout of this folder.
+- The `Charts` folder holds a single file, `Recharts_1.scss`, which styles the `Recharts_1` component.
+- The `Tracker` folder holds a stylesheet for most, but not all, of the components in `frontend/src/pages/Tracker`.
+- The `_vars.scss` file contains eight color values that are used throughout `moonbot`. There may be some hard-coded color values in the application, but for the most part only these eight variables are used to make re-coloring easier and to keep the color scheme consistent and tight.
+
+All remaining files in this directory correspond to a page, _except_ for `reset.scss`, a popular styling convention that removes certain implicit style supplied by web browsers in different ways.
 
 #### `frontend/src/utilities`
 This folder stores helpful functions and components that have a broad function needed in certain pages or components.
+1. `Debugger.js`: this file defines a debugger method, `dd`, which is used throughout the project. It's much faster to type than `console.log`, and it can be turned off with a single environmental variable in production. Importantly, because it is bound to the `window.console` context, it produces error tracing in the developer console logged from the file with the error, instead of from the `Debugger.js` file itself, which would prevent the developer from effectively finding where errors where occuring.
+2. `PrivateRoute.js`: This react component is actually an extension of the `Route` component provided by react-router-dom. It has been modified from the original by checking to see if the user is logged in, and only displaying the contents of the route if they are. It is a simple component, but it is based almost entirely off of an idea provided by Dennis Ivy, a youtuber who makes many videos about Django/React integration.
+3. `utilities.js`: this is where the rest of the utility/helper functions Moonbot relies on are stored. There's `formatTime`, which is mentioned above in the `sleepInput` component. There is also `up`, which simply capitalizes all of the first letters of words in any string passed to it. The similar `upFirstLetterOnly` only capitalizes the first letter of the input string. `insert` insterts a string inside of another string at the specified index. Lastly, `dayInMilliseconds` gets the current date and returns that date as a value of milliseconds since January 1st, 1970, which is arguably the only way to pass time between Javascript and Django in a way that can be fully trusted in all circumstances. That would be a paranoid argument, but too much (or not enough) date parsing can do weird things to a developer.
 
+----
+<br>
+<br>
 
+# Backend Files and File Structure
 
-
-
-
-
-
+----
 <br>
 <br>
 
