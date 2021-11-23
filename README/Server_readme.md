@@ -19,7 +19,7 @@ except ImportError as e:
     pass
 ```
 
-This block imports every variable from the `local_settings.py` file and overwrite whatever values those variables may have had in the `local_settings.py` file. If the `local_settings.py` file is not found, that error is passed over, meaning that you could make the default configuration variables either for the server or dev environment, and then overwrite them on whichever of those environments is NOT the default. I think I will choose to overwrite them locally, since it is easier to simply DELETE a file than it is to WRITE and DEBUG one in the server environment. That said, I will still define an example for each file as if you were over-writing existing values, since I think it is clearer that way. You can find these examples in the `local_settings.md` file in this `README` directory.
+This block imports every variable from the `local_settings.py` file and overwrite whatever values those variables may have had in the `local_settings.py` file. If the `local_settings.py` file is not found, that error is passed over, meaning that you could make the default configuration variables either for the server or dev environment, and then overwrite them on whichever of those environments is NOT the default. I would choose to overwrite them locally, since it is easier to simply DELETE a file than it is to WRITE and DEBUG one in the server environment, but I would like people to be able to reproduce the development environment as easily as possible to test it out. That said, I will still define an example for each file as if you were over-writing existing values, since I think it is clearer that way. You can find these examples in the `local_settings.md` file in this `README` directory.
 
 <br>
 
