@@ -18,6 +18,6 @@ I wish I could just deploy my frontend and backend directly onto the server. How
 
 
 # Getting started
-The server isn't too hard: Allowed hosts are added to repo, and config file is added to gitignore, including debug variable. Reference the auctions example for this.
+The server isn't too hard: Allowed hosts are added to repo, and a local_settings.py file is added to gitignore, and loaded potentially at the end of the settings.py file. This includes debug variable. Reference the auctions example for this. 
 
 For the frontend, it shouldn't be bad either. All we need to do is pass a node environmental variable in.
