@@ -5,7 +5,7 @@ if (window.location.hostname === "localhost") {
 } else {
     //serverURL = `${window.location.protocol}//${window.location.hostname}:7000/`
     //serverURL: `http://moonbot.me:7000/`
-    serverURL = "http://http://104.131.76.82:7000/"
+    serverURL = "//http://104.131.76.82:7000/"
 }
 
 const Config = {
