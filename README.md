@@ -1,3 +1,9 @@
+# To View Moonbot Live
+Go to [moonbot.me](http://moonbot.me/login) where Moonbot is running live.
+<br>
+<br>
+
+
 # To Run Moonbot Locally
 
 ```bash
