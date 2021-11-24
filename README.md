@@ -6,6 +6,7 @@ Go to [moonbot.me](http://moonbot.me/login) where Moonbot is running live.
 
 # To Run Moonbot Locally
 
+From the main directory:
 ```bash
 cd backend
 pipenv shell
