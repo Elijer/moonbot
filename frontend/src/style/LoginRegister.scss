@@ -40,8 +40,14 @@
 
 @media screen and (max-width: 480px) {
 
-    .login {
-        margin: 14% auto; // space at top
+    .login-page-greeting {
+        font-size: 26px;
+        color: $light;
+        //font-family: 'Roboto Mono', monospace;
+    }
+
+    .login, .login-page-greeting {
+        margin: 40px auto; // space at top
         text-align: center;
     }
 

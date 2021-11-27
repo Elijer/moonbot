@@ -119,7 +119,7 @@ export const AuthProvider = ({children}) => {
             },
             body: JSON.stringify({
                 'username': form.username.value,
-                "email": form.email.value,
+                "email": form.email?.value,
                 "password": form.password.value,
                 "confirmation": form.confirmation.value
             })
