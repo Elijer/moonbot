@@ -7,11 +7,9 @@
     top: 0;
     z-index: -10;
     object-fit: cover;
-    overflow: hidden;
 }
 
 .bg-image {
-    z-index: -8;
     opacity: 0.6;
 }
 
@@ -20,13 +18,10 @@
     background: rgb(0, 0, 0)
 }
 
-.login {
-    z-index: 999
-}
-
-.login-page-greeting {
-    color: $light;
+.login, .login-page-greeting {
+    z-index: 999;
     text-align: center;
+    color: $light;
 }
 
 .login-panel {
@@ -38,6 +33,7 @@
         color: $light;
         border: none;
         border-bottom: 5px solid $light;
+        margin: 20px auto 20px;
     
         &:focus {
             outline: none;
@@ -76,6 +72,27 @@
     color: white;
 }
 
+.register-message {
+
+    background: $intense;
+    font-family: 'Roboto Mono', monospace;
+    padding: 20px;
+    font-size: 24px;
+    margin: 0px auto 0px;
+    color: $gold;
+    font-weight: 100px;
+
+    .register-link {
+        color: $gold;
+
+        &:hover {
+            color: $gold;
+        }
+    }
+}
+
+
+
 @media screen and (max-width: 480px) {
 
     .login-page-greeting {
@@ -84,13 +101,11 @@
 
     .login, .login-page-greeting {
         margin: 40px auto; // space at top
-        text-align: center;
     }
 
     .form-line {
         font-size: 32px;
         width: 80%;
-        margin: 20px auto 20px;
         padding: 12px 12px 0px;
     }
 
@@ -99,30 +114,18 @@
     }
 
     .register-message {
-
-        font-family: 'Roboto Mono', monospace;
-
         padding: 30px 0px;
-        font-size: 24px;
+        background: none;
         width: 100%;
-        margin: 0px auto 0px;
-        color: $light;
-        font-weight: 100px;
-
-        .register-link {
-            color: $gold;
-
-            &:hover {
-                color: $gold;
-            }
-        }
     }
 }
 
+
+// Desktop
 @media screen and (min-width: 480px) {
 
     .login-page-greeting {
-        margin: 40px auto 0px;
+        margin: 40px auto 0px; // 
         font-size: 26px;
     }
 
@@ -141,7 +144,6 @@
         .form-line {
             font-size: 35px;
             width: 80%;
-            margin: 20px auto 20px;
             padding: 12px 12px 0px;
             color: $light;
         }
@@ -153,25 +155,6 @@
             margin-bottom: 0px;
         }
 
-        .register-message {
-
-            background: $intense;
-            font-family: 'Roboto Mono', monospace;
-            padding: 20px;
-            font-size: 24px;
-            margin: 0px auto 0px;
-            color: $gold;
-            font-weight: 100px;
-
-            .register-link {
-                color: $gold;
-
-                &:hover {
-                    color: $gold;
-                }
-            }
-        }
-
     }
 
     .register {
@@ -179,7 +162,6 @@
 
         .form-line {
             font-size: 24px;
-            margin: 20px auto 20px;
         }
     }
 }
