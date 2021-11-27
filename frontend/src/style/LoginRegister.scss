@@ -123,9 +123,18 @@
 
 @media screen and (min-width: 480px) {
 
+    .login-page-greeting {
+        color: $light;
+        margin: 20px auto 0px;
+        text-align: center;
+        font-size: 38px;
+        width: 35%;
+        padding: 0px;
+    }
+
     .login {
         width: 35%;
-        margin: 8% auto;
+        margin: 3% auto 8%;
         background: rgba(255, 255, 255, .9);
         text-align: center;
         border-radius: 3px;
