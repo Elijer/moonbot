@@ -10,6 +10,7 @@
 }
 
 .bg-image {
+    z-index: -8;
     opacity: 0.6;
 }
 
@@ -22,46 +23,54 @@
     z-index: 999;
     text-align: center;
     color: $light;
+    margin: 40px auto; // space at top
+    font-size: 26px;
 }
 
-.login-panel {
+// Requires some extra specificity
+input.form-line:focus {
+    color: $intense;
+}
 
-    .form-line {
-        border-radius: 2px;
-        display: block;
-        background: none;
-        color: $light;
+.form-line {
+    border-radius: 2px;
+    display: block;
+    background: none;
+    color: $light;
+    border: none;
+    border-bottom: 5px solid $light;
+    margin: 20px auto 20px;
+
+    font-size: 32px;
+    width: 80%;
+    padding: 12px 12px 0px;
+
+    &:focus {
+        outline: none;
         border: none;
-        border-bottom: 5px solid $light;
-        margin: 20px auto 20px;
-    
-        &:focus {
-            outline: none;
-            border: none;
-            border-bottom: 5px solid $intense;
-            color: $intense;
-        }
+        border-bottom: 5px solid $intense;
     }
+}
 
-    .form-line::placeholder {
-        color: $light;
-    }
+.form-line::placeholder {
+    color: $light;
+}
 
-    .form-submit {
-        color: $light;
+// needs more specificity to compete with form-line
+input.form-submit {
+    color: $light;
+    background: $intense;
+    border: none;
+    padding: 20px;
+    margin-top: 50px;
+    width: 50%;
+    font-weight: 800;
+    width: 50%;
+
+    &:hover {
         background: $intense;
-        border: none;
-        padding: 12px;
-        margin-top: 50px;
-        width: 50%;
-        font-weight: 800;
-
-        &:hover {
-            background: $intense;
-            color: $gold;
-        }
+        color: $gold;
     }
-
 }
 
 .login-message {
@@ -73,61 +82,29 @@
 }
 
 .register-message {
-
-    background: $intense;
+    background: none;
     font-family: 'Roboto Mono', monospace;
-    padding: 20px;
+    padding: 30px 0px;
     font-size: 24px;
     margin: 0px auto 0px;
     color: $gold;
     font-weight: 100px;
-
+    width: 100%;
+    
     .register-link {
         color: $gold;
-
+        
         &:hover {
             color: $gold;
         }
     }
 }
 
-
-
 @media screen and (max-width: 480px) {
-
-    .login-page-greeting {
-        font-size: 26px;
-    }
-
-    .login, .login-page-greeting {
-        margin: 40px auto; // space at top
-    }
-
-    .form-line {
-        font-size: 32px;
-        width: 80%;
-        padding: 12px 12px 0px;
-    }
-
-    .form-submit {
-        width: 50%;
-    }
-
-    .register-message {
-        padding: 30px 0px;
-        background: none;
-        width: 100%;
-    }
 }
-
 
 // Desktop
 @media screen and (min-width: 480px) {
-
-    .login-page-greeting {
-        margin: 40px auto 0px; // 
-        font-size: 26px;
-    }
 
     .login {
         width: 35%;
@@ -143,8 +120,6 @@
 
         .form-line {
             font-size: 35px;
-            width: 80%;
-            padding: 12px 12px 0px;
             color: $light;
         }
 
@@ -156,6 +131,14 @@
         }
 
     }
+
+        // desktop
+    .register-message {
+        padding: 20px;
+        background: $intense;
+        width: auto;
+    }
+
 
     .register {
         margin-top: 6%;

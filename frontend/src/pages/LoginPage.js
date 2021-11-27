@@ -21,7 +21,7 @@ const LoginPage = () => {
                 <div className = "login-message"> Couldn't log you in. You probably supplied the wrong credentials. </div>
             }
 
-            <div className = "login-page-greeting"> ✨ Welcome to Moonbot, your personal mood tracker.</div>
+            <div className = "login-page-greeting"> ✨ Welcome to Moonbot, your personal mood tracker!</div>
  
             <div className = "login">
                 <div className = "login-panel">
