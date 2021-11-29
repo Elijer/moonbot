@@ -53,7 +53,7 @@ input.form-line:focus {
 }
 
 .form-line::placeholder {
-    color: $light;
+    color: rgb($light, .6);
 }
 
 // needs more specificity to compete with form-line
