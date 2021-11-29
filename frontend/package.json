@@ -31,7 +31,8 @@
     "ems": "firebase emulators:start",
     "dockerDev": "docker-compose -f docker-compose.dev.yml up",
     "dockerBuild": "docker-compose -f docker-compose.prod.yml build",
-    "runBuild": "npm run build; npx serve -s build"
+    "runBuild": "npm run build; npx serve -s build",
+    "updateBuild": "scp -r ./build/* jah@104.131.76.82:/var/www/moonbot.me/html"
   },
   "browserslist": {
     "production": [
