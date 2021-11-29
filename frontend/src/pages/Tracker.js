@@ -95,7 +95,7 @@ const Tracker = () => {
                 { settings.display_rest &&
                     (!sleepSet ?
                     < SleepInput data= {entryData} user = {user} time = {time} /> :
-                    <h3 className = "section section-header"> 🛌 Nice! Sleep data logged. </h3>
+                    <h3 className = "section section-header"> 🛌 Great work! Sleep data logged. </h3>
                     )
                 }
 
