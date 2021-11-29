@@ -2,19 +2,12 @@
 
 .bg-image, .bg-color {
     width: 100%;
-    height: 115%;
+    height: 120%; // moves moon in image slightly out of way
     position: absolute;
     top: 0;
     z-index: -10;
     object-fit: cover;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
-
-/* .bg-image-1 {
-    width: 210%;
-    height: 180%;
-} */
 
 .bg-image {
     z-index: -8;
@@ -26,8 +19,58 @@
     background: rgb(0, 0, 0)
 }
 
-.login {
-    z-index: 999
+.login, .login-page-greeting {
+    z-index: 999;
+    text-align: center;
+    color: $light;
+    margin: 40px auto; // space at top
+    font-size: 26px;
+}
+
+// Requires some extra specificity
+input.form-line:focus {
+    color: $intense;
+}
+
+.form-line {
+    border-radius: 2px;
+    display: block;
+    background: none;
+    color: $light;
+    border: none;
+    border-bottom: 5px solid $light;
+    margin: 20px auto 20px;
+
+    font-size: 32px;
+    width: 80%;
+    padding: 12px 12px 0px;
+
+    &:focus {
+        outline: none;
+        border: none;
+        border-bottom: 5px solid $intense;
+    }
+}
+
+.form-line::placeholder {
+    color: rgb($light, .6);
+}
+
+// needs more specificity to compete with form-line
+input.form-submit {
+    color: $light;
+    background: $intense;
+    border: none;
+    padding: 20px;
+    margin-top: 50px;
+    width: 50%;
+    font-weight: 800;
+    width: 50%;
+
+    &:hover {
+        background: $intense;
+        color: $gold;
+    }
 }
 
 .login-message {
@@ -38,88 +81,34 @@
     color: white;
 }
 
-@media screen and (max-width: 480px) {
-
-    .login {
-        margin: 14% auto; // space at top
-        text-align: center;
-    }
-
-    .login-panel {
-        padding: 0px;
-    }
-
-    .form-line::placeholder {
-        //color: rgb(255, 255, 255, .6);
-        color: rgb($light, .5);
-    }
-
-    .form-line {
-        user-select: none;
-        font-size: 32px;
-        border-radius: 2px;
-        width: 80%;
-        display: block;
-        margin: 20px auto 20px;
-        padding: 12px 12px 0px;
-        border: none;
-        background: none;
-        border-bottom: 5px solid $light;
-        //border-bottom: 2px solid $
-        color: $light;
-        user-select: none;
-        //background: rgb(255, 255, 255, .8);
-
-        &:focus {
-            outline: none;
-            border: none;
-            border-bottom: 5px solid $intense;
-            color: $intense;
-        }
-    }
-
-    .form-submit {
-        color: $light;
-        background: $intense;
-        border: none;
-        padding: 12px;
-        margin-top: 50px;
-        width: 50%;
-        font-weight: 800;
-
-
+.register-message {
+    background: none;
+    font-family: 'Roboto Mono', monospace;
+    padding: 30px 0px;
+    font-size: 24px;
+    margin: 0px auto 0px;
+    color: $gold;
+    font-weight: 100px;
+    width: 100%;
+    
+    .register-link {
+        color: $gold;
+        
         &:hover {
-            background: $intense;
             color: $gold;
-        }
-    }
-
-    .register-message {
-
-        font-family: 'Roboto Mono', monospace;
-
-        padding: 30px 0px;
-        font-size: 24px;
-        width: 100%;
-        margin: 0px auto 0px;
-        color: $light;
-        font-weight: 100px;
-
-        .register-link {
-            color: $gold;
-
-            &:hover {
-                color: $gold;
-            }
         }
     }
 }
 
+@media screen and (max-width: 480px) {
+}
+
+// Desktop
 @media screen and (min-width: 480px) {
 
     .login {
         width: 35%;
-        margin: 8% auto;
+        margin: 3% auto 8%;
         background: rgba(255, 255, 255, .9);
         text-align: center;
         border-radius: 3px;
@@ -129,86 +118,33 @@
             padding: 50px 50px 40px;
         }
 
-
-/*         .form-header {
-            font-family: 'Zen Kaku Gothic Antique', sans-serif;
-            font-weight: 900;
-            font-size: 60px;
-            color: rgb(0, 0, 0, .8);
-            margin-bottom: 42px;
-        } */
-
-        .form-line::placeholder {
-            //color: rgb(255, 255, 255, .6);
-            color: $light;
-        }
-
         .form-line {
             font-size: 35px;
-            border-radius: 2px;
-            width: 80%;
-            display: block;
-            margin: 20px auto 20px;
-            padding: 12px 12px 0px;
-            border: none;
-            background: none;
-            border-bottom: 5px solid $light;
-            //border-bottom: 2px solid $
             color: $light;
-            user-select: none;
-            //background: rgb(255, 255, 255, .8);
-
-            &:focus {
-                outline: none;
-                border: none;
-                border-bottom: 5px solid $intense;
-                color: $intense;
-            }
         }
 
         .form-submit {
-            color: $light;
-            background: $intense;
-            border: none;
-            padding: 12px;
-            margin-top: 50px;
             width: 40%;
-            font-weight: 800;
-
-
-            &:hover {
-                background: $intense;
-                color: $gold;
-            }
-        }
-
-        .register-message {
-
-            background: $intense;
-            font-family: 'Roboto Mono', monospace;
-            padding: 20px;
-            font-size: 24px;
-            margin: 0px auto 0px;
-            color: $gold;
-            font-weight: 100px;
-
-            .register-link {
-                color: $gold;
-
-                &:hover {
-                    color: $gold;
-                }
-            }
+            padding: 14px;
+            margin-top: 40px;
+            margin-bottom: 0px;
         }
 
     }
+
+        // desktop
+    .register-message {
+        padding: 20px;
+        background: $intense;
+        width: auto;
+    }
+
 
     .register {
         margin-top: 6%;
 
         .form-line {
             font-size: 24px;
-            margin: 20px auto 20px;
         }
     }
 }

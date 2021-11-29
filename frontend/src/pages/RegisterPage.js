@@ -17,11 +17,14 @@ const RegisterPage = () => {
                 <div className = "login-message"> Couldn't create an account. Check that you entered the same password in confirm password! </div>
             }
 
+{/*             <div className = "login-page-greeting"> ✨ Welcome to Moonbot, your personal mood tracker!</div> */}
+
+
             <div className = "login register">
                 <div className = "login-panel">
                     <form onSubmit = {registerUser} >
                         <input type = "text" name = "username" placeholder = "Username" className = "form-line" autoComplete="off"/>
-                        <input type = "text" name = "email" placeholder = "Email" className = "form-line" autoComplete="off"/>
+                        {/* <input type = "text" name = "email" placeholder = "Email" className = "form-line" autoComplete="off"/> */}
                         <input type = "password" name = "password" placeholder = "Password" className = "form-line" autoComplete="off"/>
                         <input type = "password" name = "confirmation" placeholder = "Confirm Password" className = "form-line" autoComplete="off"/>
                         <input type = "submit" value = "Register" className = "form-line form-submit" />

@@ -1,5 +1,12 @@
+# To View Moonbot Live
+Go to [moonbot.me](http://moonbot.me/login) where Moonbot is running live.
+<br>
+<br>
+
+
 # To Run Moonbot Locally
 
+From the main directory:
 ```bash
 cd backend
 pipenv shell
@@ -222,6 +229,7 @@ In the top directory of moonbot, there should be a yaml file for Insomnia nd a t
 <br>
 
 # Distinctiveness and Complexity
+<<<<<<< HEAD
 
 `Moonbot` is an online mood tracker that allows users to log personal data each day, such as energy level and sleep schedule. It also provides users with an area graph of the data they've tracked, and the ability to customize the types of data they would like to track.
 

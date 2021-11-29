@@ -14,9 +14,11 @@ const BCInput = (props) => {
     let [userInteraction, setUserInteraction] = useState(false)
     //let [month, setMonth] = useState
 
+    let numberOfDays = 32;
+
     // Create dirt simple month array to map through
     let month = []
-    for (let i = 0; i<28; i++){
+    for (let i = 0; i<numberOfDays; i++){
         month[i] = i + 1
     }
 
@@ -47,7 +49,7 @@ const BCInput = (props) => {
     return (
 
         <div className = "section">
-            <div className = "section-header">🌙 Took this birth control pill:</div>
+            <div className = "section-header">🌙 I am at this day in my cycle:</div>
             <div className = "grid-container">
 
                 {month.map((i) =>

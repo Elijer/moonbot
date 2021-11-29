@@ -21,11 +21,12 @@ const LoginPage = () => {
                 <div className = "login-message"> Couldn't log you in. You probably supplied the wrong credentials. </div>
             }
 
+            <div className = "login-page-greeting"> ✨ Welcome to Moonbot, your personal mood tracker!</div>
+ 
             <div className = "login">
                 <div className = "login-panel">
 
                     {/* <h1 className = "form-header"> Log In </h1> */}
-
                     <form onSubmit = {loginUser} >
                         <input className = "form-line" type = "text" name = "username" placeholder = "username" autoComplete="off"/>
                         <input className = "form-line" type = "password" name = "password" placeholder = "password" autoComplete="off" />
