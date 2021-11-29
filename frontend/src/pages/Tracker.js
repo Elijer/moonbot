@@ -113,7 +113,7 @@ const Tracker = () => {
                 {settings.display_bc &&
                     (!BCSet ?
                     < BCInput data = {entryData}/> :
-                    <h3 className = "section section-header"> {`🌙 Birth control pill: #${entryData.BC_day}. `}
+                    <h3 className = "section section-header"> {`🌙 Day in cycle: #${entryData.BC_day}. `}
                         <div className = "bc-change" onClick = {handleBirthControlChange}> Tap here to change it.</div>
                     </h3>
                     )
