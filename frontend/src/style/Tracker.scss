@@ -28,3 +28,10 @@
         color: $intense;
     }
 }
+
+@media screen and (min-width: 480px) {
+    #tracker-page {
+        padding: 30px;
+        //background: green;
+    }
+}
