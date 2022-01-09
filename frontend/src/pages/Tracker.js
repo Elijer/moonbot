@@ -106,7 +106,7 @@ const Tracker = () => {
                 {settings.display_energy &&
                     (!energySet ?
                     < EnergyInput data = {entryData}/> :
-                    <h3 className = "section section-header"> {`⚡️ Awesome. ${up(time.timeOfDay)} energy level set.` }</h3>
+                    <h3 className = "section section-header"> {`⚡️ Awesome. ${up(time.timeOfDay)} energy level already set.` }</h3>
                     )
                 }
 
