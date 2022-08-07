@@ -26,6 +26,9 @@ I forget, but sass compilers can be finicky about this. What I had to do was sim
 
 After this, if you get an dependency errors, you may have to install those dependencies which may not have been saved to the package.json
 
+Later in the day, I had another issue with sass. Turns out I was using node-sass, an older sass library, so I switched to dart-sass, the better maintained one by running `npm uninstall node-sass` then `npm install dart-sass` and recompiling the frontend. Simple enough.
+
 
 ### Frontend and Backend working together
 After these steps, the frontend and backend should work together.
+
