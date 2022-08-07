@@ -54,5 +54,11 @@ But I dunno if we actually need a virtual environment on the server, since we ha
 
 Alright! The build succeeded this time. But it is followed by a lot of other errors, as soon as we tried to access the app I believe, from the Heroku Router. Maybe because we tried to access a path that doesn't exist, like an expected error? Let's add something to the root `/` get route to prevent this.
 
+Okay weird, now it's still saying that it can't find Django.
+
+Let me try adding a python buildpack manually.
+
+Alright! That worked. Now I'm getting a "disallowed hosts" message because, of course, heroku isn't an allowed host. So let me add that.
+
 ### Still to do
 Create a release branch and switch heroku deploys to release
