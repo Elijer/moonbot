@@ -3,7 +3,6 @@ import AuthContext from '../context/AuthContext'
 import TimeContext from '../context/TimeContext'
 import RequestContext from '../context/RequestContext'
 import dd from '../utilities/Debugger'
-import { s } from 'redom'
 
 const SettingsPage = () => {
 

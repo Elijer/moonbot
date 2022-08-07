@@ -95,7 +95,7 @@ const Tracker = () => {
                 { settings.display_rest &&
                     (!sleepSet ?
                     < SleepInput data= {entryData} user = {user} time = {time} /> :
-                    <h3 className = "section section-header"> 🛌 Nice! Sleep data logged. </h3>
+                    <h3 className = "section section-header"> 🛌 Great work! Sleep data logged. </h3>
                     )
                 }
 
@@ -106,15 +106,15 @@ const Tracker = () => {
                 {settings.display_energy &&
                     (!energySet ?
                     < EnergyInput data = {entryData}/> :
-                    <h3 className = "section section-header"> {`⚡️ ${up(time.timeOfDay)} energy level set.` }</h3>
+                    <h3 className = "section section-header"> {`⚡️ Awesome. ${up(time.timeOfDay)} energy level already set.` }</h3>
                     )
                 }
 
                 {settings.display_bc &&
                     (!BCSet ?
                     < BCInput data = {entryData}/> :
-                    <h3 className = "section section-header"> {`🌙 Birth control pill: #${entryData.BC_day}. `}
-                        <div className = "bc-change" onClick = {handleBirthControlChange}> Tap here to change it.</div>
+                    <h3 className = "section section-header"> {`🌙 Nice! You logged your cycle day (${entryData.BC_day})`}
+                        <div className = "bc-change" onClick = {handleBirthControlChange}> But you can still change it.</div>
                     </h3>
                     )
                 }

@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+
+  frontend: 
+    container_name: frontend-dev
+    image: moonbot-frontend-image-dev
+    build:
+      context: ./frontend
+      target: development
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend/src:/usr/src/app/src
+
+  backend:
+    container_name: backend-dev
+    image: moonbot-backend-image-dev
+    build: ./backend
+    ports:
+    - 7000:7000

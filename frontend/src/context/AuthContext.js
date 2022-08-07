@@ -119,7 +119,7 @@ export const AuthProvider = ({children}) => {
             },
             body: JSON.stringify({
                 'username': form.username.value,
-                "email": form.email.value,
+                "email": form.email?.value,
                 "password": form.password.value,
                 "confirmation": form.confirmation.value
             })
@@ -128,10 +128,16 @@ export const AuthProvider = ({children}) => {
         let data = await response.json()
         if (response.status === 200){
             loginEvent(data)
+            setLoginAttempt(false)
         } else {
+            setLoginAttempt(true)
             dd("error")
         }
 
+    }
+    
+    let clearLoginAttempt = () => {
+        setLoginAttempt(false)
     }
 
     let updateToken = useCallback(
@@ -234,6 +240,7 @@ export const AuthProvider = ({children}) => {
         
         // Functions:
         setSettings: setSettings,
+        clearLoginAttempt: clearLoginAttempt,
         loginUser: loginUser,
         logoutUser: logoutUser,
         registerUser: registerUser,

@@ -44,3 +44,4 @@ pip-delete-this-directory.txt
 #   having no cross-platform support, pipenv may install dependencies that don't work, or not
 #   install all needed dependencies.
 #Pipfile.lock
+local_settings.py

@@ -105,7 +105,7 @@ class Entry(models.Model):
         }
     
     def __str__(self):
-        return f"[id:{self.id}] ---> '{self.dateString}' ---> {self.creator.username}"
+        return f"[id:{self.id}], '{self.dateString}', {self.creator.username}"
     
     def calculateRest(self):
         if not self.rest_calculated and self.sleep != "" and self.wake != "":

@@ -1,0 +1,222 @@
+_type: export
+__export_format: 4
+__export_date: 2021-11-20T17:32:46.994Z
+__export_source: insomnia.desktop.app:v2021.6.0
+resources:
+  - _id: req_a2c7ab1f288847978c560f13a3234097
+    parentId: wrk_fb232cf5fbc147339df7135da5c3d2ef
+    modified: 1637271213139
+    created: 1637086116213
+    url: http://localhost:7000/updateSettings/
+    name: UpdateUserSettings
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "display_cries": false,
+          "display_rest": false,
+          "display_energy": false,
+          "display_bc": false,
+          "display_outside": false
+        }
+    parameters: []
+    headers:
+      - id: pair_9b892216da164322ba6e98884d5e2467
+        name: Authorization
+        value: Bearer {{ _['access-token'] }}
+        description: ""
+      - name: Content-Type
+        value: application/json
+        id: pair_4572d77ccebf43a6a1bbf6a1b10b9a74
+    authentication: {}
+    metaSortKey: -1637086116213
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_fb232cf5fbc147339df7135da5c3d2ef
+    parentId: null
+    modified: 1636803549966
+    created: 1636803549966
+    name: Moonbot
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_a0bc0f9411d54b918f38386885331b53
+    parentId: wrk_fb232cf5fbc147339df7135da5c3d2ef
+    modified: 1637086282646
+    created: 1636982789420
+    url: http://localhost:7000/api/token/
+    name: LoginSuccess
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "moose",
+        	"password": "moose"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_dccfe3e0447c428daa70a42c70ac247a
+    authentication: {}
+    metaSortKey: -1636982789420
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_72dd2c5cfa514e899625a38f44a839f4
+    parentId: wrk_fb232cf5fbc147339df7135da5c3d2ef
+    modified: 1637002744500
+    created: 1637002733874
+    url: http://localhost:7000/api/token/
+    name: LoginSuccess2
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "a1",
+        	"password": "a1"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_dccfe3e0447c428daa70a42c70ac247a
+    authentication: {}
+    metaSortKey: -1636982755577
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_38347c922eb24b7b84e427ddf63b7788
+    parentId: wrk_fb232cf5fbc147339df7135da5c3d2ef
+    modified: 1637086143174
+    created: 1636982721734
+    url: http://localhost:7000/graphRest/
+    name: GraphRest
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_885dab14df78437ba04022ae4f56c99f
+        name: Authorization
+        value: Bearer {{ _['access-token'] }}
+        description: ""
+    authentication: {}
+    metaSortKey: -1636982721734
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_0931b468860a4f1bb13c4a151e096d65
+    parentId: wrk_fb232cf5fbc147339df7135da5c3d2ef
+    modified: 1636983020635
+    created: 1636803588764
+    url: http://localhost:7000/getAllEntries/
+    name: GetAllEntries
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_f38ccf911b4f4d98b022e7e02f4cf678
+        name: Authorization
+        value: Bearer {{ _['access-token'] }}
+        description: ""
+    authentication: {}
+    metaSortKey: -1636803588764
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3e999d3bd65d4fe09e1f1473d9451d02
+    parentId: wrk_fb232cf5fbc147339df7135da5c3d2ef
+    modified: 1636983018762
+    created: 1636820250934
+    url: http://localhost:7000/graphAllEntries/
+    name: GraphAllEntries
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_f38ccf911b4f4d98b022e7e02f4cf678
+        name: Authorization
+        value: Bearer {{ _['access-token'] }}
+        description: ""
+    authentication: {}
+    metaSortKey: -1636803588714
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_03490003c9e1ddeeb1d0a44312c180dd450d098a
+    parentId: wrk_fb232cf5fbc147339df7135da5c3d2ef
+    modified: 1637086181458
+    created: 1636803549998
+    name: Base Environment
+    data:
+      access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM3MTcyNTQ3LCJpYXQiOjE2MzcwODYxNDcsImp0aSI6ImMwMDA1MDg0NTBmZTRhNDNhYjYxYmU2MmI4ZGM1ZTMzIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJtb29zZSIsImlkIjoxfQ.mx3XxSETvsUO1M_4i-DX3mY_ZWNqPIwG__JY-4j_1zQ
+    dataPropertyOrder:
+      "&":
+        - access-token
+    color: null
+    isPrivate: false
+    metaSortKey: 1636803549998
+    _type: environment
+  - _id: jar_03490003c9e1ddeeb1d0a44312c180dd450d098a
+    parentId: wrk_fb232cf5fbc147339df7135da5c3d2ef
+    modified: 1636803744086
+    created: 1636803550013
+    name: Default Jar
+    cookies:
+      - id: ca5ea4a1-d8de-4d8d-a1b0-c85e66970fd0
+        key: foo
+        value: bar
+        domain: domain.com
+        expires: 2147483647000
+        path: /
+        secure: false
+        httpOnly: false
+    _type: cookie_jar
+  - _id: spc_26ed41b3d52447418ed0194c4f4d5f4f
+    parentId: wrk_fb232cf5fbc147339df7135da5c3d2ef
+    modified: 1636803549968
+    created: 1636803549968
+    fileName: Moonbot
+    contents: ""
+    contentType: yaml
+    _type: api_spec
