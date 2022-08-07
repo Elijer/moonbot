@@ -48,5 +48,9 @@ We'll use the port flag and set it to 7000 though, because that's what the front
 
 So that worked. Dope. In theory, this should be good to deploy I guess - let's try it, especially to see if the subdirectly code works.
 
+Okay so it deployed, but failed because Django isn't there, no python deps are there -- I use Pipenv to create that virtual environment and I didn't even run `pipenv shell`. So I added `pipenv shell` to the Procfile just to see what happens, but I don't think it will work since the pipenv folder isn't, I don't think, in this directory even. That virtual environment is saved somewhere else on my computer.
+
+But I dunno if we actually need a virtual environment on the server, since we have the frozen `requirements.txt` file. All we should had to do is run `pip install -r requirements.txt` in the procfile. Or perhaps `pip3`. And pip should be around, right, because of the automatically detected buildpack?
+
 ### Still to do
 Create a release branch and switch heroku deploys to release
