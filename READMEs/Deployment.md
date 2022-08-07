@@ -52,5 +52,7 @@ Okay so it deployed, but failed because Django isn't there, no python deps are t
 
 But I dunno if we actually need a virtual environment on the server, since we have the frozen `requirements.txt` file. All we should had to do is run `pip install -r requirements.txt` in the procfile. Or perhaps `pip3`. And pip should be around, right, because of the automatically detected buildpack?
 
+Alright! The build succeeded this time. But it is followed by a lot of other errors, as soon as we tried to access the app I believe, from the Heroku Router. Maybe because we tried to access a path that doesn't exist, like an expected error? Let's add something to the root `/` get route to prevent this.
+
 ### Still to do
 Create a release branch and switch heroku deploys to release

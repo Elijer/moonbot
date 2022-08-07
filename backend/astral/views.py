@@ -23,6 +23,12 @@ from .serializers import ProfileSerializer
 from .models import User, Entry
 # from network.models import User, Post
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def default(request):
+    return HttpResponse("Helo! This isn't a route of the API, but it is a nice friendly API route that says hi. :)")
+    
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def analyzeRequest(request):
