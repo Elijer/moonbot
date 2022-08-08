@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Comming Back
 I am returning to this project after a while.
 
