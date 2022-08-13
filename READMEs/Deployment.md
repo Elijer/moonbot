@@ -92,3 +92,13 @@ Done.
 
 ### To Do
 - Change the branch I want to a new "release branch", which will also deploy for Django
+- Make sure that the backend URL is loaded through environmental variables, different for local and production.
+
+# 4) Use Doppler
+Doppler is a secret management solution that I've been meaning to check out for a while. Their pitch is, simplify secret management across environments.
+
+- Create an account
+- Install the CLI
+
+### Paint Points
+For create-react-app apps, all environmental variables, doppler or otherwise, must start with [REACT_APP](https://create-react-app.dev/docs/adding-custom-environment-variables/).

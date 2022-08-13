@@ -25,16 +25,17 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "doppler run -p moonbot -c dev -- react-scripts start",
     "startlint": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "doppler run -- react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "ems": "firebase emulators:start",
     "dockerDev": "docker-compose -f docker-compose.dev.yml up",
     "dockerBuild": "docker-compose -f docker-compose.prod.yml build",
     "runBuild": "npm run build; npx serve -s build",
-    "updateBuild": "scp -r ./build/* jah@104.131.76.82:/var/www/moonbot.me/html"
+    "updateBuild": "scp -r ./build/* jah@104.131.76.82:/var/www/moonbot.me/html",
+    "doppler-install": "(curl -Ls https://cli.doppler.com/install.sh || wget -qO- https://cli.doppler.com/install.sh) | sh -s -- --no-install --no-package-manager"
   },
   "browserslist": {
     "production": [
