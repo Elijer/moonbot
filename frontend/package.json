@@ -27,7 +27,7 @@
   "scripts": {
     "start": "doppler run -p moonbot -c dev -- react-scripts start",
     "startlint": "react-scripts start",
-    "build": "doppler run -- react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "ems": "firebase emulators:start",
