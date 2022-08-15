@@ -101,4 +101,6 @@ Doppler is a secret management solution that I've been meaning to check out for 
 - Install the CLI
 
 ### Paint Points
-For create-react-app apps, all environmental variables, doppler or otherwise, must start with [REACT_APP](https://create-react-app.dev/docs/adding-custom-environment-variables/).
+- For create-react-app apps, all environmental variables, doppler or otherwise, must start with [REACT_APP](https://create-react-app.dev/docs/adding-custom-environment-variables/).
+- Make sure to include `python manage.py migrate` to Procfile - Django won't be able to work at all without migrating first
+- Make sure that correct folder (in this case, frontend) is selected as the place to run the necessary command on Netflify - 
