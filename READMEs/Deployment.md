@@ -7,6 +7,9 @@ Backend is set as a heroku subdirectory deployment triggered by pushes to main. 
 **Frontend**
 Frontend is deployed via Netflify in the same way - any pushes to origin/main will automatically redeploy the frontend to netflify, currently at mymoonbot.netlify.app
 
+**Database Persisistence**
+The database data currently does not persist...I believe this is because db.sqlite3 from local is rightfully gitignored (it wouldn't make sense to push the local database data to production anyways) so a new sqlite file is created with every deploy. And I believe, also, with every dyno restart, which must happen somewhat frequently since I keep having to create new credentials on the live site.
+
 
 # Guide for setting it up / how it works
 
@@ -80,6 +83,13 @@ Let me try adding a python buildpack manually.
 Alright! That worked. Now I'm getting a "disallowed hosts" message because, of course, heroku isn't an allowed host. So let me add that.
 
 Done.
+
+# 3) Setting up a persistend database
+The easiest way to do this is probably using Heroku Postgres. Let's try that. On heroku, there's actually a little suggestion asking if I want to install postgres, so I clicked it and "added" it to the heroku dyno of the moonbot backend.
+
+I doubt it's that simple though, [so here is the docs it showed me](https://devcenter.heroku.com/articles/heroku-postgresql)
+
+Yo! [Here's a Dennis Ivy tutorial!](https://www.youtube.com/watch?v=TFFtDLZnbSs)
 
 ### Review:
 - The winning Procfile command was:
