@@ -16,6 +16,8 @@ SECRET_KEY = '13kl@xtukpwe&xj2xoysxe9_6=tf@f8ewxer5n&ifnd46+6$%8'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '*moonbot-walker-backend.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://moonbot-walker-backend.herokuapp.com']
+
 
 # Application definition
 
