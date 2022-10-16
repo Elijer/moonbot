@@ -90,6 +90,9 @@ The easiest way to do this is probably using Heroku Postgres. Let's try that. On
 I doubt it's that simple though, [so here is the docs it showed me](https://devcenter.heroku.com/articles/heroku-postgresql)
 
 Yo! [Here's a Dennis Ivy tutorial!](https://www.youtube.com/watch?v=TFFtDLZnbSs)
+Following along...had to install the psycopg2 module
+Had to add this to settings.py:
+`CSRF_TRUSTED_ORIGINS = ['https://moonbot-walker-backend.herokuapp.com']`
 
 ### Review:
 - The winning Procfile command was:
