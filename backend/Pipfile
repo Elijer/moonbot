@@ -9,6 +9,7 @@ djangorestframework = "*"
 djangorestframework-simplejwt = "*"
 django-cors-headers = "*"
 dj-database-url = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
