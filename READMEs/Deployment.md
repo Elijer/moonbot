@@ -1,8 +1,17 @@
-# Heroku Deployment for Backend
+
+
+# Deployment Process
+**Backend**
+Backend is set as a heroku subdirectory deployment triggered by pushes to main. Any pushes to main will redeploy the backend (even if the only changes are to the frontend).
+
+**Frontend**
+Frontend is deployed via Netflify in the same way - any pushes to origin/main will automatically redeploy the frontend to netflify, currently at mymoonbot.netlify.app
+
+
+# Guide for setting it up / how it works
+
+## Heroku Deployment for Backend
 I am following [this guide](https://realpython.com/django-hosting-on-heroku/) to start with.
-
-# 0) Guides
-
 
 
 # 1) Set up Heroku
